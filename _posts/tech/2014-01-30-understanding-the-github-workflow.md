@@ -11,7 +11,7 @@ description:
 
 ![github-flow](http://7u2ho6.com1.z0.glb.clouddn.com/tech-github-flow.png)
 
-## 创建一个分支2222
+## 创建一个分支,然后呢
 
 当你工作在一个项目中，你可能会在任何时间产生不同的想法和特性计划--这些都是准备完成的，或者其他不准备完成的。分支的存在可以帮助你管理工作流。
 

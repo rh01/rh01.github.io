@@ -5,7 +5,8 @@ category: 技术
 tags: Git
 keywords: Git,Workflow,工作流,GitHub 
 description: 
----
+------------
+2222
 
 > GitHub流是一个轻量级，基于分支的工作流，它使得小组和项目的部署变得标准化。这个向导解释了GitHub流是如何&为什么工作的。
 

@@ -19,8 +19,8 @@ github: rh01
 # dribbble: username
 
 # avatar头像及Favicon
-avatar: /static/favicon.ico
-favicon: /static/favicon.ico
+avatar: static/favicon.ico
+favicon: static/favicon.ico
 
 # disqus 设置
 disqus:

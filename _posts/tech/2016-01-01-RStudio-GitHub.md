@@ -37,7 +37,7 @@ RStudio 不允许我改变版本控制系统的源（主要在这里灰色显示
 
 于是我在本地计算机中删除了本地clone的repo.然后重新克隆github中源
 
-![clone](../../../pic/Git clone.png)
+![clone Git](../../../pic/Git clone.png)
 
 然后我在RStudio中 click *New Project* -> *Existing Directory*
 

@@ -1,8 +1,8 @@
 # Site settings
-title: 闫肃的个人博客
-email: suyan0830@gmail.com
+title: 申恒恒的博客
+email: heng960509@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  闫肃的博客
+  申恒恒的博客
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yansu.org" # the base hostname & protocol for your site
 rss_url: /pages/feed.xml
@@ -12,9 +12,9 @@ rss_url: /pages/feed.xml
 filter: 'category'
 
 # Social account
-twitter: masonsuyan
+twitter: ShenHengheng
 # weibo:    ID
-github: suyan
+github: rh01
 # codepen:  username
 # dribbble: username
 
@@ -24,12 +24,12 @@ favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
 
 # disqus 设置
 disqus:
-  shortname: suyan-zh
+  shortname:shenheng-zh
 
 # google analytics 设置
 ga:
-  id: UA-54767140-1
-  url: yansu.org
+  id:
+  url:
 
 # Build settings
 permalink: /:year/:month/:day/:title.html

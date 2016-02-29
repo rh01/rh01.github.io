@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 本科生涯结束了
+title: 本科生涯结束了吗
 category: 生活
 tags: Essay
 keywords: 本科,结束

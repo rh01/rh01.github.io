@@ -19,7 +19,7 @@ github: rh01
 # dribbble: username
 
 # avatar头像及Favicon
-avatar: https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAcXAAAAJGM1ODgwNTQzLWM3OTAtNGVmMy1iZWZlLWViZWYxZDAyNmYxZA.jpg
+avatar: static/fav.png
 favicon: static/favicon.ico
 
 # disqus 设置

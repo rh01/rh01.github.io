@@ -19,7 +19,7 @@ github: rh01
 # dribbble: username
 
 # avatar头像及Favicon
-avatar: static/fav.png
+avatar: https://coursera.s3.amazonaws.com/topics/ml/large-icon.png
 favicon: static/favicon.ico
 
 # disqus 设置

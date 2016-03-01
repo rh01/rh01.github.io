@@ -106,5 +106,4 @@ In RStudio, again click *Tools* -> *Shell* … . Enter:
 git config remote.origin.url git@github.com:rh01/test.git
 ```
 
-===
-
+---

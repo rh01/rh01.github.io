@@ -56,7 +56,7 @@ In RStudio, click *New project* as normal. Click *New Directory*.
 
 Name the project and check *Create a git repository*.
 
-![8_new_project_with_git](../pic/7.jpg)
+![8_new_project_with_git](../../../pic/7.jpg)
 
 Now in RStudio, create a new script which you will add to your repository.
 

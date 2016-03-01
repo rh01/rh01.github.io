@@ -1,10 +1,8 @@
 ---
 layout: post
-title: "R and Rstdio Condfigration"
+title: R and Rstdio Condfigration
 category: 技术
-date: "2016年2月24日"
 tags: RStudio,GitHuub
-
 ---
 
 ## Introduction

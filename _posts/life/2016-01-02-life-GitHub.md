@@ -1,7 +1,7 @@
 ---
 layout: post
 title: RStudio和GitHub出现的问题解决方案
-category: 技术
+category: 生活
 tags: RStudio
 keywords: RStudio,GitHub
 ---

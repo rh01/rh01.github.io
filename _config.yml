@@ -20,7 +20,7 @@ github: rh01
 
 # avatar头像及Favicon
 avatar: https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAcXAAAAJGM1ODgwNTQzLWM3OTAtNGVmMy1iZWZlLWViZWYxZDAyNmYxZA.jpg
-favicon: https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAcXAAAAJGM1ODgwNTQzLWM3OTAtNGVmMy1iZWZlLWViZWYxZDAyNmYxZA.jpg
+favicon: stattic/favicon.ico
 
 # disqus 设置
 disqus:

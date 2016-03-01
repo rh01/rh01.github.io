@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "R and Rstdio Condfigration"
-category: GitHub
+category: 技术
 date: "2016年2月24日"
 tags: RStudio,GitHuub
 

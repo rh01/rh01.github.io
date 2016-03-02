@@ -13,6 +13,13 @@ layout: default
   {{ content }}
 </article>
 
+<div class="post-share">
+  <div class="container">
+    <a href="https://twitter.com/share?url={{ page.url | prepend: site.baseurl | prepend: site.url }}&text={{ page.title }}" target="_blank" class="post-share-icon twitter"></a>
+    <a href="https://www.evernote.com/clip.action?url={{ page.url | prepend: site.baseurl | prepend: site.url }}&title={{ page.title }}" target="_blank" class="post-share-icon evernote"></a>
+    <a href="http://service.weibo.com/share/share.php?url={{ page.url | prepend: site.baseurl | prepend: site.url }}&title={{ page.title }}" target="_blank" class="post-share-icon weibo"></a>
+  </div>
+</div>
 
 
 <!---{% if site.disqus.shortname %}
@@ -40,10 +47,3 @@ layout: default
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
-<div class="post-share">
-  <div class="container">
-    <a href="https://twitter.com/share?url={{ page.url | prepend: site.baseurl | prepend: site.url }}&text={{ page.title }}" target="_blank" class="post-share-icon twitter"></a>
-    <a href="https://www.evernote.com/clip.action?url={{ page.url | prepend: site.baseurl | prepend: site.url }}&title={{ page.title }}" target="_blank" class="post-share-icon evernote"></a>
-    <a href="http://service.weibo.com/share/share.php?url={{ page.url | prepend: site.baseurl | prepend: site.url }}&title={{ page.title }}" target="_blank" class="post-share-icon weibo"></a>
-  </div>
-</div>

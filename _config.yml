@@ -4,7 +4,7 @@ email: heng960509@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   申恒恒的博客
 baseurl: "" # the subpath of your site, e.g. /blog/
-url:  the base hostname & protocol for your site
+url: http://rh01.github.io #the base hostname & protocol for your site
 rss_url: /pages/feed.xml
 
 # Sidebar filter
@@ -13,7 +13,7 @@ filter: 'category'
 
 # Social account
 twitter: ShenHengheng
-# weibo:    ID
+weibo:    ShenHengheng
 github: rh01
 # codepen:  username
 # dribbble: username

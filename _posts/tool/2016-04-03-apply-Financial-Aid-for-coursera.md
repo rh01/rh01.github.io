@@ -14,7 +14,7 @@ description:
 	恐怕很多童鞋们都找不到如何申请助学金的链接，不过没关系，哥哥告诉你，哈哈，:)
 
 1. 打开你想申请的课程网站
-	比如，莱斯大学著名的IIPP课程（已完成），课程网站为[An Introduction to Interactive Programming in Python (Part 1)\](https://www.coursera.org/learn/interactive-python-1)
+	比如，莱斯大学著名的IIPP课程（已完成），课程网站为[An Introduction to Interactive Programming in Python(Part 1)](https://www.coursera.org/learn/interactive-python-1)
 
 	![1](../../../pic/03-1.png)
 
@@ -36,11 +36,29 @@ description:
 
 	点击链接,我们会转到申请助学金的页面,
 
-	![apply](03-4.png)
+	![apply](../../../pic/03-4.png)
 
 	不错,就是它,如果你们看到这了,会产生两个疑问,中文写还是英文??
 
 	**当然英文了**,对于英文弱的要死要死的我们,肿么办??
+
+4. 干货来了
+	要注意的是：
+
+	![attention](../../../pic/03-5.png)
+	首先按照自个儿的经济情况书写，国家不要填错！
+
+	下面是一超链接，大家都懂得！![wenjian](.../.../.../pic/apply.txt)
+
+5. 终于完工了
+
+![](.../.../.../pic/03-5.png)
+
+![](.../.../.../pic/03-6.png)
+
+![](.../.../.../pic/03-7.png)
+
+![](.../.../.../pic/03-8.png)
 
 
 

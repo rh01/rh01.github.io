@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: How to Apply Finitial Aid For Coursera Course
 category: 工具

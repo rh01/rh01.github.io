@@ -6,7 +6,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: http://rh01.github.io #the base hostname & protocol for your site
 rss_url: /pages/feed.xml
-encoding: UTF-8
+
 # Sidebar filter
 # Choose 'tag' or 'category' as filter in sidebar.
 filter: 'category'

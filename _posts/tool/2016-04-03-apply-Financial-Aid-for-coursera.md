@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [干货]如何申请Coursera助学金
+title: How to Apply Finitial Aid For Coursera Course
 category: 工具
 tags: Coursera
 keywords: Coursera,申请助学金

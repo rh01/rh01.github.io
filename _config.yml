@@ -19,7 +19,7 @@ github: rh01
 # dribbble: username
 
 # avatar头像及Favicon
-avatar: static/fav.png
+avatar: https://www.dropbox.com/s/wni6yakj2g1wnyi/fav.png?dl=1
 favicon: static/favicon.ico
 
 # disqus 设置

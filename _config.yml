@@ -20,7 +20,7 @@ github: rh01
 
 # avatar头像及Favicon
 avatar: https://www.dropbox.com/s/wni6yakj2g1wnyi/fav.png?dl=1
-favicon: static/favicon.ico
+favicon: https://www.dropbox.com/s/syh88fyf5spxy00/android_robot.ico?dl=1
 
 # disqus 设置
 disqus:

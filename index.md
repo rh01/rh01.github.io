@@ -10,8 +10,8 @@ layout: post
 
 ## 简历
 
-![resume](pic/001.jpg)
-![resume](pic/002.jpg)
+![resume](./pic/0001.jpg)
+![resume](./pic/0002.jpg)
 
 ## 博客平台
 

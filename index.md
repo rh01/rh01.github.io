@@ -13,7 +13,6 @@ layout: post
 ![resume](./pic/0001.jpg)
 ![resume](./pic/0002.jpg)
 
-## 博客平台
 
 ## 这个博客做什么？
 

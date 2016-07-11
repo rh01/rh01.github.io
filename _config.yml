@@ -29,8 +29,8 @@ disqus:
 
 # google analytics 设置
 ga:
-  id:
-  url:
+  id: UA-80563036-1
+  url: rh01.github.io
 
 # Build settings
 permalink: /:year/:month/:day/:title.html
@@ -38,3 +38,10 @@ markdown: kramdown
 highlighter: rouge
 sass:
   style: compressed
+      
+# Jekyll Plugin
+# https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed

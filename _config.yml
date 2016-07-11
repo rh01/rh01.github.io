@@ -29,8 +29,8 @@ disqus:
 
 # google analytics 设置
 ga:
-  id:
-  url:
+  id: UA-80563036-1
+  url: rh01.github.io
 
 # Build settings
 permalink: /:year/:month/:day/:title.html

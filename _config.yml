@@ -4,7 +4,7 @@ email: heng960509@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   申恒恒的博客
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: http://rh01.github.io #the base hostname & protocol for your site
+url: https://rh01.github.io #the base hostname & protocol for your site
 rss_url: /pages/feed.xml
 encoding: UTF-8
 # Sidebar filter

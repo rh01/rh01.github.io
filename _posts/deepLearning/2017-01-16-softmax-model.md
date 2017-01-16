@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: softmax 模型
+category：深度学习
 tags: softmax modle,classifcation
 keywords: softmax,python
 ---

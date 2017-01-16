@@ -2,8 +2,8 @@
 layout: post
 title: softmax 模型
 category: 深度学习
-tags: softmax modle,classifcation
-keywords: softmax,python
+tags: classification,machine learning,deep learning,tutorial
+keywords: Note
 ---
 
 ## softmax 模型和激活函数

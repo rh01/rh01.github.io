@@ -78,7 +78,7 @@ keywords: softmax,python
 
 **笔记：**
 
-numpy.array¶
+numpy.array
 
 numpy.array(*object*, *dtype=None*, *copy=True*, *order=None*, *subok=False*, *ndmin=0*)
 

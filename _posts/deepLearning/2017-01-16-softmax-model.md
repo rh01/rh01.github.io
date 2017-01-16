@@ -1,11 +1,12 @@
 ---
-layout: posts
+layout: post
 title: softmax 模型
 category：深度学习
 tags: softmax modle,classifcation
 keywords: softmax,python
 ---
 
+## softmax 模型和激活函数
 
 > """Softmax."""
 >

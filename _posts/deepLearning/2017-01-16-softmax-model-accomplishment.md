@@ -69,7 +69,7 @@ def softmax(x):
     for item in x:
         values.append(item) #Compute and return softmax(x)
     return np.array(values)
-{% highlight %}
+{% endhighlight %}
 运行结果:
 
 >[ 3.   1.   0.2]

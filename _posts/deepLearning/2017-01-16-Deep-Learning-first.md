@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [笔记1]从机器学习到深度学习-两个问题
+title: 笔记1-从机器学习到深度学习-两个问题
 category: DL
 tags: classification,machine learning,deep learning,tutorial
 keywords: Note

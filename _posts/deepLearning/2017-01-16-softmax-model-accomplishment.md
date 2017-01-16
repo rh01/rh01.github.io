@@ -10,37 +10,31 @@ keywords: Note
 
 
 
-{% highlight java %}
-public class Hello {
-  public static void main(String[] args) {
-    System.out.println("Hello World!");
-  }
-}
+{% highlight python %}
+"""Softmax."""
+
+scores = [3.0, 1.0, 0.2]
+
+import numpy as np
+
+def softmax(x):
+    """Compute softmax values for each sets of scores in x."""
+    values = []
+    for item in x:
+        values.append(item) # TODO: Compute and return softmax(x)
+    return np.array(values)   
+
+print(softmax(scores))
+
+# Plot softmax curves
+import matplotlib.pyplot as plt
+x = np.arange(-2.0, 6.0, 0.1)
+scores = np.vstack([x, np.ones_like(x), 0.2 * np.ones_like(x)])
+
+plt.plot(x, softmax(scores).T, linewidth=2)
+plt.show()
+
 {% endhighlight %}
-
-
-> """Softmax."""
->
->scores = [3.0, 1.0, 0.2]
->
->import numpy as np
->
->def softmax(x):
->    """Compute softmax values for each sets of scores in x."""
->    pass
->      
->
->
->print(softmax(scores))
-
-> # Plot softmax curves
-> import matplotlib.pyplot as plt
-> x = np.arange(-2.0, 6.0, 0.1)
-> scores = np.vstack([x, np.ones_like(x), 0.2 * np.ones_like(x)])
-> 
-> plt.plot(x, softmax(scores).T, linewidth=2)
-> plt.show()
-> 
 
 **Softmax 模型**
 **Note**: softmax(x) 函数应该返回一个形状和x相同的NumPy array类型。
@@ -50,8 +44,7 @@ public class Hello {
 
 应该返回一个同样长度（即3个元素）的一维矩阵：
 
-> print softmax(scores)
-> 
+> print softmax(scores) 
 
 **[ 0.09003057  0.24472847  0.66524096]**
 
@@ -69,15 +62,14 @@ public class Hello {
 每个样本（列向量）中的概率加起来应当等于 1。
 
 解决方案：
-
-> def softmax(x):
->     """Compute softmax values for each sets of scores in x."""
->     values = []
->     for item in x:
->         values.append(item) #Compute and return softmax(x)
->     
->     return np.array(values)
-
+{% highlight python %}
+def softmax(x):
+     """Compute softmax values for each sets of scores in x."""
+    values = []
+    for item in x:
+        values.append(item) #Compute and return softmax(x)
+    return np.array(values)
+{% highlight %}
 运行结果:
 
 >[ 3.   1.   0.2]

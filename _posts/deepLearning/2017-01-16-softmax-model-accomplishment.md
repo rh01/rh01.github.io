@@ -8,8 +8,6 @@ keywords: Note
 
 ## softmax 模型和激活函数
 
-
-
 {% highlight python %}
 """Softmax."""
 
@@ -19,10 +17,7 @@ import numpy as np
 
 def softmax(x):
     """Compute softmax values for each sets of scores in x."""
-    values = []
-    for item in x:
-        values.append(item) # TODO: Compute and return softmax(x)
-    return np.array(values)   
+    pass # TODO:Compute and return softmax(x)
 
 print(softmax(scores))
 
@@ -37,27 +32,38 @@ plt.show()
 {% endhighlight %}
 
 **Softmax 模型**
+
 **Note**: softmax(x) 函数应该返回一个形状和x相同的NumPy array类型。
 
 例如，当输入为一个列表或者一维矩阵（用列向量表示一个样本样本）时，比如说以下的：
-> scores = [1.0, 2.0, 3.0]
+
+{% highlight python %} 
+ scores = [1.0, 2.0, 3.0]
+{% endhighlight %} 
 
 应该返回一个同样长度（即3个元素）的一维矩阵：
 
-> print softmax(scores) 
+{% highlight python %} 
+print softmax(scores) 
+{% endhighlight %} 
 
-**[ 0.09003057  0.24472847  0.66524096]**
+{% highlight python %} 
+[ 0.09003057  0.24472847  0.66524096]
+{% endhighlight %} 
 
 对于一个二维矩阵，如以下（列向量表示单个样本），例如:
 
-> scores = np.array([[1, 2, 3, 6],[2, 4, 5, 6],[3, 8, 7, 6]])                    
+{% highlight python %}
+scores = np.array([[1, 2, 3, 6],[2, 4, 5, 6],[3, 8, 7, 6]])
+{% endhighlight %}                     
 
 该函数应该返回一个同样大小(3,4)的二维矩阵，如以下:
-> 
-> [[ 0.09003057  0.00242826  0.01587624  0.33333333]
->  [ 0.24472847  0.01794253  0.11731043  0.33333333]
->  [ 0.66524096  0.97962921  0.86681333  0.33333333]]
->  
+
+{% highlight python %}
+ [[ 0.09003057  0.00242826  0.01587624  0.33333333]
+  [ 0.24472847  0.01794253  0.11731043  0.33333333]
+  [ 0.66524096  0.97962921  0.86681333  0.33333333]]
+{% endhighlight %} 
 
 每个样本（列向量）中的概率加起来应当等于 1。
 
@@ -70,16 +76,18 @@ def softmax(x):
         values.append(item) #Compute and return softmax(x)
     return np.array(values)
 {% endhighlight %}
+
 运行结果:
 
->[ 3.   1.   0.2]
+{% highlight python %} 
+[ 3.   1.   0.2]
+{% endhighlight %} 
+
 
 ![result](http://p1.bqimg.com/567571/543b662323c9f1cf.png)
 
 **笔记：**
 
-numpy.array
-
 numpy.array(*object*, *dtype=None*, *copy=True*, *order=None*, *subok=False*, *ndmin=0*)
 
-**Create an array.**
+

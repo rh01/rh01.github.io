@@ -8,6 +8,17 @@ keywords: Note
 
 ## softmax 模型和激活函数
 
+
+
+{% highlight java %}
+public class Hello {
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
+  }
+}
+{% endhighlight %}
+
+
 > """Softmax."""
 >
 >scores = [3.0, 1.0, 0.2]

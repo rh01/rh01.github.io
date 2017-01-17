@@ -71,23 +71,24 @@ scores = np.array([[1, 2, 3, 6],[2, 4, 5, 6],[3, 8, 7, 6]])
 {% highlight python %}
 def softmax(x):
      """Compute softmax values for each sets of scores in x."""
-    values = []
-    for item in x:
-        values.append(item) #Compute and return softmax(x)
-    return np.array(values)
+    return np.exp(x) / np.sum(np.exp(x), axis = 0)
 {% endhighlight %}
 
 运行结果:
 
 {% highlight python %} 
-[ 3.   1.   0.2]
+[ 0.8360188   0.11314284  0.05083836]
 {% endhighlight %} 
 
 
-![result](http://p1.bqimg.com/567571/543b662323c9f1cf.png)
+![result](http://i1.piimg.com/567571/b44cd2b3a1927e8f.png)
 
 **笔记：**
 
-numpy.array(*object*, *dtype=None*, *copy=True*, *order=None*, *subok=False*, *ndmin=0*)
+两个数学函数
+
+np.sum()：
+
+np.exp()
 
 

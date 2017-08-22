@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Çizgi izleyen robotumuz :)
+</title>
+	
+	
+<meta name="description" content="Bizim de çizgi izleyen bir robotumuz oldu. Robotun teknik detaylarını ve videosunu yazının devamında inceleyebilirsiniz.
+" />
+
+	
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/isikdogan.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	
+  </head>
+
+  <body>
+  
+  <div class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="http://www.isikdogan.com/turkce-blog/"><span class="fa fa-home fa-fw"></span>&nbsp;&nbsp; Anasayfa</a></li>
+        <li><a href="http://github.com/isikdogan" target="_blank"><span class="fa fa-github fa-fw"></span> GitHub</a></li>
+        <li><a href="https://www.instagram.com/leodogan/" target="_blank"><span class="fa fa-instagram fa-fw"></span> Instagram</a></li>
+        <li><a href="https://www.youtube.com/channel/UC-YAxUbpa1hvRyfJBKFNcJA" target="_blank"><span class="fa fa-youtube-play fa-fw"></span> YouTube</a></li>
+      </ul>
+  </div>
+  </div>
+  
+    <div class="container">
+		<div class="row" id="main">
+			
+
+	<div class="blog-content">
+		<h1>Çizgi izleyen robotumuz :)
+</h1>
+		<span class="date">January 27, 2011</span>
+		<hr/>
+		
+		<blockquote>
+<p><a class="btn btn-primary" href="http://www.isikdogan.com/files/software/cizgitt.c"><span class="fa fa-cloud-download fa-lg"></span>&nbsp;&nbsp;&nbsp; Kaynak Kodlar</a></p>
+</blockquote>
+<p><img alt="Robotumuz" class="pull-right" src="../img/blog/robot_cizgitt.jpg" /></p>
+<p>Bizim de çizgi izleyen bir robotumuz oldu. Çok yenilikçi bir çalışma olduğu söylenemez ama uğraşması oldukça zevkli. :)  Gerçek zamanlı sistemler dersinin projesi olarak 3 kişilik bir ekip ile 4 günde geliştirdiğimiz bu robotun teknik detaylarını ve videosunu yazının devamında inceleyebilirsiniz.</p>
+<p>Geliştirilen robot, beyaz zemin üzerindeki siyah çizgiyi IR yansımaya dayalı algılayıcıları ile algılamakta ve çizginin oluşturduğu yol üzerinde ilerlemektedir. Yazının devamında robotun kullandığı karar yöntemleri, robotun tasarımı, karşılaşılan problemler ve çözümlerine yer verilmiştir.</p>
+<p>Kullanılan Malzemeler:</p>
+<ul>
+<li><a href="http://focus.ti.com/lit/ds/symlink/msp430g2231.pdf" target="_blank">Texas Instruments MSP430</a> Mikrodenetleyici</li>
+<li><a href="http://www.datasheetcatalog.org/datasheet/vishay/83751.pdf" target="_blank">CNY70</a> Karşıtlık sensörleri</li>
+<li><a href="http://www.datasheetcatalog.org/datasheet2/2/052daje928cw7pc0uqs1ipyryppy.pdf" target="_blank">L298</a> Motor sürücü tümdevresi</li>
+<li><a href="http://www.datasheetcatalog.org/datasheet/texasinstruments/lm324.pdf" target="_blank">LM324</a> İşlemsel kuvvetlendirici tümdevresi</li>
+<li>1KΩ potansiyometre, 47KΩ ve 330Ω dirençler</li>
+<li>12V DC Motorlar</li>
+<li>Robot gövdesi, pil yuvası, anahtar v.s.</li>
+</ul>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/E1qM8QrMWck?wmode=transparent&amp;fs=1&amp;hl=en&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=0&amp;theme=light"></iframe></div></p>
+<h2>Çizginin Algılanması</h2>
+<p>Siyah çizginin beyaz zeminden ayırt edilebilmesi için, karşıtlık sensörü olarak da bilinen CNY70 sensörler kullanılmıştır. CNY 70, kızılötesi ışık yayan ve bu ışığı geri alıp alamamasına göre analog çıkış veren ve önünde yansıtıcı bir yüzey olup olmadığına karar vermemize yarayan bir algılayıcıdır. Her bir CNY70 sensörü iki bölümden oluşmaktadır. Bunlardan gönderici uçtan gönderilen kızılötesi ışık yerden (beyaz zeminden) yansıyarak alıcı uç üzerine düştüğünde daha düşük, yerdeki siyah çizgi tarafından soğurulup geri yansımaması veya az yansıması durumunda daha yüksek gerilim çıkış üzerinde oluşmaktadır.</p>
+<p>Tasarlanan robotta 3 adet CNY70 kullanılmıştır. Bu sayede dönüşlerde sensörlerden hangilerinin çizgiden çıktığı göz önünde bulundurularak robotun kontrolü gerçekleştirilebilmektedir. Sensörler robotun hareket merkezinin biraz ilerisine, robotun yönüne dik olacak şekilde yerleştirilmiştir.</p>
+<p>Problem: Sensörlerden alınan çıkış değerleri tam olarak lojik 1 ve lojik 0 olmadığından mikrodenetleyici tarafından doğrudan algılanamamaktadır.</p>
+<p>Gerçeklenen Çözüm: Eşikleme için karşılaştırma amaçlı kullanılmak üzere bir işlemsel kuvvetlendirici (op-amp) entegresi (LM324) ve eşik değerinin ayarlanabilir olmasını sağlayan bir potansiyometre kullanılmıştır. Entegre üzerinde bulunan 4 İşlemsel kuvvetlendiriciden 3’ü, sensör gerilimine eşikleme uygulanıp sonucun 5V veya 0V olarak mikrodenetleyiciye gönderilmesi için yeterli olmuştur.</p>
+<h2>Motor Sürüşü</h2>
+<p>Tasarlanan robotta hareket diferansiyel sürüş ile sağlanmıştır. Birbirinden bağımsız iki ayrı DC motor kullanılmıştır ve motorlar iki ayrı tekeri sürmektedir. Dönüşler motorlar arasındaki hız farkı ile sağlanmıştır. Sola dönüşlerde, dönüşün keskinliğine göre sağ teker hızlı sol teker yavaş çalışmakta veya sol teker durmaktadır.</p>
+<p>Problem: Dönüş sırasında robot ilerlemeye devam ettiğinden keskin dönemeçlerde robot çizgiden çıkmakta ve durmaktadır.</p>
+<p>Gerçeklenen Çözüm: Keskin dönemeçlerde sağ teker ileri dönerken sol tekerin aynı hızda geri dönmesi sağlanarak robotun olduğu yerde dönebilmesi sağlanmıştır.</p>
+<p>Motorlar 12V gerilim ile çalışmaktadır. Devre gerilimi olan 5V motorları sürmek için yeterli olamayacağından 8 adet 1.5V AA pilin ürettiği gerilim L298 motor sürücü entegresinin Vs bacağına bağlanarak motorlar sürülmüştür.  Sürücü entegrenin giriş bacakları olan IN1(5,7) ve IN2(10,12) mikrodenetleyiciye bağlanarak motorların dönüş yönlerinin yazılımsal olarak kontrol edilebilmesi sağlanmıştır.</p>
+<p>Motorların hızı <a href="http://en.wikipedia.org/wiki/Pulse-width_modulation" target="_blank">Pulse Width Modulation(PWM)</a> yöntemi ile ayarlanmıştır. L298 entegresinin motor etkinleştirme (enable) uçları mikrodenetleyiciye bağlanarak modülasyon yazılımsal olarak gerçeklenmiştir. M birim süre boyunca E=1 ve N birim süre boyunca E=0 atanarak M ve N değerine bağlı olarak motorların hızlarının kontrolü sağlanmıştır.</p>
+<h2>Robot Kontrolü</h2>
+<p>Robotun kontrolünde Texas Instruments MSP430 mikrodenetleyici kullanılmıştır. Kontrol temel olarak aşağıdaki tablodaki gibi sağlanmıştır:</p>
+<table class="table table-condensed">
+<tbody>
+<tr>
+<td valign="top" width="60">Sensör1</td>
+<td valign="top" width="60">Sensör2</td>
+<td valign="top" width="62">Sensör3</td>
+<td valign="top" width="189">Durum</td>
+<td valign="top" width="234">Davranış</td>
+</tr>
+<tr>
+<td valign="top" width="60">Siyah</td>
+<td valign="top" width="60">Siyah</td>
+<td valign="top" width="62">Siyah</td>
+<td valign="top" width="189">Kalın çizgi üzerinde düz hareket</td>
+<td valign="top" width="234">İki motor da ileri yönde eşit hızda hareket eder.</td>
+</tr>
+<tr>
+<td valign="top" width="60">Siyah</td>
+<td valign="top" width="60">Siyah</td>
+<td valign="top" width="62">Beyaz</td>
+<td valign="top" width="189">Sola dönüş</td>
+<td valign="top" width="234">Sağ motor ileri yönde çalışır sol motor daha yavaş çalışır veya durur.</td>
+</tr>
+<tr>
+<td valign="top" width="60">Siyah</td>
+<td valign="top" width="60">Beyaz</td>
+<td valign="top" width="62">Siyah</td>
+<td valign="top" width="189">Beyaz çizgi – kullanılmamaktadır</td>
+<td valign="top" width="234">-</td>
+</tr>
+<tr>
+<td valign="top" width="60">Siyah</td>
+<td valign="top" width="60">Beyaz</td>
+<td valign="top" width="62">Beyaz</td>
+<td valign="top" width="189">Sola keskin dönüş</td>
+<td valign="top" width="234">Sağ motor ileri yönde sol motor geri yönde çalışır.</td>
+</tr>
+<tr><td valign="top" width="60">Beyaz</td>
+<td valign="top" width="60">Siyah</td>
+<td valign="top" width="62">Siyah</td>
+<td valign="top" width="189">Sağa dönüş</td>
+<td valign="top" width="234">Sol motor ileri yönde çalışır sağ motor daha yavaş çalışır veya durur.</td>
+</tr>
+<tr>
+<td valign="top" width="60">Beyaz</td>
+<td valign="top" width="60">Siyah</td>
+<td valign="top" width="62">Beyaz</td>
+<td valign="top" width="189">İnce çizgi üzerinde düz hareket</td>
+<td valign="top" width="234">İki motor da ileri yönde eşit hızda hareket eder.</td>
+</tr>
+<tr>
+<td valign="top" width="60">Beyaz</td>
+<td valign="top" width="60">Beyaz</td>
+<td valign="top" width="62">Siyah</td>
+<td valign="top" width="189">Sağa keskin dönüş</td>
+<td valign="top" width="234">Sol motor ileri yönde sağ motor geri yönde çalışır.</td>
+</tr>
+<tr>
+<td valign="top" width="60">Beyaz</td>
+<td valign="top" width="60">Beyaz</td>
+<td valign="top" width="62">Beyaz</td>
+<td valign="top" width="189">Çizginin dışı</td>
+<td valign="top" width="234">Motorları durdurur.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Problem: Robotun dönemeçi dönerken çizgiden çıkması durumunda robot durmaktadır.</p>
+<p>Gerçeklenen Çözüm: Robotun çizgiden çıkmadan bir önceki sensör verisi geçici bir değişkende tutulmuştur. Çizgiden çıkıldığında, çizgiden çıkılmadan bir önceki durumun sağa veya sola dönmeyi gerektiren bir durum olması durumunda robot belirtilen yönde keskin dönüş yapmakta ve çizgiyi arayarak tekrar yakalamaya çalışmaktadır. Bu sayede dönemeçlerde çizgiden çıkma durumunun kontrolü yapılmıştır. Çizginin sonuna gelindiğinde çıkılması durumunda bir önceki durum düz gitme durumu olacağından robot yeni çizgi aramamakta ve durmaktadır. Hata sonucu çizginin dönüşle sonlanması durumunda robotun durmaksızın çalışarak çizgi aramasının önüne geçilebilmesi için çizgi arama işlemi belirli bir zaman aşımı tanımlanarak sınırlanmıştır.</p>
+<h2>Gövde Tasarımı</h2>
+<p>Hazırlanan devre ve elektronik elemanlar oyuncak araba kasası üzerine giydirilmiştir. Motorların gerilimi oyuncağın 8 adet AA pil içeren batarya kutusundan alınmıştır. MSP430’un beslemesi için 3 adet AAA pil içeren ayrı pil kutusu kullanılmıştır.</p>
+<p>Robotun gövde tasarımının da genel performans üzerinde etkisi büyük olduğundan tasarımda bazı iyileştirmeler yapılmıştır.</p>
+<p>Etkin bir hareket sağlanması için motorların boşta dönme oranının en düşük seviyeye düşürülmesi planlanmıştır. Bu bağlamda robot, ağırlık merkezi (yaklaşık olarak) hareketi sağlayan motorlar üzerinde olacak şekilde gövde üzerinde konumlandırılmıştır. Motorlara bağlı olan tekerlerde çapı daha geniş olan lastikler kullanılarak hareket yeteneğinde iyileştirme sağlanmıştır.</p>
+<h2>Sınama</h2>
+<p>Geliştirilen robot, gittikçe artan karmaşıklığa sahip farklı koşullarda sınanmıştır. Sınama sonuçlarında başarılı sonuç alınana kadar yazılımsal iyileştirmeler yapılmıştır. Sınama sonuçları aşağıda gösterilmiştir:</p>
+<table class="table table-condensed">
+<tbody>
+<tr>
+<td valign="top" width="409">Durum</td>
+<td valign="top" width="170">Sonuç</td>
+</tr>
+<tr>
+<td valign="top" width="409">Düz çizgiyi takip etme</td>
+<td valign="top" width="170">Başarılı</td>
+</tr>
+<tr>
+<td valign="top" width="409">Basit dönemeçlerden dönme</td>
+<td valign="top" width="170">Başarılı</td>
+</tr>
+<tr>
+<td valign="top" width="409">Keskin dönemeçlerden dönme</td>
+<td valign="top" width="170">Başarılı</td>
+</tr>
+<tr>
+<td valign="top" width="409">Çembersel ve 8 şeklindeki pistte sürekli hareket</td>
+<td valign="top" width="170">Başarılı</td>
+</tr>
+<tr>
+<td valign="top" width="409">Yol ayrımlarında kenar yola sapmadan devam etme</td>
+<td valign="top" width="170">Başarılı</td>
+</tr>
+<tr>
+<td valign="top" width="409">Çok dönemeçli kısa pistleri tamamlama</td>
+<td valign="top" width="170">Başarılı</td>
+</tr>
+<tr>
+<td valign="top" width="409">Dönemeçlerde çizgiden çıkıldığında çizgiyi geri bulma</td>
+<td valign="top" width="170">Başarılı</td>
+</tr>
+</tbody>
+</table>
+		
+		
+		  <hr/>
+		  Programlama, Robot, En çok okunan yazılar
+		
+		
+		
+		<hr/>
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+				var disqus_shortname = 'isikdogan'; // required: replace example with your forum shortname
+
+				/* * * DON'T EDIT BELOW THIS LINE * * */
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	
+
+			
+			<div class="footer">
+			<hr/>	
+				<small>© Copyright 2016 - isikdogan.com</small>
+				<small class="pull-right">Powered by <a href="http://www.isikdogan.com/blog/paperplane-a-simple-static-blog-generator.html" target="_blank">PaperPlane</a></small>
+			</div>
+		</div>
+	
+    </div><!-- /.container -->
+	
+	<link rel="icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+	<!-- google analytics -->
+	<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-6983098-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+	
+  </body>
+</html>

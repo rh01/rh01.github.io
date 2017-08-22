@@ -1,0 +1,31 @@
+{% extends "main_template.html" %}
+{% block title %}Leo Isikdogan, PhD - Personal Homepage{% endblock %}
+
+{% block meta %}
+<!-- meta tags can be added here -->
+{% endblock %}
+
+{% block content %}
+<div class="business-card">
+  <div class="panel-body">
+    <div class="my-picture">    
+        <img src="img/leo2017b.jpg" alt="leo" width="175" class="img-circle">
+    </div>
+    <div class="my-business-card">
+        <span class="bold big">Leo F. Isikdogan, PhD</span><br/>
+        <span class="bold">Imaging Algorithm Staff Engineer</span><br/>
+        <br class="rbr"/>
+        Motorola Mobility / Lenovo, Chicago, IL
+	<br/>
+        <span class="fa fa-envelope fa-fw"></span> <span class="email" user="leo" domain="isikdogan.com"></span>
+    </div>
+  </div>
+</div>
+
+{% if content is defined %}
+    {{ content }}
+{% endif %}
+
+<hr/>
+
+{% endblock %}

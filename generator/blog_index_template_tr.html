@@ -1,0 +1,113 @@
+{% extends "main_template_tr.html" %}
+{% block title %}Isikdogan.com - Türkçe Blog{% endblock %}
+
+{% block meta %}
+{% endblock %}
+
+{% block content %}
+		
+	<form>
+		<input type="text" class="form-control" id="search" placeholder="Sitede ara...">
+	</form>
+	
+	<hr class="short"/>
+	<span class="label label-default"><i class="fa fa-tags fa-fw"></i> Popüler içerik etiketleri:</span>
+	<a role="button" class="tag label label-warning">Görüntü işleme</a>
+	<a role="button" class="tag label label-warning">Programlama</a>
+	<a role="button" class="tag label label-warning">Bilgisayar mühendisliği</a>
+	<a role="button" class="tag label label-warning">Yurtdışı</a>
+	<a role="button" class="tag label label-warning">Staj</a>
+	<a role="button" class="tag label label-danger">En çok okunan yazılar</a>
+	
+	<div id="search-results-text" style="display:none">
+	<hr/>
+		<button id="back" class="btn btn-default btn-sm pull-right"><i class="fa fa-arrow-left fa-fw"></i> Geri dön</button> 
+		<i class="fa fa-search fa-fw"></i> <code id="search-query"></code> için arama sonuçları:
+	</div>
+			
+	<hr/>
+
+	<div class="list-of-posts">
+
+		{% for post in posts %}
+
+		<div class="itembox">
+			
+
+			<h3><a href="{{ post["filename"] }}">{{ post["title"] }}</a></h3>
+			<img class="pull-right blog-index-thumbnail" src="{{ post["thumbnail"] }}" alt="thumbnail"/>
+			<span class="date">{{ post["formatted_date"] }}</span>
+			
+			<p>{{ post["description"] }}</p>
+			
+			<div class="vspace"></div>
+
+			<p><small><i class="fa fa-tags fa-fw"></i> {{ post["tags"] }}</small></p>
+			
+			<div class="vspace"></div>
+
+			<a class="btn btn-default btn-sm" href="{{ post["filename"] }}">Devamını oku</a>
+			
+			
+			
+		</div>
+		
+		{% endfor %}
+	
+	</div>
+
+<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	
+<script>
+(function ($) {
+	// custom css expression for a case-insensitive contains()
+	jQuery.expr[':'].Contains = function(a,i,m){
+		return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+	};
+
+	function listFilter() {
+
+		$('#search')
+		.change( function () {
+					
+			$('#search-results-text').show();
+			
+			var filter = $(this).val();
+			if(filter) {
+				// this finds all links in a list that contain the input,
+				// and hide the ones not containing the input while showing the ones that do
+				$('.list-of-posts').find("div:not(:Contains(" + filter + "))").hide();
+				$('.list-of-posts').find("div:Contains(" + filter + ")").show();
+				$('#search-query').text(filter);
+				} else {
+					$('#search-results-text').hide();
+					$('.list-of-posts').find("div").show();
+			}
+			return false;
+		})
+		.keyup( function () {
+			// fire the above change event after every letter
+			$(this).change();
+		});
+
+		$( ".tag" ).click(function() {
+			$('#search').val($(this).text());
+			$('#search').change();
+		});
+		
+		$( "#back" ).click(function() {
+			$('#search').val("");
+			$('#search').change();
+		});
+	}
+	
+	
+	
+	//ondomready
+	$(function () {
+		listFilter($());
+	});
+}(jQuery));
+</script>
+	
+{% endblock %}

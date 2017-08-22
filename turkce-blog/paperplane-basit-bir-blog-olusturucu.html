@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PaperPlane: Basit bir blog oluşturucu
+</title>
+	
+	
+<meta name="description" content="Bu siteyi oluşturmak için geliştirdiğim ve PaperPlane adını verdiğim statik web sitesi oluşturucuyu açık kaynak kodlu olarak yayınladım.
+" />
+
+	
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/isikdogan.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	
+  </head>
+
+  <body>
+  
+  <div class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="http://www.isikdogan.com/turkce-blog/"><span class="fa fa-home fa-fw"></span>&nbsp;&nbsp; Anasayfa</a></li>
+        <li><a href="http://github.com/isikdogan" target="_blank"><span class="fa fa-github fa-fw"></span> GitHub</a></li>
+        <li><a href="https://www.instagram.com/leodogan/" target="_blank"><span class="fa fa-instagram fa-fw"></span> Instagram</a></li>
+        <li><a href="https://www.youtube.com/channel/UC-YAxUbpa1hvRyfJBKFNcJA" target="_blank"><span class="fa fa-youtube-play fa-fw"></span> YouTube</a></li>
+      </ul>
+  </div>
+  </div>
+  
+    <div class="container">
+		<div class="row" id="main">
+			
+
+	<div class="blog-content">
+		<h1>PaperPlane: Basit bir blog oluşturucu
+</h1>
+		<span class="date">February 23, 2015</span>
+		<hr/>
+		
+		<blockquote>
+<p><a class="btn btn-primary" target="_blank" href="https://github.com/isikdogan/paperplane"><span class="fa fa-github fa-lg fa-fw"></span> Kaynak Kodlar</a>
+<a class="btn btn-primary" target="_blank" href="http://www.isikdogan.com/files/paperplane-demo/"><span class="fa fa-paper-plane fa-lg fa-fw"></span> Demo</a></p>
+</blockquote>
+<p>Bu siteyi oluşturmak için geliştirdiğim ve PaperPlane adını verdiğim statik web sitesi oluşturucuyu açık kaynak kodlu olarak yayınladım.</p>
+<h1>Statik websitesi nedir?</h1>
+<p>Statik websitesi dijital kağıt gibi düşünülebilir. Sayfalar kullanıcıya olduğu gibi aktarılır. Sayfa görüntüleme işlemi sunucu tarafında veritabanı sorgusu ve benzeri işlemlerin yapılmasını gerektirmez. Konu hakkında daha fazla bilgiye arkadaşımın blogundaki yazıdan erişebilirsiniz: <a href="http://www.emrealadag.com/statik-site-olusturmak.html" target="_blank">Statik Site Oluşturmak</a>.</p>
+<p>PaperPlane statik websitesi oluşturabileceğiniz bir yazılımcık. İşte PaperPlane'in özellikleri:</p>
+<h2><i class="fa fa-rocket fa-fw"></i>&nbsp;&nbsp;Hızlı</h2>
+<p>Sayfalar önceden oluşturulduğu ve veritabani sorgusu gerektirmediği için hızlı açılır.</p>
+<h2><i class="fa fa-database fa-fw"></i>&nbsp;&nbsp;Veritabanı gerektirmez</h2>
+<p>Sayfalar veri sisteminde metin belgesi olarak tutulur.</p>
+<h2><i class="fa fa-cogs fa-fw"></i>&nbsp;&nbsp;Uyumlu</h2>
+<p>Oluşturulan web sitesi herhangi bir HTML sunucusunda barındırılabilir. <a href="http://alexcican.com/post/guide-hosting-website-dropbox-github/" target="_blank">Sitenizi Dropbox ve Github gibi servislerde bile barındırabilirsiniz</a>.</p>
+<h2><i class="fa fa-lock fa-fw"></i>&nbsp;&nbsp;Güvenli</h2>
+<p>PaperPlane sunucu tarafında herhangi bir kodun çalışmasını gerektirmez.</p>
+<h2><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;&nbsp;Kolay içerik oluşturma</h2>
+<p><a href="http://daringfireball.net/projects/markdown/" target="_blank">Markdown</a> formatında yazdığınız yazıları kolaylıkla blog yazısına dönüştürebilirsiniz.</p>
+<h2><i class="fa fa-film fa-fw"></i>&nbsp;&nbsp;Kolay video ekleme</h2>
+<p>Videoları <code>[vid]link[/vid]</code> etiketini kullanarak yazılarınıza ekleyebilirsiniz.</p>
+<h2><i class="fa fa-paint-brush fa-fw"></i>&nbsp;&nbsp;Kolay tema oluşturma</h2>
+<p>PaperPlane tema tasarımı için <a href="http://jinja.pocoo.org/docs/dev/" target="_blank">Jinja2</a> şablon motorunu, <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3.0</a> HTML/CSS altyapısını, ve <a href="http://fontawesome.io/" target="_blank">FontAwesome</a> ikon setini kullanmaktadır.</p>
+<h2><i class="fa fa-server fa-fw"></i>&nbsp;&nbsp;Çoklu-platform desteği</h2>
+<p>PaperPlane Python programlama dili ile yazılmıştır.</p>
+<h2><i class="fa fa-github fa-fw"></i>&nbsp;&nbsp;Ücretsiz ve açık kaynak</h2>
+<p>PaperPlane <a href="http://en.wikipedia.org/wiki/MIT_License" target="_blank">MIT lisansı</a> ile yayınlanmıştır. Kaynak kodları <a href="https://github.com/isikdogan/paperplane" target="_blank">GitHub</a> üzerinden indirebilirsiniz.</p>
+		
+		
+		  <hr/>
+		  Programlama
+		
+		
+		
+		<hr/>
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+				var disqus_shortname = 'isikdogan'; // required: replace example with your forum shortname
+
+				/* * * DON'T EDIT BELOW THIS LINE * * */
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	
+
+			
+			<div class="footer">
+			<hr/>	
+				<small>© Copyright 2016 - isikdogan.com</small>
+				<small class="pull-right">Powered by <a href="http://www.isikdogan.com/blog/paperplane-a-simple-static-blog-generator.html" target="_blank">PaperPlane</a></small>
+			</div>
+		</div>
+	
+    </div><!-- /.container -->
+	
+	<link rel="icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+	<!-- google analytics -->
+	<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-6983098-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+	
+  </body>
+</html>

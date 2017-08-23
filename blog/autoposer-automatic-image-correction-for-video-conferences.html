@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>AutoPoser: automatic image correction for video conferences
+    <title>AutoPoser: automatic image correction for video conferences
 </title>
 	
 	
-<meta name="description" content="AutoPoser is a program that automatically corrects images of the participants in video conferences.
+<meta name="description" content="AutoPoser is a program that automatically corrects images of the participants in video conferences.
 " />
 
 	
@@ -33,10 +33,10 @@
       <ul class="nav navbar-nav">
         <li><a href="http://www.shenhengheng.xyz/index.html"><span class="fa fa-home fa-fw"></span> About Me</a></li>
           <li><a href="http://www.shenhengheng.xyz/projects.html"><span class="fa fa-cubes fa-fw"></span> Projects</a></li>
-          <li><a href="http://github.com/isikdogan" target="_blank"><span class="fa fa-github fa-fw"></span> GitHub</a></li>
-          <li><a href="https://www.instagram.com/leodogan/" target="_blank"><span class="fa fa-instagram fa-fw"></span> Instagram</a></li>
-          <li><a href="https://www.youtube.com/channel/UC-YAxUbpa1hvRyfJBKFNcJA" target="_blank"><span class="fa fa-youtube-play fa-fw"></span> YouTube</a></li>
-          <li><a href="https://www.linkedin.com/in/isikdogan" target="_blank"><span class="fa fa-linkedin fa-fw"></span> LinkedIn</a></li>
+          <li><a href="http://github.com/rh01" target="_blank"><span class="fa fa-github fa-fw"></span> GitHub</a></li>
+          
+          <li><a href="https://www.youtube.com/channel/UCTOuJy4b9E89zCwffX-qC3A" target="_blank"><span class="fa fa-youtube-play fa-fw"></span> YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/heng960509/" target="_blank"><span class="fa fa-linkedin fa-fw"></span> LinkedIn</a></li>
       </ul>
   </div>
   </div>
@@ -47,14 +47,14 @@
 			
 	<div class="blog-content">
 
-		<h1>AutoPoser: automatic image correction for video conferences
+		<h1>AutoPoser: automatic image correction for video conferences
 </h1>
 		<span class="date">May 3, 2013</span>
 		
 		<hr/>
 
 		<blockquote>
-<p><a class="btn btn-primary" target="_blank" href="http://www.shenhengheng.xyz/files/software/AutoPoser.rar"><span class="fa fa-windows fa-lg fa-fw"></span> Download Executable (Win)</a>
+<p><a class="btn btn-primary" target="_blank" href="http://www.isikdogan.com/files/software/AutoPoser.rar"><span class="fa fa-windows fa-lg fa-fw"></span> Download Executable (Win)</a>
 <a class="btn btn-primary" target="_blank" href="https://github.com/isikdogan/autoposer"><span class="fa fa-github fa-lg fa-fw"></span> Source Code</a></p>
 </blockquote>
 <p>Hey guys! Thanks for voting and choosing me as the first-day winner of the EE 371R Ram’s Horn Best Project Award. This was a fun project to present. In this post, I’ll present the application, AutoPoser, and briefly explain how it works. The source code and the executable files are attached to this post.</p>
@@ -67,14 +67,11 @@
 <p>The program consists of three main stages: initialization, posture correction, and ideal image superimposition. In the initialization step, the initial location of the face is detected by using cascade classifiers and the ideal pose of the user is captured. The user is assumed to be sitting up straight and giving an ideal pose. For posture correction, the input image is first thresholded in YCbCr color space for skin color detection. Then, the skin-colored artifacts in the background are masked out using an elliptical mask around the face that detected in the previous frame. Finally, the main orientation of the head is calculated by using image moments, and the image is rotated to the opposite direction to zero out the leaning angle. In the ideal image superimposition step, the ideal face is aligned with the current face and superimposed on the current frame. For a seamless blending, I use a circular mask with smoothed edges as an alpha mask.</p>
 		
 		
-		  <hr/>
-		  
-		
 		<hr/>
 			<div id="disqus_thread"></div>
 			<script type="text/javascript">
 				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-				var disqus_shortname = 'isikdogan'; // required: replace example with your forum shortname
+				var disqus_shortname = 'shine'; // required: replace example with your forum shortname
 
 				/* * * DON'T EDIT BELOW THIS LINE * * */
 				(function() {
@@ -95,12 +92,11 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 	<!-- google analytics -->
-	<script type="text/javascript">
-
+	
+<script type="text/javascript">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-6983098-1']);
 	_gaq.push(['_trackPageview']);
-
 	(function() {
 		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';

@@ -8,7 +8,9 @@ Created on Sat Feb 21 03:13:22 2015
 import os, re, glob, codecs, markdown, unicodedata
 from dateutil.parser import parse
 from jinja2 import Environment, FileSystemLoader
-
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 #parse youtube url
 def youtube_code(url):
     youtube_regex = (
@@ -45,6 +47,7 @@ def createBlog(text_dir, blog_dir, blog_template, createIndexPage = False, index
         date = f.readline()
         tags = f.readline().rstrip(os.linesep)
         description = f.readline()
+        #print(description)
         thumbnail = f.readline()
         f.readline() #skip a line
         content = f.read()
@@ -68,6 +71,7 @@ def createBlog(text_dir, blog_dir, blog_template, createIndexPage = False, index
         
         #create a summary
         summary = content  
+        
         #remove the first blockquote in summary
         summary = summary.replace('\n', ' ')
         summary = re.sub(r'<blockquote>(.+?)<\/blockquote>', '', summary)
@@ -102,10 +106,11 @@ def createBlog(text_dir, blog_dir, blog_template, createIndexPage = False, index
                 
         #Parse the template
         template = env.get_template(index_template)
-        html_file =  template.render(posts = posts, subdir=subdir)
-        
+        html_file =  template.render(posts = posts, subdir=subdir).decode('utf8')
         #Write the inex page
         f = open(blog_dir + "index.html",'w')
-        f.write(html_file.encode('utf8'))
+        f.write(html_file.encode('utf-8'))
+        #f.write(html_file)
+
         f.close()
     

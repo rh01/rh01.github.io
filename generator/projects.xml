@@ -12,7 +12,7 @@
 			<a href="http://www.shenhengheng.xyz/blog/self-driving-car-based-on-convolution-network.html" class="btn btn-default btn-xs" target="_blank">Details</a>
 			<a href="http://www.shenhengheng.xyz/files/self-driving-car-based-Neural-Networks.pdf" class="btn btn-default btn-xs" target="_blank">Paper</a>
 			<a href="https://www.youtube.com/watch?v=poPoz264rpo" class="btn btn-default btn-xs" target="_blank">Video</a>
-			<span class="lable lable-warning lable-xs">Best Capston Design</span>
+			<span class="lable lable-warning">Best Capston Design</span>
 		]]></notes>
 		<picture>rccar.png</picture>
 	</project>

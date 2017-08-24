@@ -23,8 +23,8 @@ blog_template = 'blog_post_template.html'
 createBlog(text_dir, blog_dir, blog_template, createIndexPage = True, index_template = index_template, subdir = "../")
 
 #Turkish blog
-text_dir = "posts_tr/*.md"
-blog_dir = "../turkce-blog/"
-index_template = 'blog_index_template_tr.html'
-blog_template = 'blog_post_template_tr.html'
+text_dir = "posts_zh/*.md"
+blog_dir = "../zh-blog/"
+index_template = 'blog_index_template_zh.html'
+blog_template = 'blog_post_template_zh.html'
 createBlog(text_dir, blog_dir, blog_template, createIndexPage = True, index_template = index_template, subdir = "../")

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Görüntü birleştirme ile geniş açılı fotoğraflar
+</title>
+	
+	
+<meta name="description" content="Bu yazıda en basit anlamda görüntü birleştirmenin nasıl yapılabileceğine değineceğim, kaynak kodları ve daha detaylı raporu yazının ekinde bulabilirsiniz.
+" />
+
+	
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/isikdogan.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	
+  </head>
+
+  <body>
+  
+  <div class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="http://www.shenhengheng.xyz/turkce-blog/"><span class="fa fa-home fa-fw"></span>&nbsp;&nbsp; Home</a></li>
+        <li><a href="http://github.com/rh01" target="_blank"><span class="fa fa-github fa-fw"></span> GitHub</a></li>
+        <li><a href="https://www.youtube.com/channel/UCTOuJy4b9E89zCwffX-qC3A" target="_blank"><span class="fa fa-youtube-play fa-fw"></span> YouTube</a></li>
+      </ul>
+  </div>
+  </div>
+  
+    <div class="container">
+		<div class="row" id="main">
+			
+
+	<div class="blog-content">
+		<h1>Görüntü birleştirme ile geniş açılı fotoğraflar
+</h1>
+		<span class="date">November 26, 2011</span>
+		<hr/>
+		
+		<blockquote>
+<p><a class="btn btn-primary" href="http://isikdogan.com/files/Image_Stitching.pdf" target="_blank"><span class="fa fa-file-pdf-o fa-lg"></span>&nbsp;&nbsp;&nbsp; More detailed report in English</a>
+<a class="btn btn-primary" href="http://www.isikdogan.com/files/software/Image-Stitching-Isikdogan.rar"><span class="fa fa-cloud-download fa-lg"></span>&nbsp;&nbsp;&nbsp; Kaynak Kodlar / Source Code</a></p>
+</blockquote>
+<p><img alt="Image Stitching" class="pull-right" height="250" src="../img/blog/image_stitching.jpg" /></p>
+<p>Neredeyse bütün kamera ve görüntü işleme yazılımlarının sahip olduğu görüntü birleştirme (panoramik çekim) özelliğinin nasıl çalıştığını merak ettiniz mi? Bu yazıda en basit anlamda görüntü birleştirmenin nasıl yapılabileceğine değineceğim, kaynak kodları ve daha detaylı raporu yazının ekinde bulabilirsiniz.</p>
+<p>Birleştirilecek görüntüler farklı perspektiflerden çekilmiş olduğundan doğrudan görüntüleri uç uca ekleyerek güzel sonuçlar almamız pek mümkün değil. Bu yüzden ilk olarak görüntülerin perspektiflerini birbirine göre hizalamamız gerekiyor. Neyi neye göre hizalamamız gerektiğini bulmak için öncelikle ardışık iki görüntünün kesiştiği alandaki bazı ortak noktaları buluyoruz.</p>
+<h2>Ortak Noktaların Bulunması</h2>
+<p>Ortak noktaları SIFT veya SURF gibi çeşitli anahtar nokta tanımlayıcı algoritmalar yardımı ile otomatik olarak bulabiliriz ancak bu örnekte karmaşıklığı artırmamak için noktaları el ile işaretliyoruz. Örneğin iki görüntüde de yer alan binaların köşe noktalarını işaretleyebiliriz.</p>
+<h2>Görüntülerin Hizalanması</h2>
+<p>İlk görüntüde bulduğumuz ortak noktalardan oluşan matrise<em> X</em>, bu noktalara karşılık gelen ikinci görüntüdeki noktaların koordinatlarından oluşan matrise <em>x</em> diyecek olursak bu noktaları arasında eşleşme yapmamıza olanak sağlayacak “<em>X = Hx</em>” eşitliğini sağlayan bir dönüşüm matrisi (<em>H</em>) bulmamız gerekir (daha detaylı matematiksel açıklama için ekteki rapora bakabilirsiniz).</p>
+<p>Dönüşüm matrisini bulduktan sonra ilk görüntüdeki bütün noktaların koordinatlarına bu dönüşümü uygulayarak hizalamadan sonra olması gereken koordinatlarını bulabiliriz. Bu şekilde bir dönüşüm uygulandığında bir bakıma noktalara birebir eşleme yapmış oluyoruz. Bu durumda görüntüdeki toplam nokta sayısı değişmemiş oluyor ve küçük bir görüntüden daha büyük bir görüntüye eşleme yaptığımızda elde edilen piksellerde boşluklar bulunması muhtemel olacaktır. Bu sebeple kaynak görüntüdeki her nokta için yeni değer hesaplamak yerine hedef görüntüdeki her noktanın olması gereken değerini interpolasyon ile hesaplamak (inverse mapping) daha mantıklı olacaktır.</p>
+<h2>Görüntülerin Birleştirilmesi</h2>
+<p>Görüntüler hizalandıktan sonra birleştirme aşamasında kesişen bölgelerde basitçe iki görüntünün ortalaması alınabilir veya yakın olan görüntünün ağırlığı daha yüksek olacak şekilde ağırlıklı ortalama alınabilir. Bu örnekte daha basit olması için kesişen bölgelerde en parlak pikselin değeri alınmıştır.</p>
+		
+		
+		  <hr/>
+		  Görüntü işleme, Programlama
+		
+		
+		
+		<hr/>
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+				var disqus_shortname = 'shine'; // required: replace example with your forum shortname
+
+				/* * * DON'T EDIT BELOW THIS LINE * * */
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	
+
+			
+			<div class="footer">
+			<hr/>	
+				<small>© Copyright 2016 - shenhengheng.xyz</small>
+				<small class="pull-right">Powered by <a href="http://www.shenhengheng.xyz/blog/paperplane-a-simple-static-blog-generator.html" target="_blank">PaperPlane</a></small>
+			</div>
+		</div>
+	
+    </div><!-- /.container -->
+	
+	<link rel="icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+	<!-- google analytics -->
+	
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-80563036-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+	
+  </body>
+</html>

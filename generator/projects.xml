@@ -17,5 +17,20 @@
 		<picture>rccar.png</picture>
 	</project>
 
+	<project>
+		<title>Git and GitHub Tutorial</title>
+		<description>Advisors: 申恒恒</description>
+		<type>Anyang Institute of Technology, Anyang, China</type>
+		<date>Aug 2017</date>
+		<notes><![CDATA[
+			<span class="label label-default">Git, GitHub</span>
+			<span class="label label-danger">Tools</span>
+			<a href="https://github.com/rh01/Notes" class="btn btn-default btn-xs" target="_blank">Dowloads</a>
+			<a href="http://www.shenhengheng.xyz/zh-blog/self-driving-car-based-on-convolution-network.html" class="btn btn-default btn-xs" target="_blank">Details</a>
+			<a href="http://www.shenhengheng.xyz/files/self-driving-car-based-Neural-Networks.pdf" class="btn btn-default btn-xs" target="_blank">Paper</a>
+		]]></notes>
+		<picture>rccar.png</picture>
+	</project>
+
 	
 </projects>

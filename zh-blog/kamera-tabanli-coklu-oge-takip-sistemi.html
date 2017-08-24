@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kamera tabanlı çoklu öğe takip sistemi
+</title>
+	
+	
+<meta name="description" content="Bu proje ile kamera görüş alanı içerisinde hareket eden öğelerin tespit edilmesi ve her ögenin kendi tanımlayıcı numarası ile takip edilmesi sağlanıyor.
+" />
+
+	
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/isikdogan.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	
+  </head>
+
+  <body>
+  
+  <div class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="http://www.shenhengheng.xyz/turkce-blog/"><span class="fa fa-home fa-fw"></span>&nbsp;&nbsp; Home</a></li>
+        <li><a href="http://github.com/rh01" target="_blank"><span class="fa fa-github fa-fw"></span> GitHub</a></li>
+        <li><a href="https://www.youtube.com/channel/UCTOuJy4b9E89zCwffX-qC3A" target="_blank"><span class="fa fa-youtube-play fa-fw"></span> YouTube</a></li>
+      </ul>
+  </div>
+  </div>
+  
+    <div class="container">
+		<div class="row" id="main">
+			
+
+	<div class="blog-content">
+		<h1>Kamera tabanlı çoklu öğe takip sistemi
+</h1>
+		<span class="date">July 28, 2011</span>
+		<hr/>
+		
+		<p>PSNC'deki 3. haftamın sonunda tamamladığım bu proje ile kamera görüş alanı içerisinde hareket eden öğelerin tespit edilmesi ve her ögenin kendi tanımlayıcı numarası ile takip edilmesi sağlanıyor. Bir önceki projemde olduğu gibi bu uygulamayı da Java ile OpenCV kütüphanesi arasında bir köprü niteliğinde olan JavaCV sarmalayıcısını kullanarak geliştirdim. Projenin temel işleyiş biçimini aşağıdaki başlıklar altında özetleyebiliriz.</p>
+<p><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Vg8vvdmS7QE?wmode=transparent&amp;fs=1&amp;hl=en&amp;showinfo=0&amp;iv_load_policy=3&amp;showsearch=0&amp;rel=0&amp;theme=light"></iframe></div></p>
+<h2>Mevcut anlık görüntü içerisinde nesne bulma (Blob Detection)</h2>
+<p>Anlık görüntü içerisinde hareket eden cisimlerin bulunması için uygulanan yöntemler;</p>
+<ul>
+<li><a href="http://www.google.com/search?q=mixture+of+gaussians+background+subtraction" target="_blank">Mixture of Gaussians</a> yaklaşımı ile dinamik arkaplan çıkarımı,</li>
+<li>Elde edilen görüntünün <a href="http://en.wikipedia.org/wiki/Thresholding_(image_processing)" target="_blank">eşikleme</a> uygulanarak binary görüntüye dönüştürülmesi,</li>
+<li><a href="http://en.wikipedia.org/wiki/Morphological_operations" target="_blank">Biçimsel işlemler</a> ile gürültünün giderilmesi ve nesne içi kopuklukların kapatılması,</li>
+<li><a href="http://en.wikipedia.org/wiki/Connected-component_labeling" target="_blank">Bağlı bileşenlerin</a> bulunması ve çevreleyen dikdörtgenlerin elde edilmesi şeklinde özetlenebilir.</li>
+</ul>
+<h2>Bulunan nesnelerin bir önceki anlık görüntü ile ilişkilendirilmesi</h2>
+<p>Videonun ardışık çerçevelerinde aynı nesnelerin birbirleriyle ilişkilendirilmesini sağlamak için temel olarak aşağıdaki adımlar uygulanmıştır;
+<em> Bir önceki görüntüdeki nesnelerin mevcut nesnelere koordinat uzaklıklarının bulunması,
+</em> Görüntünün RGB renk uzayından <a href="http://en.wikipedia.org/wiki/HSL_and_HSV" target="_blank">HSV</a> uzayına dönüştürülmesi ve nesnelerin Hue-Saturation histogramlarının elde edilmesi,
+<em> Histogramların normalizasyonu ve birbirine olan uzaklıklarının bulunması,
+</em> Ardışık iki görüntüdeki nesnelerin koordinat ve histogram uzaklıklarının karşılaştırılması,
+* Mesafe ve renk olarak en yakın olan nesnelerin uzaklığı belirli bir değerin altındaysa nesne tanımlayıcılarının (ID) eşleştirilmesi, değilse nesneye yeni ID atanması.</p>
+<h2>Çerçeveler arası süreksizlik probleminin çözümü</h2>
+<p>Anlık çerçevede bir nesne kaybolduğunda nesnenin önceki çerçevelerdeki hareketi göz önünde bulundurularak lineer regresyon ile yeni konumu hesaplanmaktadır. Nesnenin gerçekten kaybolmuş olabileceği durumunu da ele alabilmek için hesaplanarak konumu tahmin edilen nesneler hayalet nesne olarak işaretlenmekte ve ardisik çerçeve sayısı cinsinden bir ömür atanmaktadır. İlerileyen çerçevelerde nesne tekrar tespit edilirse yakalanmakta ve gerçek nesne olarak işaretlenmekte, ömrü bitene kadar tespit edilemezse silinmektedir. Bir nesnenin kisa bir sure icin kaybolmasi sorun oldugu gibi, genellikle görüntüdeki küçük hareketliliklerden kaynaklanan (örneğin ağaçların rüzgarla hareket etmesi) kisa sureli istenmeyen nesnelerin ortaya çıkması da problem olmaktadir. Bu sorun da benzer şekilde her nesneye bir yaşam süresi atanması ve belirli bir süreden daha uzun süre varlığını sürdürmeyen nesnelerin silinmesi ile çözülmüştür.</p>
+		
+		
+		  <hr/>
+		  Görüntü işleme, Bilgisayarla görü, Programlama, Staj
+		
+		
+		
+		<hr/>
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+				var disqus_shortname = 'shine'; // required: replace example with your forum shortname
+
+				/* * * DON'T EDIT BELOW THIS LINE * * */
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	
+
+			
+			<div class="footer">
+			<hr/>	
+				<small>© Copyright 2016 - shenhengheng.xyz</small>
+				<small class="pull-right">Powered by <a href="http://www.shenhengheng.xyz/blog/paperplane-a-simple-static-blog-generator.html" target="_blank">PaperPlane</a></small>
+			</div>
+		</div>
+	
+    </div><!-- /.container -->
+	
+	<link rel="icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+	<!-- google analytics -->
+	
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-80563036-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+	
+  </body>
+</html>

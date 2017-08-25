@@ -171,3 +171,12 @@ br.rbr{
 	width: 100%;
   }
 }
+
+.padding_right{
+	margin-left: 40px;
+}
+
+.cap{
+	font-size: 15px;
+	font-family: Tahoma,Helvetica,Arial,'宋体',sans-serif;
+}

@@ -25,7 +25,7 @@
 		<notes><![CDATA[
 			<span class="label label-default">Git, GitHub</span>
 			<span class="label label-danger">Tools</span>
-			<a href="https://github.com/rh01/Notes" class="btn btn-default btn-xs" target="_blank">Dowloads</a>
+			<a href="https://github.com/rh01/Notes" class="btn btn-default btn-xs" target="_blank">GitHub Repository</a>
 			<a href="http://www.shenhengheng.xyz/zh-blog/gitgithub.html" class="btn btn-default btn-xs" target="_blank">Details</a>
 		]]></notes>
 		<picture>Git-Logo.png</picture>

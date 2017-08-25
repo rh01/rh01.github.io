@@ -4,7 +4,7 @@ Web 开发
 Git是一个开源的版本控制系统，本教程将讲解Git的基本使用和高级使用技巧...
 http://www.shenhengheng.xyz/img/blog/Git-logo.png
 ---
-![](../img/blog/Git-logo.png){: .pull-right}
+![git logo](../img/blog/Git-logo.png){: .pull-right}
 本教程主要从Git的简明使用到高级应用，比如协作和相关高级话题。本教程本着简明扼要的目标给出相当精彩的教程！
 ##Git Configurations
 

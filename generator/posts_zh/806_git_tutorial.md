@@ -2,9 +2,10 @@ Git和GitHub教程
 2017-08-03
 Web 开发
 Git是一个开源的版本控制系统，本教程将讲解Git的基本使用和高级使用技巧...
-http://www.shenhengheng.xyz/img/blog/Git-logo.png
+http://olrs8j04a.bkt.clouddn.com/17-8-25/84252244.jpg
 ---
-![git logo](../img/blog/Git-logo.png){: .pull-right}
+![git logo](http://olrs8j04a.bkt.clouddn.com/17-8-25/84252244.jpg
+){: .pull-right}
 本教程主要从Git的简明使用到高级应用，比如协作和相关高级话题。本教程本着简明扼要的目标给出相当精彩的教程！
 ##Git Configurations
 

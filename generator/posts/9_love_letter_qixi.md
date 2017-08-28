@@ -4,7 +4,10 @@ Love letter
 秋风送爽，迎来中国的传统节日-七夕情人节，身为异地恋的我们，此时此刻对彼岸的她或着他做点什么，礼物有的千奇八怪，层出不穷。而我想在这里对我的那个她通过书信来传递我对她的爱！
 http://olrs8j04a.bkt.clouddn.com/17-8-28/72130184.jpg
 ---
+><a class="btn btn-primary" target="_blank" href="https://openload.co/f/8tNSEtII9n0/%E5%96%9C%E6%AC%A2%E4%BD%A0_Loving_you_BY--%E9%BB%84%E5%AE%B6%E9%A9%B9.mp4
+"><span class="fa fa-youtube fa-lg fa-fw"></span>喜欢你</a>
 
+一首 **喜欢你** 送给我最亲爱的宝贝儿～
 [vid]https://youtu.be/4OqXWzekVw4 [/vid]
 
 

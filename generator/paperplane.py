@@ -75,7 +75,7 @@ def createBlog(text_dir, blog_dir, blog_template, createIndexPage = False, index
         #remove the first blockquote in summary
         summary = summary.replace('\n', ' ')
         summary = re.sub(r'<blockquote>(.+?)<\/blockquote>', '', summary)
-        summary = striphtml(summary)[0:50]
+        summary = striphtml(summary)[0:150]
             
         posts.append({"title": title,
                       "description": description,

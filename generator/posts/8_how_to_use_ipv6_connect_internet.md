@@ -30,40 +30,33 @@ http://olrs8j04a.bkt.clouddn.com/17-9-4/34115661.jpg
 
 1. 打开[Bandwagonhost](https://bandwagonhost.com) ，注册并登录（很简单，省略）
 2. 登录之后，选择合适的套餐，如果是新手，选择如下图所示的服务，1->2，千万别点错了，选择 **OrderOVZ**。
-
 <div align="center">
-![新手购机](http://olrs8j04a.bkt.clouddn.com/17-9-4/90531119.jpg)
+![新手购机](http://olrs8j04a.bkt.clouddn.com/17-9-4/90531119.jpg?imageMogr2/thumbnail/!60p)
 <center class="cap"><caption>图1 购机</caption></center>
 </div>
 
-3. 选择完成后，会跳出一个新的标签，在页面中选择节点地址就可以了，在这里选择了US - Los Angeles DC2 QNET (USCA_2)，如图。
-
-<div align="center">
+3. 选择完成后，会跳出一个新的标签，在页面中选择节点地址就可以了，在这里选择了US - Los Angeles DC2 QNET (USCA_2)，如图。<div align="center">
 ![选择地址](http://olrs8j04a.bkt.clouddn.com/17-9-4/56351816.jpg)
 <center class="cap"><caption>图2 选择地址并下单</caption></center>
 </div>
 
 4. 支付订单并完成
-
 <div align="center">
-![结算](http://olrs8j04a.bkt.clouddn.com/17-9-4/32584067.jpg)
-<center class="cap"><caption>图3 结算</caption></center>
+    ![结算](http://olrs8j04a.bkt.clouddn.com/17-9-4/32584067.jpg)
+    <center class="cap"><caption>图3 结算</caption></center>
 </div>
-
 <div align="center">
-![支付](http://olrs8j04a.bkt.clouddn.com/17-9-4/21065011.jpg)
-<center class="cap"><caption>图4 选择使用支付宝支付，Paypal太贵！</caption></center>
+    ![支付](http://olrs8j04a.bkt.clouddn.com/17-9-4/21065011.jpg)
+    <center class="cap"><caption>图4 选择使用支付宝支付，Paypal太贵！</caption></center>
 </div>
 
 ###配置SS服务
 
 <br>支付完成后，会向你发送一封邮件，这封邮件包含你的ip地址和SSH的端口号（这个是你需要客户端登录要填写的端口号）。默认情况下，分配的是CentOS系统的。
 
-在主页点击 Services->My Services，即
-
-<div align="center">
-![](http://olrs8j04a.bkt.clouddn.com/17-9-4/74582836.jpg)
-<center class="cap"><caption>图5 查看主机信息</caption></center>
+在主页点击 Services->My Services，即<div align="center">
+    ![](http://olrs8j04a.bkt.clouddn.com/17-9-4/74582836.jpg)
+    <center class="cap"><caption>图5 查看主机信息</caption></center>
 </div>
 
 接下来来到管理界面上对主机进行以下操作：
@@ -71,12 +64,9 @@ http://olrs8j04a.bkt.clouddn.com/17-9-4/34115661.jpg
 - 生成root密码
 - 启用ipv6地址
 
-然后使用XShell软件连接到VPS上，并进行下一步配置SS服务。
-
-
-<div align="center">
-![](http://olrs8j04a.bkt.clouddn.com/17-9-4/64904900.jpg)
-<center class="cap"><caption>图6 远程登陆云主机</caption></center>
+然后使用XShell软件连接到VPS上，并进行下一步配置SS服务.<div align="center">
+    ![](http://olrs8j04a.bkt.clouddn.com/17-9-4/64904900.jpg)
+    <center class="cap"><caption>图6 远程登陆云主机</caption></center>
 </div>
 
 登陆后，对主机进行SS服务的安装（注意：在这里不使用搬瓦工自带的一键安装方法）。
@@ -119,11 +109,9 @@ $ vi /etc/shadowsocks.json
 - "server":"0.0.0.0"表示启用的是IPV4，仅支持IPV4
 - "server":"0.0.0.0"\n"server_ipv6":"::" 表示启用IPV4和V6
 
-打开SS客户端并输入VPS的ip信息：
-
-<div align="center">
-![](http://olrs8j04a.bkt.clouddn.com/17-9-4/88255315.jpg)
- <center class="cap"><caption>图7 登录SS客户端，启用代理</caption></center>
+打开SS客户端并输入VPS的ip信息：<div align="center">
+    ![](http://olrs8j04a.bkt.clouddn.com/17-9-4/88255315.jpg)
+    <center class="cap"><caption>图7 登录SS客户端，启用代理</caption></center>
 </div>
 
 <div class="alert alert-warning" role="alert">
@@ -132,11 +120,8 @@ $ vi /etc/shadowsocks.json
   在系统代理模式中启用全局模式。
 </div>
 
-在百度中搜索ip，会显示当前主机使用的ip地址。如图所示：
-
-<div align="center">
-![](http://olrs8j04a.bkt.clouddn.com/17-9-4/38703883.jpg)
- <center class="cap"><caption>图8 查看IP</caption></center>
+在百度中搜索ip，会显示当前主机使用的ip地址。如图所示：<div align="center">
+  ![](http://olrs8j04a.bkt.clouddn.com/17-9-4/38703883.jpg)<center class="cap"><caption>图8 查看IP</caption></center>
 </div>
 
 ###开始IPV6无流量模式

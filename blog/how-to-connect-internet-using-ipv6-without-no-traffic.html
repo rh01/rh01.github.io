@@ -73,53 +73,46 @@
 <p>在网上搜索了很长时间，搬瓦工是一个便宜稳定并且支持支付宝支付的一家VPS（虚拟主机，往往人们在上面配置服务器或者部署网站，FQ等等，在这里我使用它做VPN服务来FQ。）</p>
 <ol>
 <li>打开<a href="https://bandwagonhost.com">Bandwagonhost</a> ，注册并登录（很简单，省略）</li>
-<li>登录之后，选择合适的套餐，如果是新手，选择如下图所示的服务，1-&gt;2，千万别点错了，选择 <strong>OrderOVZ</strong>。</li>
-</ol>
+<li>
+<p>登录之后，选择合适的套餐，如果是新手，选择如下图所示的服务，1-&gt;2，千万别点错了，选择 <strong>OrderOVZ</strong>。
 <div align="center">
-![新手购机](http://olrs8j04a.bkt.clouddn.com/17-9-4/90531119.jpg)
+<img alt="新手购机" src="http://olrs8j04a.bkt.clouddn.com/17-9-4/90531119.jpg?imageMogr2/thumbnail/!60p" />
 <center class="cap"><caption>图1 购机</caption></center>
-</div>
-
-<ol>
-<li>选择完成后，会跳出一个新的标签，在页面中选择节点地址就可以了，在这里选择了US - Los Angeles DC2 QNET (USCA_2)，如图。</li>
-</ol>
-<div align="center">
-![选择地址](http://olrs8j04a.bkt.clouddn.com/17-9-4/56351816.jpg)
+</div></p>
+</li>
+<li>
+<p>选择完成后，会跳出一个新的标签，在页面中选择节点地址就可以了，在这里选择了US - Los Angeles DC2 QNET (USCA_2)，如图。<div align="center">
+<img alt="选择地址" src="http://olrs8j04a.bkt.clouddn.com/17-9-4/56351816.jpg" />
 <center class="cap"><caption>图2 选择地址并下单</caption></center>
+</div></p>
+</li>
+<li>
+<p>支付订单并完成
+<div align="center">
+    <img alt="结算" src="http://olrs8j04a.bkt.clouddn.com/17-9-4/32584067.jpg" />
+    <center class="cap"><caption>图3 结算</caption></center>
 </div>
-
-<ol>
-<li>支付订单并完成</li>
+<div align="center">
+    <img alt="支付" src="http://olrs8j04a.bkt.clouddn.com/17-9-4/21065011.jpg" />
+    <center class="cap"><caption>图4 选择使用支付宝支付，Paypal太贵！</caption></center>
+</div></p>
+</li>
 </ol>
-<div align="center">
-![结算](http://olrs8j04a.bkt.clouddn.com/17-9-4/32584067.jpg)
-<center class="cap"><caption>图3 结算</caption></center>
-</div>
-
-<div align="center">
-![支付](http://olrs8j04a.bkt.clouddn.com/17-9-4/21065011.jpg)
-<center class="cap"><caption>图4 选择使用支付宝支付，Paypal太贵！</caption></center>
-</div>
-
 <h3>配置SS服务</h3>
 <p><br>支付完成后，会向你发送一封邮件，这封邮件包含你的ip地址和SSH的端口号（这个是你需要客户端登录要填写的端口号）。默认情况下，分配的是CentOS系统的。</p>
-<p>在主页点击 Services-&gt;My Services，即</p>
-<div align="center">
-![](http://olrs8j04a.bkt.clouddn.com/17-9-4/74582836.jpg)
-<center class="cap"><caption>图5 查看主机信息</caption></center>
-</div>
-
+<p>在主页点击 Services-&gt;My Services，即<div align="center">
+    <img alt="" src="http://olrs8j04a.bkt.clouddn.com/17-9-4/74582836.jpg" />
+    <center class="cap"><caption>图5 查看主机信息</caption></center>
+</div></p>
 <p>接下来来到管理界面上对主机进行以下操作：</p>
 <ul>
 <li>生成root密码</li>
 <li>启用ipv6地址</li>
 </ul>
-<p>然后使用XShell软件连接到VPS上，并进行下一步配置SS服务。</p>
-<div align="center">
-![](http://olrs8j04a.bkt.clouddn.com/17-9-4/64904900.jpg)
-<center class="cap"><caption>图6 远程登陆云主机</caption></center>
-</div>
-
+<p>然后使用XShell软件连接到VPS上，并进行下一步配置SS服务.<div align="center">
+    <img alt="" src="http://olrs8j04a.bkt.clouddn.com/17-9-4/64904900.jpg" />
+    <center class="cap"><caption>图6 远程登陆云主机</caption></center>
+</div></p>
 <p>登陆后，对主机进行SS服务的安装（注意：在这里不使用搬瓦工自带的一键安装方法）。</p>
 <p>首先安装配置工具:</p>
 <pre><code class="bash"># 一些安装包需要的编译工具
@@ -153,24 +146,19 @@ $ pip install shadowsocks
 <li>"server":"0.0.0.0"表示启用的是IPV4，仅支持IPV4</li>
 <li>"server":"0.0.0.0"\n"server_ipv6":"::" 表示启用IPV4和V6</li>
 </ul>
-<p>打开SS客户端并输入VPS的ip信息：</p>
-<div align="center">
-![](http://olrs8j04a.bkt.clouddn.com/17-9-4/88255315.jpg)
- <center class="cap"><caption>图7 登录SS客户端，启用代理</caption></center>
-</div>
-
+<p>打开SS客户端并输入VPS的ip信息：<div align="center">
+    <img alt="" src="http://olrs8j04a.bkt.clouddn.com/17-9-4/88255315.jpg" />
+    <center class="cap"><caption>图7 登录SS客户端，启用代理</caption></center>
+</div></p>
 <div class="alert alert-warning" role="alert">
   重点：<br>
   使用系统代理和
   在系统代理模式中启用全局模式。
 </div>
 
-<p>在百度中搜索ip，会显示当前主机使用的ip地址。如图所示：</p>
-<div align="center">
-![](http://olrs8j04a.bkt.clouddn.com/17-9-4/38703883.jpg)
- <center class="cap"><caption>图8 查看IP</caption></center>
-</div>
-
+<p>在百度中搜索ip，会显示当前主机使用的ip地址。如图所示：<div align="center">
+  <img alt="" src="http://olrs8j04a.bkt.clouddn.com/17-9-4/38703883.jpg" /><center class="cap"><caption>图8 查看IP</caption></center>
+</div></p>
 <h3>开始IPV6无流量模式</h3>
 <p><br>打开 <strong>控制面板\网络和 Internet\网络连接</strong>,设置本地网卡属性。在IPV6中设置首选DNS服务器为你的VPS主机IPV6地址。（切记：一定要确定你的校园网注销登录了，负责走得还是你的IPV4，即你的校园网。）</p>
 <div class="alert alert-warning" role="alert">

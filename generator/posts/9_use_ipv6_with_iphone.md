@@ -16,7 +16,7 @@ http://olrs8j04a.bkt.clouddn.com/17-9-5/76082342.jpg
 <br>
 1. 打开手机设置，连接你设置的共享wifi，（**记住**一定要把电脑的防火墙干掉，不干掉是上不去网滴）.
 2. 连接之后，在那个wifi上点击一个类似与感叹号的按钮，会弹出详细信息关于该网络，往下滑，你会发现有设置代理的地方，转到**AUTO**处，输入 **http://xxx.xxx.xxx.xxxx:1080/pac ** 。<div align="center">
-![](http://olrs8j04a.bkt.clouddn.com/17-9-5/26444952.jpg)
-<center><caption class="cap">图1 能够正确上网</caption></center>
-</div>
+  ![](http://olrs8j04a.bkt.clouddn.com/17-9-5/26444952.jpg?imageMogr/thumbnail/!40p)
+  <center><caption class="cap">图1 能够正确上网</caption></center>
+  </div>
 3. 打开你的浏览器，看看是否能够正确上网了。

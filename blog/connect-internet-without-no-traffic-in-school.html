@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>PaperPlane: a simple static blog generator
+    <title>Connect Internet Without No Traffic In School
 </title>
 	
 	
-<meta name="description" content="You like this website? You can easily create your own using PaperPlane, which is a very simple, flat-file, static blog generator.
+<meta name="description" content="上一篇文章介绍了如何对电脑进行ipv6免流量配置，接下来就对如何对局域网内的手机如何顺利的联网进行论述，主要介绍局部代理，不同于上篇文章介绍到的对桌面版QQ和微信进行应用代理，这次测试的手机不能进行对QQ 和微信进行使用，好像屏蔽掉了，但能正常在浏览器进行上网和看youtube，Gmail等等
 " />
 
 	
@@ -48,36 +48,26 @@
 			
 	<div class="blog-content">
 
-		<h1>PaperPlane: a simple static blog generator
+		<h1>Connect Internet Without No Traffic In School
 </h1>
-		<span class="date">February 23, 2015</span>
+		<span class="date">September 5, 2017</span>
 		
 		<hr/>
 
-		<blockquote>
-<p><a class="btn btn-primary" target="_blank" href="https://github.com/isikdogan/paperplane"><span class="fa fa-github fa-lg fa-fw"></span> Source Code</a>
-<a class="btn btn-primary" target="_blank" href="http://www.isikdogan.com/files/paperplane-demo/"><span class="fa fa-paper-plane fa-lg fa-fw"></span> Demo</a></p>
-</blockquote>
-<p>You like this website? You can easily create your own using PaperPlane, which is a very simple, flat-file, static blog generator. Initially, I created it to have a complete control over my personal website. Then I decided to put it online after receiving some encouraging comments on my website.</p>
-<p>Here are the features:</p>
-<h2><i class="fa fa-rocket fa-fw"></i>&nbsp;&nbsp;Fast</h2>
-<p>The blog loads fast since all pages are pre-rendered. No server-side querying is required to display the pages.</p>
-<h2><i class="fa fa-database fa-fw"></i>&nbsp;&nbsp;Requires no database</h2>
-<p>The data is stored in a folder containing a text file for each blog entry.</p>
-<h2><i class="fa fa-cogs fa-fw"></i>&nbsp;&nbsp;Compatible</h2>
-<p>PaperPlane generated blogs can run on any HTML hosting service (Google Cloud Storage, GitHub, Dropbox, etc.).</p>
-<h2><i class="fa fa-lock fa-fw"></i>&nbsp;&nbsp;Secure</h2>
-<p>No scripts run on the server side.</p>
-<h2><i class="fa fa-pencil-square-o fa-fw"></i>&nbsp;&nbsp;Easy to create content</h2>
-<p>PaperPlane supports simple <a href="http://daringfireball.net/projects/markdown/" target="_blank">Markdown</a> formatting for content generation.</p>
-<h2><i class="fa fa-film fa-fw"></i>&nbsp;&nbsp;Easy to embed videos</h2>
-<p>You can easily embed videos using <code>[vid]link[/vid]</code> tags.</p>
-<h2><i class="fa fa-paint-brush fa-fw"></i>&nbsp;&nbsp;Easy to create themes</h2>
-<p>PaperPlane uses <a href="http://jinja.pocoo.org/docs/dev/" target="_blank">Jinja2</a> template engine, <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3.0</a> HTML/CSS framework, and <a href="http://fontawesome.io/" target="_blank">FontAwesome</a> icon collection.</p>
-<h2><i class="fa fa-server fa-fw"></i>&nbsp;&nbsp;Multi-platform</h2>
-<p>PaperPlane is written in Python.</p>
-<h2><i class="fa fa-github fa-fw"></i>&nbsp;&nbsp;Free and open source</h2>
-<p>The PaperPlane project is released under the terms of the <a href="http://en.wikipedia.org/wiki/MIT_License" target="_blank">MIT license</a>. You can download/fork the code on <a href="https://github.com/isikdogan/paperplane" target="_blank">GitHub</a>.</p>
+		<p>昨天刚刚介绍了如何对电脑进行ipv6免流量配置，接今天就对如何对局域网内的手机如何顺利的联网进行论述，主要介绍局部代理，不同于上篇文章介绍到的对桌面版QQ和微信进行应用代理，这次测试的手机不能进行对QQ 和微信进行使用，好像屏蔽掉了，但能正常在浏览器进行上网和看youtube，Gmail等等</p>
+<h3>准备材料</h3>
+<p><br>
+- 一部iphone手机
+- 能进行ipv6免流上网的电脑，装有免费wifi共享软件
+- 关闭防火墙</p>
+<h3>具体操作</h3>
+<p><br>
+1. 打开手机设置，连接你设置的共享wifi，（<strong>记住</strong>一定要把电脑的防火墙干掉，不干掉是上不去网滴）.
+2. 连接之后，在那个wifi上点击一个类似与感叹号的按钮，会弹出详细信息关于该网络，往下滑，你会发现有设置代理的地方，转到<strong>AUTO</strong>处，输入 <strong>http://xxx.xxx.xxx.xxxx:1080/pac </strong> 。<div align="center">
+<img alt="" src="http://olrs8j04a.bkt.clouddn.com/17-9-5/26444952.jpg" />
+<center><caption class="cap">图1 能够正确上网</caption></center>
+</div>
+3. 打开你的浏览器，看看是否能够正确上网了。</p>
 		
 		
 		<hr/>

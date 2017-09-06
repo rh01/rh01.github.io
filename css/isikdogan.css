@@ -1,4 +1,4 @@
-body{
+﻿body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	line-height: 1.7em;
@@ -52,6 +52,7 @@ hr.short{
 .business-card {
 	margin-bottom: 20px;
 	border-radius: 4px;
+        #box-shadow: 0px 0px 10px 1px rgba(0,0,0, 0.7);
 }
 .business-card{
 	color: #206080;
@@ -81,17 +82,21 @@ hr.short{
 
 .project-thumb{
 	float:right; 
-	border: 1px solid #ddd;
+	#border: 1px solid #ddd;
 	max-width: 125px;
 	border-radius: 6px;
 	margin-left: 20px;
 	margin-top: 20px;
+        border-radius: 6px;
+        box-shadow: 0px 0px 10px 1px rgba(0,0,0, 0.7);
 }
 
 .blog-content img{
 	margin: 20px;
 	max-width: 95%;
 	border-radius: 6px;
+
+        box-shadow: 0px 0px 10px 1px rgba(0,0,0, 0.7);
 }
 
 .blog-index-thumbnail{
@@ -100,11 +105,15 @@ hr.short{
 	display: block;
 	margin-left: 20px;
 	border-radius: 6px;
+
+        box-shadow: 0px 0px 10px 1px rgba(0,0,0, 0.7);
 }
 
 .blog-content .embed-responsive{
 	margin-top: 30px;
 	margin-bottom: 30px;
+
+        box-shadow: 0px 0px 10px 1px rgba(0,0,0, 0.7);
 }
 
 .blog-content h3{

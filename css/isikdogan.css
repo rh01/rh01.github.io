@@ -167,11 +167,11 @@ br.rbr{
 @media (max-width: 768px) {
   .pull-right{
 	float: none !important;
-	display: block;
+	#display: block;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	box-shadow: 0px 0px 10px 1px rgba(0,0,0, 0.7);
-	border-radius: 20px;
+	border-radius: 50%;
   }
   
   br.rbr{

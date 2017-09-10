@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Reinforcement Learning: Markov Decision Process
+</title>
+	
+	
+<meta name="description" content="最近整理了一下有关强化学习的一些资料，准备这几天整理成笔记，有关马尔科夫决策过程的，马尔科夫过程相对来说苦涩，因为它是属于随机过程的一个课题，但它的应用和一些motivation与现实却十分贴近，所以理解起来并不难。总而言之，它不属于强化学习，但它是理解和走入强化学习的必经之路，是强化学习的基础。
+" />
+
+	
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/isikdogan.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+	<!-- add Math Support -->
+	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	
+  </head>
+
+  <body>
+  
+  <div class="navbar navbar-inverse navbar-static-top navbar-fixed"">
+  <nav>
+  <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="http://www.shenhengheng.xyz/index.html"><span class="fa fa-home fa-fw"></span> About Me</a></li>
+          <li><a href="http://www.shenhengheng.xyz/projects.html"><span class="fa fa-cubes fa-fw"></span> Projects</a></li>
+          <li><a href="http://www.shenhengheng.xyz/blog"><span class="fa fa-pencil fa-fw"></span> Blogs</a></li>
+          <li><a href="http://github.com/rh01" target="_blank"><span class="fa fa-github fa-fw"></span> GitHub</a></li>
+          
+          <li><a href="https://www.youtube.com/channel/UCTOuJy4b9E89zCwffX-qC3A" target="_blank"><span class="fa fa-youtube-play fa-fw"></span> YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/heng960509/" target="_blank"><span class="fa fa-linkedin fa-fw"></span> LinkedIn</a></li>
+      </ul>
+  </div>
+  </nav>
+  </div>
+  
+    <div class="container">
+		<div class="main row">
+			
+			
+	<div class="blog-content">
+
+		<h1>Reinforcement Learning: Markov Decision Process
+</h1>
+		<span class="date">September 10, 2017</span>
+		
+		<hr/>
+
+		<p>最近整理了一下有关强化学习的一些资料，准备这几天整理成笔记，有关马尔科夫决策过程的，马尔科夫过程相对来说苦涩，因为它是属于随机过程的一个课题，但它的应用和一些motivation与现实却十分贴近，所以理解起来并不难。总而言之，它不属于强化学习，但它是理解和走入强化学习的必经之路，是强化学习的基础。</p>
+<h3>强化学习简介</h3>
+<p><br>如果对机器学习系统比较熟悉的同学来说，强化学习是独立于监督式学习和非监督式学习的，在监督式学习中可以将其的特点归纳为 \(y=f(x)\),因为在监督学习中每一个样本都有其对应的正确的值，都有一个正确答案，机器需要学习的也是近似估计出\(f\) , 监督式学习往往包括了回归，分类等，而对于非监督式学习，可以形象的用\(f(x)\),因为在非监督式学习中，往往训练的样本是没有正确值，非监督式学习的目标就是对这些未知正确值的样本进行寻找相似的模式，对其进行分类或者进行数据降维以达到压缩数据的过程，非监督式学习包括了聚类，PCA，矩阵分解等，而强化学习可以使用 \(y=f(x),z\) 表示，因为在监督式学习的基础上强化学习引入了一个新的“规则” \(z\) ，目标是让机器对环境进行学习，做出决策，并对决策的结果进行打分，此时的分数将作为奖励，那么机器就是使得每次所做的决策产生的奖励（回报值）进行累加并最大化累计奖励。强化学习的环境，智能体（大脑）进行交互的部分见下图：<div align="center">
+    <img alt="" src="http://olrs8j04a.bkt.clouddn.com/17-9-10/23029293.jpg" />
+    <center class="cap"><caption>图1 Agent and Environment</caption></center>
+</div>
+为了能更好的理解上面的图，在这里特别地对该图作出说明，“机器人学走路”的例子。</p>
+<ol>
+<li>图1中的\(Env\) 表示的就是机器人学习的环境，比如马路，室内等等</li>
+<li>图1中的 \(State\) 表示的就是机器人当前的状态信息，比如可以利用坐标来表示或者经纬度等等来描述\(State\).</li>
+<li>图1中的 \(Action\) 表示的是机器人执行的动作，往往是一个集合，比如 \(Action = [up, right, left, down]\) 所表示的就是机器人对于当前所在的状态来对环境作出的决策（动作）.</li>
+<li>图1中的 \(Reward\) 表示机器人通过 \(Action\) 来影响环境，进而环境将对该行为进行评分，或者做出奖励</li>
+<li>整个过程可以用一段话来陈述：在训练机器人如何行走的例子中，机器人对当前所在的状态 \(s \in S\) 进行决策，并执行相应的动作 \(a \in A\) 来影响环境进而进入到一个新的状态 \(s' \in S\) 下，并且机器人也将会受到环境的反馈奖励 \(R\).</li>
+</ol>
+<p>再比如，让机器对猫进行识别，起初这个机器并不知道什么是猫什么不是猫，这时候就需要一个人或者一个专家来干预该过程（有点像监督学习），但是人在过程中不单单教给机器什么是对的，还会对机器进行奖励或者惩罚，如果前期人类交给它什么是对的什么是错的，后期的时候，人将会对机器进行奖励和惩罚，如果该机器识别对了，人将会对其进行奖励，如果错了，将对其惩罚，久而久之，机器将会越来越想得到更多的奖励，所以他将会越来越智能越来越自信。进而获得更多的奖励。</p>
+<p>----更新中----</p>
+		
+		
+		<hr/>
+			<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8zMDczMC83Mjgz">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+	<div class="footer">
+			<hr/>	
+				<small>© Copyright 2016 - shenhengheng.xyz</small>
+				<small class="pull-right">Powered by <a href="http://www.shenhengheng.xyz/blog/paperplane-a-simple-static-blog-generator.html" target="_blank">PaperPlane</a></small>
+			</div>
+	
+
+
+
+		</div>
+	
+    </div><!-- /.container -->
+	
+	<link rel="icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+	<!-- google analytics -->
+	
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-80563036-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+	
+  </body>
+</html>

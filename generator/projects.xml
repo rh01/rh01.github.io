@@ -30,6 +30,19 @@
 		]]></notes>
 		<picture>Git-Logo.png</picture>
 	</project>
+	<project>
+		<title>Machine Learning Notes</title>
+		<description>Advisors: 申恒恒</description>
+		<type>中国科学院大学研一整理</type>
+		<date>Sep 2017</date>
+		<notes><![CDATA[
+			<span class="label label-default">Machine Learning And Deep Learning Note</span>
+			<span class="label label-warning">Notes</span>			
+			<a href="http://www.shenhengheng.xyz/files/ml/ml_Introduction.pdf" class="btn btn-default btn-xs" target="_blank">Introduction</a>
+			<a href="http://www.shenhengheng.xyz/files/ml/ml_single_regression.pdf" class="btn btn-default btn-xs" target="_blank">Single variable Linear Regression</a>			
+		]]></notes>
+		<picture>ml.png</picture>
+	</project>
 
 	
 </projects>

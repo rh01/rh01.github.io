@@ -3,7 +3,7 @@
 - Joined [shiyanlou](www.shiyanlou.com){: target="_blank"}, Sep 19, 2014
 - [Joined China Undergraduate Mathematical Contest in Modeling](http://slxy.ayit.edu.cn/info/1961/1781.htm), July 10, 2015
 - joined the national mechanical creative design contest-Luoyang , Mar 1, 2016
-- make up notes of machine learning and some algorithms. Sep 16, 2017
+- [Machine Learning And Deep Learning Notes Plans](http://www.shenhengheng.xyz/files/ml/ml_plan.pdf). Sep 16, 2017
 
 ---
 
@@ -33,7 +33,7 @@ Deep Learning and Neural Network, Machine Learning, Image And Video Processing, 
 ---
 
 ## Publications
-- [Machine Learning Note(updating...)](http://www.shenhengheng.xyz/projects.html)
+- [ML NOTES PROJECT](http://www.shenhengheng.xyz/projects.html)
 
 ---
 

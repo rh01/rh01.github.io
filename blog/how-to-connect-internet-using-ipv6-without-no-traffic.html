@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>How To Connect Internet Using IPV6 Without No Traffic
+    <title>How To Connect Internet Using IPV6 Without No Traffic
 </title>
 	
 	
-<meta name="description" content="进入新的研究生学校，在大学从未曾接触到IPV6无流量上网的我来说，完全懵B，这是啥子东西嘛？都没有听说过，看来我上了一个“假的”大学。来到研究生学校（UCAS），发现他们的流量是要钱滴，好奇葩的有木有！！我上大学从来没有见过上网要钱滴。看来我的大学生活还是很不错的，瞬间自豪感起来了。虽说到了研究生流量要钱，那么就尽量在满足我们上要需求的情况下合理的进行省钱是一个好的idea.
+<meta name="description" content="进入新的研究生学校，在大学从未曾接触到IPV6无流量上网的我来说，完全懵B，这是啥子东西嘛？都没有听说过，看来我上了一个“假的”大学。来到研究生学校（UCAS），发现他们的流量是要钱滴，好奇葩的有木有！！我上大学从来没有见过上网要钱滴。看来我的大学生活还是很不错的，瞬间自豪感起来了。虽说到了研究生流量要钱，那么就尽量在满足我们上要需求的情况下合理的进行省钱是一个好的idea.
 " />
 
 	
@@ -52,7 +52,7 @@
 			
 	<div class="blog-content">
 
-		<h1>How To Connect Internet Using IPV6 Without No Traffic
+		<h1>How To Connect Internet Using IPV6 Without No Traffic
 </h1>
 		<span class="date">September 4, 2017</span>
 		
@@ -179,6 +179,40 @@ $ pip install shadowsocks
 </div>
 </div>
 
+<h3>注意</h3>
+<p><br>必须关闭IPv4和IPv6的防火墙，它俩的防火墙是独立的所以都要关闭，否则客户端连接不上的.</p>
+<ol>
+<li>
+<p>永久有效 -&gt; 修改 <code>/etc/selinux/config</code> 文件中的 <code>SELINUX=""</code> 为 <code>disabled</code>，然后重启。</p>
+</li>
+<li>
+<p>即时生效 -&gt; <code>setenforce 0</code></p>
+</li>
+</ol>
+<p>关闭防火墙的方法为：</p>
+<pre><code>1. 永久性生效
+
+开启：chkconfig iptables on
+
+关闭：chkconfig iptables off
+
+2. 即时生效，重启后失效
+
+开启：service iptables start
+
+关闭：service iptables stop
+</code></pre>
+
+<p>需要说明的是对于 Linux 下的其它服务都可以用以上命令执行开启和关闭操作</p>
+<p><strong>补充：</strong></p>
+<p>a. 防火墙还需要关闭ipv6的防火墙：
+<code>chkconfig ip6tables off</code>
+并且可以通过如下命令查看状态：
+<code>chkconfig --list iptables</code></p>
+<p>b. selinux状态可以通过以下命令查看：
+<code>sestatus</code></p>
+<p>c. 关闭ss服务：<code>ssserver -d stop</code></p>
+<p>d. 开启ss服务：<code>ssserver -c /etc/shadowsocks.json -d start</code></p>
 <p>OK！你可以快快乐乐的玩耍了！下一篇文章将介绍如何对苹果手机进行局域网连接。</p>
 <h3>参考文章</h3>
 <p><br>[1] https://blog.whsir.com/post-1456.html</p>

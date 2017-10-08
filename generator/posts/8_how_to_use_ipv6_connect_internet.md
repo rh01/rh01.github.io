@@ -142,33 +142,47 @@ $ vi /etc/shadowsocks.json
 </div>
 </div>
 
-<div class="alert alert-danger" role="alert">
-必须关闭IPv4和IPv6的防火墙，它俩的防火墙是独立的所以都要关闭，否则客户端连接不上的.
 
-1. 永久有效
-修改 /etc/selinux/config 文件中的 SELINUX="" 为 disabled，然后重启。
+###注意
 
-2. 即时生效
-setenforce 0
+<br>必须关闭IPv4和IPv6的防火墙，它俩的防火墙是独立的所以都要关闭，否则客户端连接不上的.
+
+1. 永久有效 -> 修改 `/etc/selinux/config` 文件中的 `SELINUX=""` 为 `disabled`，然后重启。
+
+2. 即时生效 -> `setenforce 0`
 
 关闭防火墙的方法为：
+
+```
 1. 永久性生效
+
 开启：chkconfig iptables on
+
 关闭：chkconfig iptables off
 
 2. 即时生效，重启后失效
+
 开启：service iptables start
+
 关闭：service iptables stop
+```
 
 需要说明的是对于 Linux 下的其它服务都可以用以上命令执行开启和关闭操作
-补充：
+
+**补充：**
+
 a. 防火墙还需要关闭ipv6的防火墙：
-chkconfig ip6tables off
+`chkconfig ip6tables off`
 并且可以通过如下命令查看状态：
-chkconfig --list iptables
+`chkconfig --list iptables`
+
 b. selinux状态可以通过以下命令查看：
-sestatus
-</div>
+`sestatus`
+
+c. 关闭ss服务：`ssserver -d stop`
+
+d. 开启ss服务：`ssserver -c /etc/shadowsocks.json -d start`
+
 OK！你可以快快乐乐的玩耍了！下一篇文章将介绍如何对苹果手机进行局域网连接。
 
 ###参考文章

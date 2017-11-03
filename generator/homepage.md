@@ -3,7 +3,9 @@
 - Joined [shiyanlou](www.shiyanlou.com){: target="_blank"}, Sep 19, 2014
 - [Joined China Undergraduate Mathematical Contest in Modeling](http://slxy.ayit.edu.cn/info/1961/1781.htm), July 10, 2015
 - joined the national mechanical creative design contest-Luoyang , Mar 1, 2016
+- [Deep Learning Course Repo](https://github.com/rh01/coursera_dl), Aug 13, 2017
 - [Machine Learning And Deep Learning Notes Plans](http://www.shenhengheng.xyz/files/ml/ml_plan.pdf). Sep 16, 2017
+- Deep Learning Notes is comming..., Nov 3, 2017
 
 ---
 

@@ -11,4 +11,6 @@ http://www.shenhengheng.xyz/img/blog/car.png
 
 
 
-><a class="btn btn-primary" target="_blank" href="https://www.youtube.com/watch?v=poPoz264rpo&t=28s"><span class="fa fa-youtube fa-lg fa-fw"></span>基于深度学习的自动驾驶RC 车</a>
+><a class="btn btn-primary" target="_blank" href="https://youtu.be/poPoz264rpo"><span class="fa fa-youtube fa-lg fa-fw"></span>基于深度学习的自动驾驶RC 车</a>
+
+[vid]https://youtu.be/poPoz264rpo [/vid]

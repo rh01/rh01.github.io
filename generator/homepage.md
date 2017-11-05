@@ -36,6 +36,7 @@ Deep Learning and Neural Network, Machine Learning, Image And Video Processing, 
 
 ## Publications
 - [ML NOTES PROJECT](http://www.shenhengheng.xyz/projects.html)
+- [NMF Notes](http://www.shenhengheng.xyz/files/ml_nmf.pdf)
 
 ---
 

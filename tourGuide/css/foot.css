@@ -1,0 +1,118 @@
+@charset "utf-8";
+/* CSS Document */
+
+.c_sub, .c_sub a {
+	color: #919090;
+}
+.footline {
+	/*width:1180px;*/
+	margin:40px auto 0px auto;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-color: #CCC;
+}
+.foot {
+	width:1180px;
+	margin: 40px auto 0px auto;
+	padding: 0px;
+	position: relative;
+	min-height:100px;
+}
+.footfirt {
+	width:223px;
+	height:145px;
+	float:left;
+	margin-left:60px;
+	border-right:solid 1px #ededed
+}
+.f-16 {
+	font-size: 16px;
+}
+.mt-5 {
+	margin-top: 5px;
+}
+.mt-10 {
+	margin-top:10px;
+	}
+.cl, .clearfix {
+	zoom: 1;
+}
+.footheight {
+	line-height: 24px;
+}
+b, strong {
+	font-weight:bold;
+}
+.foot ul{
+	margin-top:17px; 
+	margin-left:0px;
+	margin-right:0px;
+	margin-bottom:0px;
+	padding:0px;
+	width: 210px;
+	min-height:96px;
+	}
+.foot li {
+    float: left;
+    width: 99px;
+	display:block;
+    margin: 0;
+    padding: 0;
+	line-height:24px;
+	margin:0px;
+	padding:0px;
+}
+.foot li a{
+	display:inline-block;
+	text-decoration:none;
+	font-size:12px;
+	height:24px;
+	margin:0px;
+	padding:0px;
+}
+.icon-sinawb2 {
+    background-image: url(./images/icon-sinawb2.png);
+    width: 21px;
+    height: 21px;
+	margin-right:10px;
+}
+.icon-zcool {
+    background-image: url(./images/icon-zcool.png);
+    width: 21px;
+    height: 21px;
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: text-top;
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.f-12 {
+    font-size: 12px;
+}
+.footcopyright {
+	background-color: #ededed;
+    font-size: 12px;
+    color: #999;
+    line-height: 22px;
+    padding: 13px 0;
+    margin-top: 65px;
+	}
+.wp {
+    width: 1180px;
+	height:24px;
+}
+.pos-r {
+    position: relative;
+	margin:0 auto;
+}
+.footcopyright a, footcopyright a:hover {
+    color: #999;
+	font-size:12px;
+}

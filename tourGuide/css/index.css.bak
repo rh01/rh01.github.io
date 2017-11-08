@@ -640,11 +640,9 @@ strong{
 
 .page_box {
     position: relative;
-	align:center;
     zoom: 1;
-    width: 90%;
+    width: 100%;
     /*height: 46px;*/
-	left: 3px;
     height: 100px;
     padding-top: 5px;
     overflow: hidden;

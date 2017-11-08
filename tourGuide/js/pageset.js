@@ -75,7 +75,7 @@ $(function () {
         var areaid=parseInt($(this).attr("data-href").substring(20));
         //var url = $(this).attr("data-href");
 
-		listAreaImages(areaid,pagesize);
+		listAreaImages(areaid);
         //window.location.href = url;
 		//addClick(areaid,url);
 
@@ -348,9 +348,9 @@ function listByArea(areaid,searchname,orderbyheat, orderbyclicknum, pagesize, cu
 
 
 //获取服务器端景点列表信息
-function listAreaImages(areaid, pagesize, currentpage) {
+function listAreaImages(areaid) {
     $.ajax({
-		crossDomain: true,
+        crossDomain: true,
         xhrFields: {withCredentials: true},
         //提交数据的类型 POST GET
         type: "GET",
@@ -358,7 +358,7 @@ function listAreaImages(areaid, pagesize, currentpage) {
         //url: "http://172.16.3.251/tourGuide/resource/tourArea/licityidstByCity",
         url: tourguideurl + "/resource/areaImage/listSpotImagesByAreaId",
         //提交的数据
-        data: { areaId: areaid, pageSize: pagesize, currentPage: currentpage },
+        data: { areaId: areaid },
         //返回数据的格式
         datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
         //在请求之前调用的函数
@@ -367,26 +367,25 @@ function listAreaImages(areaid, pagesize, currentpage) {
         //成功返回之后调用的函数
         success: function (data) {
             var obj = JSON.parse(data);
-            curentpage = parseInt(obj.currentPage);
-            pagesize = parseInt(obj.pageSize);
+            //curentpage = parseInt(obj.currentPage);
+            //pagesize = parseInt(obj.pageSize);
             totalpage = parseInt(obj.totalPage);
             totalitem = parseInt(obj.totalItem);
             var datatotal = obj.data;
+            $('.scenicsearch').empty();
             $('.search_list').empty();
+            $('.scenicsearch').empty();
+            $('.page_box').empty();
             for (var i = 0, l = datatotal.length; i < l; i++) {
                 //$('.search_list').html(text);
 
-				var areaimages = datatotal[i].areaImages;
-				for (var j = 0, l = areaimages.length; j < l; j++) {
-                var text = '<li style="width:100%">' +			
-						'<div class="img_pane">' +
-	            '<img class="pic" style="float:left"  src="' + areaimages[j].imageUrl + '" alt="">' +
-							
-						'</div>' +
-    '</li>';
-               
-				}
- $('.search_list').append(text);
+                var areaimages = datatotal[i].areaImages;
+                for (var j = 0, l = areaimages.length; j < l; j++) {
+                    var text = '<a class="example-image-link" href="' + areaimages[j].imageUrl + '" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">' +
+                        '<img class="example-image" src="' + areaimages[j].imageUrl + '" alt=""></a>';
+                     $('.image-set').append(text);
+                }
+
             }
 
         },
@@ -406,7 +405,6 @@ function listAreaImages(areaid, pagesize, currentpage) {
     });
 
 }
-
 
 
 

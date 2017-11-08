@@ -64,10 +64,8 @@ $(function () {
         var areaid=parseInt($(this).attr("data-href").substring(20));
         //var url = $(this).attr("data-href");
 
-		listByArea(areaid,pagesize);
-        //window.location.href = url;
-		//addClick(areaid,url);
-
+		listByArea(areaid);
+  
     });
 
 	// 给 cover img添加点击事件
@@ -88,42 +86,7 @@ $(function () {
 
 
 
-//点击事件+1，增加点击量
-function addClick(areaid,url){
-	   $.ajax({
-        //提交数据的类型 POST GET
-		crossDomain: true,
-        xhrFields: {withCredentials: true},
-        type: "POST",
-        //提交的网址
-        //url: "http://172.16.3.251/tourGuide/resource/tourArea/listByCity",
-        url: tourguideurl + "/resource/tourArea/addClick",
-        //提交的数据
-        data: { areaId: areaid},
-        //返回数据的格式
-        datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
-        //在请求之前调用的函数
-        beforeSend: function () {
-        },
-        //成功返回之后调用的函数
-        success: function (data) {
-           var obj = JSON.parse(data);
-		   //alert(obj.data);
-		   //获取景区列表
-	       listByCity(cityid, searchname, orderbyheat, orderbyclicknum, pagesize, currentpage);
-		   window.location.href = url;
-        },
-        //调用执行后调用的函数
-        complete: function (XMLHttpRequest, textStatus) {
 
-        },
-        //调用出错执行的函数
-        error: function () {
-            //请求出错处理
-        }
-    });
-
-}
 
 //获取服务器端景点列表信息
 function searchByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, currentpage) {
@@ -160,7 +123,7 @@ function searchByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, 
 	            '<div class="price_box">' +
 	                '<div class="price"> <strong>' + datatotal[i].qualityGradeStr + '<b></b> </strong>&nbsp;<span></span></div>' +
 									'<div>热度:<div class="atar_Show"><p tip="' + parseInt(datatotal[i].heat) / 2 + '" style="width: 60px;"></p>'+
-									'<img src="images/more.gif" class="btn btn_more" title="" data-original-title="Heading" data-href="scenid='+datatotal[i].areaId+'" data-index="0" data-id="121681"></div></div>' +
+									'<img src="images/more.gif" class="btn_more" title="" data-original-title="Heading" data-href="scenid='+datatotal[i].areaId+'" data-index="0" data-id="121681"></div></div>' +
 						'<div class="img_pane">' +
 	            '<img class="pic" style="float:left"  src="' + datatotal[i].coverImage + '" alt="">' +
 							'<img class="pic" src="' + datatotal[i].coverImage + '" alt="">' +
@@ -232,7 +195,7 @@ function listByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, cu
 	            '<div class="price_box">' +
 	                '<div class="price"> <strong>' + datatotal[i].qualityGradeStr + '<b></b> </strong>&nbsp;<span></span></div>' +
 									'<div>热度:<div class="atar_Show"><p tip="' + parseInt(datatotal[i].heat) / 2 + '" style="width: 60px;"></p>'+
-									'<img src="images/more.gif" id ="moreId"  title="" data-original-title="'+ datatotal[i].name  +'" class="btn_more" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="121681"></div></div>' +
+									'<img src="images/more.gif" id ="moreId"  title="" data-original-title="'+ datatotal[i].name  +'" class=" btn_more" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="121681"></div></div>' +
 						'<div  class="img_pane">' +
 	            '<img  class="pic" id="coverId" style="float:left"  src="' + datatotal[i].coverImage + '" alt="" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="122222"> ' +
 							'<div><img class="pic" id="coverId" src="' + datatotal[i].areaImages[0].imageUrl + '" alt="" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="122222">' +
@@ -276,7 +239,7 @@ function listByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, cu
 
 
 //获取服务器端景点列表信息
-function listByArea(areaid,searchname,orderbyheat, orderbyclicknum, pagesize, currentpage) {
+function listByArea(areaid) {
     $.ajax({
 		crossDomain: true,
         xhrFields: {withCredentials: true},
@@ -286,7 +249,7 @@ function listByArea(areaid,searchname,orderbyheat, orderbyclicknum, pagesize, cu
         //url: "http://172.16.3.251/tourGuide/resource/tourArea/licityidstByCity",
         url: tourguideurl + "/resource/areaImage/listSpotImagesByAreaId",
         //提交的数据
-        data: { areaId: areaid, pageSize: pagesize, currentPage: currentpage },
+        data: { areaId: areaid},
         //返回数据的格式
         datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
         //在请求之前调用的函数
@@ -315,19 +278,20 @@ function listByArea(areaid,searchname,orderbyheat, orderbyclicknum, pagesize, cu
 
 
             }
+            htmltext+='</ul>'
 
-             $('#moreId').popover({
+             $('.search_list #moreId').popover({
                 html: true,
                 placement: 'bottom',
-                trigger: 'manual',
+                //trigger: 'manual',
                 container: 'body',
-            content: function(){return htmltext+'</ul>';}
+            content: function(){return htmltext;}
         }).click(function (e) {
                  e.preventDefault();
                  // Exibe o popover.
                  $(this).popover('show');
 
-                $('.popover').css('left', '63px'); 
+                $('.popover').css('left', '73px'); 
               });
 
         },
@@ -336,19 +300,18 @@ function listByArea(areaid,searchname,orderbyheat, orderbyclicknum, pagesize, cu
             // alert(XMLHttpRequest.responseText);
             //alert(textStatus);
             //HideLoading();
-            getPageBar();
+            //getPageBar();
 
-            //评分插件
-            $(".atar_Show p").each(function (index, element) {
-                var num = $(this).attr("tip");
-                var www = num * 2 * 8;//
-                $(this).css("width", www);
-            });
+            //关闭
+            // $('htmltext').popover('close');
+            
+            
 
         },
         //调用出错执行的函数
         error: function () {
             //请求出错处理
+            $('.search_list #moreId').popover('close');
         }
     });
 
@@ -401,9 +364,7 @@ function listAreaImages(areaid) {
         },
         //调用执行后调用的函数
         complete: function (XMLHttpRequest, textStatus) {
-            // alert(XMLHttpRequest.responseText);
-            //alert(textStatus);
-            //HideLoading();
+            
           
             
 

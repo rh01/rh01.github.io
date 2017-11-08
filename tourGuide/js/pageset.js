@@ -12,21 +12,21 @@ var searchname="";
 
 $(function () {
     //获取景区列表
-    listByCity(cityid, searchname, orderbyheat, orderbyclicknum, pagesize, currentpage);
+	listByCity(cityid, searchname, orderbyheat, orderbyclicknum, pagesize, currentpage);
     //listByCity(cityid, pagesize, curentpage);
     //添加点击事件
     $('.c_page_list').on('click', 'a', function () {
         var pageset = $(this).html();
         var pagenum = parseInt(pageset);
         //listByCity(cityid, pagesize, pagenum);
-        listByCity(cityid,searchname, orderbyheat, orderbyclicknum, pagesize, pagenum);
+		listByCity(cityid,searchname, orderbyheat, orderbyclicknum, pagesize, pagenum);
 
     })
     //添加前一页
     $(".c_up").on('click', function () {
         if (curentpage >= 2) {
             //listByCity(cityid, pagesize, curentpage - 1);
-            listByCity(cityid,searchname, orderbyheat, orderbyclicknum, pagesize, curentpage - 1);
+			listByCity(cityid,searchname, orderbyheat, orderbyclicknum, pagesize, curentpage - 1);
         }
     });
 
@@ -34,7 +34,7 @@ $(function () {
     $(".c_down").on('click', function () {
         if (curentpage < totalpage) {
             //listByCity(cityid, pagesize, curentpage + 1);
-            listByCity(cityid,searchname, orderbyheat, orderbyclicknum, pagesize, curentpage + 1);
+			listByCity(cityid,searchname, orderbyheat, orderbyclicknum, pagesize, curentpage + 1);
         }
     });
 
@@ -43,51 +43,56 @@ $(function () {
         var pagenum = $(".c_page_num").val();
         pagenum = parseInt(pagenum);
         if (pagenum > 0 && pagenum <= totalpage) {
-            listByCity(cityid, searchname, orderbyheat, orderbyclicknum, pagesize, pagenum);
+			listByCity(cityid, searchname, orderbyheat, orderbyclicknum, pagesize, pagenum);
         }else{
-            alert("请输入正确的序号！");
-            $(".c_page_num").val("");
-        }
+			alert("请输入正确的序号！");
+			$(".c_page_num").val("");
+		}
     });
 
-    
-    //添加搜索事件
-    $(".searchbutton").on('click',function() {
-        var text=$(".searchinput").val();
-        searchname=text;
-        searchByCity(cityid,searchname, orderbyheat, orderbyclicknum, pagesize, currentpage);
-        $(".searchinput").val("");
+	
+	//添加搜索事件
+	$(".searchbutton").on('click',function() {
+		var text=$(".searchinput").val();
+		searchname=text;
+		searchByCity(cityid,searchname, orderbyheat, orderbyclicknum, pagesize, currentpage);
+		$(".searchinput").val("");
 
-    });
-    // 给img添加点击事件
-    $('.search_list').on('click', "#moreId", function () {
+	});
+	// 给more img添加点击事件
+	$('.search_list').on('click', "#moreId", function () {
         var areaid=parseInt($(this).attr("data-href").substring(20));
         //var url = $(this).attr("data-href");
 
-        listByArea(areaid,pagesize);
+		listByArea(areaid,pagesize);
         //window.location.href = url;
-        //addClick(areaid,url);
+		//addClick(areaid,url);
 
     });
 
-    // 给 cover img添加点击事件
-    $('.search_list').on('click', "#coverId", function () {
+	// 给 cover img添加点击事件
+	$('.search_list').on('click', "#coverId", function () {
         var areaid=parseInt($(this).attr("data-href").substring(20));
         //var url = $(this).attr("data-href");
 
-        listAreaImages(areaid);
+		listAreaImages(areaid);
         //window.location.href = url;
-        //addClick(areaid,url);
+		//addClick(areaid,url);
 
     });
 
 
 });
+
+
+
+
+
 //点击事件+1，增加点击量
 function addClick(areaid,url){
-       $.ajax({
+	   $.ajax({
         //提交数据的类型 POST GET
-        crossDomain: true,
+		crossDomain: true,
         xhrFields: {withCredentials: true},
         type: "POST",
         //提交的网址
@@ -103,10 +108,10 @@ function addClick(areaid,url){
         //成功返回之后调用的函数
         success: function (data) {
            var obj = JSON.parse(data);
-           //alert(obj.data);
-           //获取景区列表
-           listByCity(cityid, searchname, orderbyheat, orderbyclicknum, pagesize, currentpage);
-           window.location.href = url;
+		   //alert(obj.data);
+		   //获取景区列表
+	       listByCity(cityid, searchname, orderbyheat, orderbyclicknum, pagesize, currentpage);
+		   window.location.href = url;
         },
         //调用执行后调用的函数
         complete: function (XMLHttpRequest, textStatus) {
@@ -123,7 +128,7 @@ function addClick(areaid,url){
 //获取服务器端景点列表信息
 function searchByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, currentpage) {
     $.ajax({
-        crossDomain: true,
+		crossDomain: true,
         xhrFields: {withCredentials: true},
         //提交数据的类型 POST GET
         type: "GET",
@@ -149,20 +154,20 @@ function searchByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, 
             for (var i = 0, l = datatotal.length; i < l; i++) {
                 //$('.search_list').html(text);
                 var text = '<li style="width:100%" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="121681">' +
-                        '<fieldset>' +
-                        '<legend class="legend">'+ datatotal[i].name +'</legend>'+
-                        '<div class="list_box">' +
-                '<div class="price_box">' +
-                    '<div class="price"> <strong>' + datatotal[i].qualityGradeStr + '<b></b> </strong>&nbsp;<span></span></div>' +
-                                    '<div>热度:<div class="atar_Show"><p tip="' + parseInt(datatotal[i].heat) / 2 + '" style="width: 60px;"></p>'+
-                                    '<img src="images/more.gif" class="btn_more" data-href="scenid='+datatotal[i].areaId+'" data-index="0" data-id="121681"></div></div>' +
-                        '<div class="img_pane">' +
-                '<img class="pic" style="float:left"  src="' + datatotal[i].coverImage + '" alt="">' +
-                            '<img class="pic" src="' + datatotal[i].coverImage + '" alt="">' +
-                    
-                        '</div>' + 
+						'<fieldset>' +
+						'<legend class="legend">'+ datatotal[i].name +'</legend>'+
+						'<div class="list_box">' +
+	            '<div class="price_box">' +
+	                '<div class="price"> <strong>' + datatotal[i].qualityGradeStr + '<b></b> </strong>&nbsp;<span></span></div>' +
+									'<div>热度:<div class="atar_Show"><p tip="' + parseInt(datatotal[i].heat) / 2 + '" style="width: 60px;"></p>'+
+									'<img src="images/more.gif" class="btn btn_more" title="" data-original-title="Heading" data-href="scenid='+datatotal[i].areaId+'" data-index="0" data-id="121681"></div></div>' +
+						'<div class="img_pane">' +
+	            '<img class="pic" style="float:left"  src="' + datatotal[i].coverImage + '" alt="">' +
+							'<img class="pic" src="' + datatotal[i].coverImage + '" alt="">' +
+					
+						'</div>' + 
 
-                '</fieldset>' +
+				'</fieldset>' +
     '</li>';
                 $('.search_list').append(text);
 
@@ -195,7 +200,7 @@ function searchByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, 
 //获取服务器端景点列表信息
 function listByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, currentpage) {
     $.ajax({
-        crossDomain: true,
+		crossDomain: true,
         xhrFields: {withCredentials: true},
         //提交数据的类型 POST GET
         type: "GET",
@@ -221,22 +226,22 @@ function listByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, cu
             for (var i = 0, l = datatotal.length; i < l; i++) {
                 //$('.search_list').html(text);
                 var text = '<li style="width:100%" > ' +
-                        '<fieldset>' +
-                        '<legend class="legend">'+ datatotal[i].name +'</legend>'+
-                        '<div class="list_box">' +
-                '<div class="price_box">' +
-                    '<div class="price"> <strong>' + datatotal[i].qualityGradeStr + '<b></b> </strong>&nbsp;<span></span></div>' +
-                                    '<div>热度:<div class="atar_Show"><p tip="' + parseInt(datatotal[i].heat) / 2 + '" style="width: 60px;"></p>'+
-                                    '<img src="images/more.gif" id ="moreId" class="btn_more" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="121681"></div></div>' +
-                        '<div  class="img_pane">' +
-                '<img  class="pic" id="coverId" style="float:left"  src="' + datatotal[i].coverImage + '" alt="" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="122222"> ' +
-                            '<div><img class="pic" id="coverId" src="' + datatotal[i].areaImages[0].imageUrl + '" alt="" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="122222">' +
-                    '<div style="position:relative; float:right; padding:0 10px 0 0; bottom:95px; font-weight:bold;font-family:"Microsoft YaHei"; background-color:#FFF; opacity: 0.5;">' +
-                        datatotal[i].areaImages[0].description +
+						'<fieldset>' +
+						'<legend class="legend">'+ datatotal[i].name +'</legend>'+
+						'<div class="list_box">' +
+	            '<div class="price_box">' +
+	                '<div class="price"> <strong>' + datatotal[i].qualityGradeStr + '<b></b> </strong>&nbsp;<span></span></div>' +
+									'<div>热度:<div class="atar_Show"><p tip="' + parseInt(datatotal[i].heat) / 2 + '" style="width: 60px;"></p>'+
+									'<img src="images/more.gif" id ="moreId"  title="" data-original-title="'+ datatotal[i].name  +'" class="btn_more" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="121681"></div></div>' +
+						'<div  class="img_pane">' +
+	            '<img  class="pic" id="coverId" style="float:left"  src="' + datatotal[i].coverImage + '" alt="" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="122222"> ' +
+							'<div><img class="pic" id="coverId" src="' + datatotal[i].areaImages[0].imageUrl + '" alt="" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="122222">' +
+					'<div style="position:relative; float:right; padding:0 10px 0 0; bottom:95px; font-weight:bold;font-family:"Microsoft YaHei"; background-color:#FFF; opacity: 0.5;">' +
+						datatotal[i].areaImages[0].description +
                 '</div></div>'+
-                        '</div>' + 
+						'</div>' + 
 
-                '</fieldset>' +
+				'</fieldset>' +
     '</li>';
                 $('.search_list').append(text);
 
@@ -270,16 +275,10 @@ function listByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, cu
 
 
 
-
-
-
-
-
-
 //获取服务器端景点列表信息
 function listByArea(areaid,searchname,orderbyheat, orderbyclicknum, pagesize, currentpage) {
     $.ajax({
-        crossDomain: true,
+		crossDomain: true,
         xhrFields: {withCredentials: true},
         //提交数据的类型 POST GET
         type: "GET",
@@ -301,24 +300,35 @@ function listByArea(areaid,searchname,orderbyheat, orderbyclicknum, pagesize, cu
             totalpage = parseInt(obj.totalPage);
             totalitem = parseInt(obj.totalItem);
             var datatotal = obj.data;
-            $('.search_list').empty();
+            var htmltext = '<ul>';
+            ///$('.search_list').empty();
             for (var i = 0, l = datatotal.length; i < l; i++) {
                 //$('.search_list').html(text);
-                var text = '<li style="width:100%">' +
-                        '<fieldset>' +
-                        '<legend class="legend">'+ datatotal[i].name +'</legend>'+
-                        
-               
-                        '<div class="img_pane">' +
-                '<img class="pic" style="float:left"  src="' + datatotal[i].coverImage + '" alt="">' +
-                            
-                        '</div>' + 
+                var text = '<li class="popoverli">' +
+						'<img class="cover" src="' + datatotal[i].coverImage + '" alt="">' +
+				
+						
+	            '<span>'+ datatotal[i].name +'</span></li>' ;
+                //$('.search_list').append(text);
 
-                '</fieldset>' +
-    '</li>';
-                $('.search_list').append(text);
+                htmltext += text;
+
 
             }
+
+             $('#moreId').popover({
+                html: true,
+                placement: 'bottom',
+                trigger: 'manual',
+                container: 'body',
+            content: function(){return htmltext+'</ul>';}
+        }).click(function (e) {
+                 e.preventDefault();
+                 // Exibe o popover.
+                 $(this).popover('show');
+
+                $('.popover').css('left', '63px'); 
+              });
 
         },
         //调用执行后调用的函数
@@ -408,29 +418,6 @@ function listAreaImages(areaid) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //获取分页条
 function getPageBar() {
     $(".c_page_list").empty();
@@ -452,27 +439,27 @@ function getPageBar() {
     $(".c_page_list").html(pageStr);
     if (curentpage == 1){
         $(".c_up").css("disable", false);
-        //$(".c_up").css("visibility", 'hidden');
-        $(".c_up").css("color", '#6FDCC5');
-        $(".c_up").css("background", '#ffffff');
-    }
+		//$(".c_up").css("visibility", 'hidden');
+		$(".c_up").css("color", '#6FDCC5');
+		$(".c_up").css("background", '#ffffff');
+	}
     else {
         $(".c_up").css("disable", true);
-        //$(".c_up").css("visibility", 'visible');
-        $(".c_up").css("color", '#ffffff');
-        $(".c_up").css("background", '#6FDCC5');
+		//$(".c_up").css("visibility", 'visible');
+		$(".c_up").css("color", '#ffffff');
+		$(".c_up").css("background", '#6FDCC5');
     }
     if (curentpage == totalpage){
         $(".c_down").css("disable", false);
-        //$(".c_down").css("visibility", 'hidden');
-        $(".c_down").css("color", '#6FDCC5');
-        $(".c_down").css("background", '#ffffff');
-    }
+		//$(".c_down").css("visibility", 'hidden');
+		$(".c_down").css("color", '#6FDCC5');
+		$(".c_down").css("background", '#ffffff');
+	}
     else {
         $(".c_down").css("disable", true);
-        //$(".c_down").css("visibility", 'visible');
-        $(".c_down").css("color", '#ffffff');
-        $(".c_down").css("background", '#6FDCC5');
+		//$(".c_down").css("visibility", 'visible');
+		$(".c_down").css("color", '#ffffff');
+		$(".c_down").css("background", '#6FDCC5');
     }
     // $(".c_page_list").find("a")[curentpage].css('class', 'current');
 

@@ -831,3 +831,41 @@ strong{
     -o-border-radius: 5px;
     border-radius: 5px;
 }
+
+
+
+.popover-content {
+    margin: 0 auto;
+    max-width: 300px;
+    max-height: 50px;
+    width: 100%;
+}
+
+.popoverli{
+    list-style:none;
+    float:left;
+
+}
+
+/*ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+
+}*/
+
+
+
+
+.cover {
+    width:40px;
+    margin:10px 10px 15px 10px;
+}
+
+
+.popover {
+    
+}
+
+.popover.bottom .arrow {
+    left:90% !important;
+}

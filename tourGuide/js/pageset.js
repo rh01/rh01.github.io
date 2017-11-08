@@ -230,7 +230,7 @@ function listByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, cu
                                     '<img src="images/more.gif" id ="moreId" class="btn_more" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="121681"></div></div>' +
                         '<div  class="img_pane">' +
                 '<img  class="pic" id="coverId" style="float:left"  src="' + datatotal[i].coverImage + '" alt="" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="122222"> ' +
-                            '<div><img class="pic" src="' + datatotal[i].areaImages[0].imageUrl + '" alt="">' +
+                            '<div><img class="pic" id="coverId" src="' + datatotal[i].areaImages[0].imageUrl + '" alt="" data-href="scenicdetail?scenid='+datatotal[i].areaId+'" data-index="0" data-id="122222">' +
                     '<div style="position:relative; float:right; padding:0 10px 0 0; bottom:95px; font-weight:bold;font-family:"Microsoft YaHei"; background-color:#FFF; opacity: 0.5;">' +
                         datatotal[i].areaImages[0].description +
                 '</div></div>'+

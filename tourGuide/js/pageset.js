@@ -58,7 +58,8 @@ $(function () {
 	$(".searchbutton").on('click',function() {
 		var text=$(".searchinput").val();
 		searchname=text;
-		searchByCity(cityid,searchname, orderbyheat, orderbyclicknum, pagesize, currentpage);
+		console.log(searchname);
+		searchByCity(cityid,searchname, orderbyheat, orderbyclicknum, pagesize, 1);
 		$(".searchinput").val("");
 
 	});
@@ -100,31 +101,36 @@ $(function () {
 
 
 
+
 //获取服务器端景点列表信息
-function searchByCity(cityid,searchname, pagesize, currentpage) {
+function searchByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, currentpage) {
     $.ajax({
 		crossDomain: true,
         xhrFields: {withCredentials: true},
         //提交数据的类型 POST GET
         type: "GET",
+
         //提交的网址
         //url: "http://172.16.3.251/tourGuide/resource/tourArea/listByCity",
         url: tourguideurl + "/resource/tourArea/selectByQuery" ,
         //提交的数据
-        data: { cityId: cityid,isPublished: true, searchName: searchname, pageSize: pagesize, currentPage: currentpage },
+        data: { cityId: cityid,isPublished: true, searchName: searchname, orderByHeat: orderbyheat, orderByClickNum: orderbyclicknum, pageSize: pagesize, currentPage: currentpage },
         //返回数据的格式
         datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
         //在请求之前调用的函数
         beforeSend: function () {
+        	console.log(searchname);
         },
         //成功返回之后调用的函数
         success: function (data) {
-            var obj = JSON.parse(data);
+
+            var obj = JSON.parse(data);console.log(data);
             curentpage = parseInt(obj.currentPage);
             pagesize = parseInt(obj.pageSize);
             totalpage = parseInt(obj.totalPage);
             totalitem = parseInt(obj.totalItem);
             var datatotal = obj.data;
+            
             $('.search_list').empty();
             for (var i = 0, l = datatotal.length; i < l; i++) {
                 //$('.search_list').html(text);
@@ -154,7 +160,7 @@ function searchByCity(cityid,searchname, pagesize, currentpage) {
             // alert(XMLHttpRequest.responseText);
             //alert(textStatus);
             //HideLoading();
-            getPageBar();
+            //getPageBar();
 
             //评分插件
             $(".atar_Show p").each(function (index, element) {
@@ -171,6 +177,7 @@ function searchByCity(cityid,searchname, pagesize, currentpage) {
     });
 
 }
+
 
 //获取服务器端景点列表信息
 function listByCity(cityid, pagesize, currentpage) {

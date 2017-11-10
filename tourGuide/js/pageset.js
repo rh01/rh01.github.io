@@ -74,8 +74,17 @@ $(function () {
         //var url = $(this).attr("data-href");
 
 		listAreaImages(areaid);
-        //window.location.href = url;
-		//addClick(areaid,url);
+
+
+    });
+
+    // 给 cover img添加点击事件
+	$('#popoverImgId').on('click',".popoverli", function () {
+        var areaid=parseInt($(this).attr("data-href").substring(20));
+        //var url = $(this).attr("data-href");
+
+		listAreaImages(areaid);
+
 
     });
 
@@ -89,7 +98,7 @@ $(function () {
 
 
 //获取服务器端景点列表信息
-function searchByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, currentpage) {
+function searchByCity(cityid,searchname, pagesize, currentpage) {
     $.ajax({
 		crossDomain: true,
         xhrFields: {withCredentials: true},
@@ -99,7 +108,7 @@ function searchByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, 
         //url: "http://172.16.3.251/tourGuide/resource/tourArea/listByCity",
         url: tourguideurl + "/resource/tourArea/selectByQuery" ,
         //提交的数据
-        data: { cityId: cityid,isPublished: true, searchName: searchname, orderByHeat: orderbyheat, orderByClickNum: orderbyclicknum, pageSize: pagesize, currentPage: currentpage },
+        data: { cityId: cityid,isPublished: true, searchName: searchname, pageSize: pagesize, currentPage: currentpage },
         //返回数据的格式
         datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
         //在请求之前调用的函数
@@ -161,7 +170,7 @@ function searchByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, 
 }
 
 //获取服务器端景点列表信息
-function listByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, currentpage) {
+function listByCity(cityid, pagesize, currentpage) {
     $.ajax({
 		crossDomain: true,
         xhrFields: {withCredentials: true},
@@ -185,7 +194,7 @@ function listByCity(cityid,searchname,orderbyheat, orderbyclicknum, pagesize, cu
             totalpage = parseInt(obj.totalPage);
             totalitem = parseInt(obj.totalItem);
             var datatotal = obj.data;
-            $('.search_list').empty();
+            //$('.search_list').empty();
             for (var i = 0, l = datatotal.length; i < l; i++) {
                 //$('.search_list').html(text);
                 var text = '<li style="width:100%" > ' +
@@ -268,7 +277,7 @@ function listByArea(areaid) {
             for (var i = 0, l = datatotal.length; i < l; i++) {
                 //$('.search_list').html(text);
                 var text = '<li class="popoverli">' +
-						'<img class="cover" src="' + datatotal[i].coverImage + '" alt="">' +
+						'<img id="popoverImgId" class="cover" src="' + datatotal[i].coverImage + '" alt="" data-href="scenicdetail?scenid='+areaid+'" data-index="0" data-id="123332">' +
 				
 						
 	            '<span>'+ datatotal[i].name +'</span></li>' ;
@@ -426,3 +435,119 @@ function getPageBar() {
 
 
 }
+
+
+
+
+// var page=1;
+var finished=0;
+var sover=0;
+
+//如果屏幕未到整屏自动加载下一页补满
+var setdefult=setInterval(function (){
+	if(sover==1)
+		clearInterval(setdefult);	
+	else if($(".search_list").height()<$(window).height())
+		loadmore($(window));
+	else
+		clearInterval(setdefult);
+},500);
+
+//加载完
+function loadover(){
+	if(sover==1)
+	{	
+		var overtext="Duang～到底了";
+		$(".loadmore").remove();
+		if($(".loadover").length>0)
+		{
+			$(".loadover span").eq(0).html(overtext);
+		}
+		else
+		{
+			var txt='<div class="loadover"><span>'+overtext+'</span></div>';
+			$("body").append(txt);
+		}
+	}
+}
+
+//加载更多
+var vid=0;
+function loadmore(obj){
+	if(finished==0 && sover==0)
+	{
+		var scrollTop = $(obj).scrollTop();
+		var scrollHeight = $(document).height();
+		var windowHeight = $(obj).height();
+		
+		if($(".loadmore").length==0)
+		{
+			var txt='<div class="loadmore"><span class="loading"></span>加载中..</div>';
+			$("search_list").append(txt);
+		}
+		if (scrollTop + windowHeight -scrollHeight<=50 ) {
+			//此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作
+			
+			
+			//防止未加载完再次执行
+			finished=1;
+			
+			// var result = '';
+			// for(var i = 0; i < 6; i++){
+			// 	vid++;
+			// 	result+='<li>'
+			// 				+'<a href="http://www.86y.org/art_detail.aspx?id=744">好经典人生语句，经典得让人心痛！'+parseInt(vid)+'</a>'
+			// 			+'</li>';
+			// }
+			setTimeout(function(){
+				$(".loadmore").remove();
+				
+				currentpage+=1;
+				listByCity(cityid, pagesize, currentpage);
+				//$('.search_list').append(result);
+
+				finished=0;
+				//最后一页
+				if(currentpage==7)
+				{
+					sover=1;
+					loadover();
+				}
+			},1000);
+			/*$.ajax({
+				type: 'GET',
+				url: 'json/more.json?t=25&page='+page,
+				dataType: 'json',
+				success: function(data){
+					var result = '';
+					for(var i = 0; i < data.lists.length; i++){
+						result+='<li>'
+									+'<a href="'+data.lists[i].link+'">'+data.lists[i].title+parseInt(page+1)+"-"+i+'</a>'
+								+'</li>';
+					}
+					
+					// 为了测试，延迟1秒加载
+					setTimeout(function(){
+						$(".loadmore").remove();
+						$('.prolist').append(result);
+						page+=1;
+						finished=0;
+						//最后一页
+						if(page==10)
+						{
+							sover=1;
+							loadover();
+						}
+					},1000);
+				},
+				error: function(xhr, type){
+					alert('Ajax error!');
+				}
+			});*/
+		}
+	}
+}
+//页面滚动执行事件
+$(window).scroll(function (){
+	loadmore($(this));
+});

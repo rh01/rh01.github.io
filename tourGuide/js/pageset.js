@@ -356,8 +356,8 @@ function listAreaImages(areaid) {
             var datatotal = obj.data;
             $('.scenicsearch').empty();
             $('.search_list').empty();
-            $('.scenicsearch').empty();
-            $('.page_box').empty();
+            //$('.scenicsearch').empty();
+            //$('.page_box').empty();
             for (var i = 0, l = datatotal.length; i < l; i++) {
                 //$('.search_list').html(text);
 

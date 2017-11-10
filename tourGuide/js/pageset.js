@@ -9,6 +9,9 @@ var totalpage;
 var orderbyheat=null;
 var orderbyclicknum=null;
 var searchname="";
+// var page=1;
+var finished=0;
+var sover=0;
 
 $(function () {
     //获取景区列表
@@ -340,7 +343,7 @@ function listAreaImages(areaid) {
         //url: "http://172.16.3.251/tourGuide/resource/tourArea/licityidstByCity",
         url: tourguideurl + "/resource/areaImage/listSpotImagesByAreaId",
         //提交的数据
-        data: { areaId: areaid },
+        data: { areaId: areaid},
         //返回数据的格式
         datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
         //在请求之前调用的函数
@@ -357,7 +360,7 @@ function listAreaImages(areaid) {
             $('.scenicsearch').empty();
             $('.search_list').empty();
             //$('.scenicsearch').empty();
-            //$('.page_box').empty();
+            $('.searchbox').remove();
             for (var i = 0, l = datatotal.length; i < l; i++) {
                 //$('.search_list').html(text);
 
@@ -369,6 +372,7 @@ function listAreaImages(areaid) {
                 }
 
             }
+            finished = 1;
 
         },
         //调用执行后调用的函数
@@ -439,9 +443,7 @@ function getPageBar() {
 
 
 
-// var page=1;
-var finished=0;
-var sover=0;
+
 
 //如果屏幕未到整屏自动加载下一页补满
 var setdefult=setInterval(function (){

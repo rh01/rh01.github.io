@@ -3,3 +3,5 @@ _drafts/
 .DS_Store
 .idea/
 generator/__pycache__/ 
+*.wmz
+

@@ -4,4 +4,7 @@ _drafts/
 .idea/
 generator/__pycache__/ 
 *.wmz
+clip_colorschememapping.xml
+clip_themedata.thmx
+clip_oledata.mso
 

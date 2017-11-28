@@ -66,7 +66,7 @@ $$R[h] = \int_{X \times \{  - 1,1\} } { \frac{1}{2}|h(x) - y|dp(x,y)} $$
 
 思想是将具体的$p(x,y)$换成在样本数据上做平均，那么实验风险函数为
 
-$${R_{emp}}[h] = {1 \over l}\sum\limits_{i = 1}^l {{1 \over 2}|h({x_i}) - {y_i}|} $$
+$${R_{emp}}[h] = {1 \over l}\sum\limits_{i = 1}^l {\frac{1}{2}|h({x_i}) - {y_i}|} $$
 
 找到使得上式最小的${h^*}$,使得
 

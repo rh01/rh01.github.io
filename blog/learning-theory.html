@@ -97,7 +97,7 @@ tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
 <h2>4. 最小实验误差（ERM - Empirical Risk Minimization）</h2>
 <p>那么做统计的人就提出了一种在未知${{\cal D}},p(x,y)$的情况下，如何计算误分类的误差。</p>
 <p>思想是将具体的$p(x,y)$换成在样本数据上做平均，那么实验风险函数为</p>
-<p>$${R_{emp}}[h] = {1 \over l}\sum\limits_{i = 1}^l {{1 \over 2}|h({x_i}) - {y_i}|} $$</p>
+<p>$${R_{emp}}[h] = {1 \over l}\sum\limits_{i = 1}^l {\frac{1}{2}|h({x_i}) - {y_i}|} $$</p>
 <p>找到使得上式最小的${h^*}$,使得</p>
 <p>$${R_{emp}}[{h^*}] \le {R_{emp}}[h],\;\;\;\;\forall h \in H$$</p>
 <p>注意：根据经验可以知道，</p>

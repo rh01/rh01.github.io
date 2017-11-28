@@ -79,7 +79,7 @@ $${R_{emp}}[{h^*}] \le {R_{emp}}[h],\;\;\;\;\forall h \in H$$
 
 ## 5. VC confidence – 期望误差和实验误差的边界
 
-$$R[h] \le {R_{emp}}[h] + \sqrt {{{v(\log ({ 2l \over v}) + 1) - \log ({\delta  \over 4})} \over l}} $$
+$$R[h] \le {R_{emp}}[h] + \sqrt {{\frac{v(\log ({ 2l \over v}) + 1) - \log ({\delta  \over 4})}{l}} $$
 
 对该公式[[2\]](#_ftn2)的解释：
 

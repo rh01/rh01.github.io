@@ -56,7 +56,7 @@ $$P(\mathop {err}\limits_{{\cal D}} ({h_S}) \le \varepsilon ) = \varepsilon (l.h
 
 那么错误分类的期望误差为
 
-$$R[h] = \int_{X \times \{  - 1,1\} } {{1 \over 2}|h(x) - y|dp(x,y)} $$
+$$R[h] = \int_{X \times \{  - 1,1\} } { \frac{1}{2}|h(x) - y|dp(x,y)} $$
 
 但是这种往往是不现实的，因为在现实处理的数据我们是不知道它背后的具体分布的.
 

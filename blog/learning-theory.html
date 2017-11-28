@@ -9,7 +9,8 @@
 </title>
 	
 	
-<meta name="description" content="本部分是学习理论的介绍，如有纰漏，请与作者联系." />
+<meta name="description" content="本部分是学习理论的介绍，如有纰漏，请与作者联系.
+" />
 
 	
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -91,7 +92,7 @@ tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
 <h2>3. 求出最小期望风险（MSE）</h2>
 <p>现在，假定我们的训练数据$S = { ({x_1},{y_1}),({x_2},{y_2}),...,({x_l},{y_l})}  \subseteq X \times {  - 1,1} $独立同分布于特定的分布${{\cal D}}$，概率密度函数为$P(x,y)$。</p>
 <p>那么错误分类的期望误差为</p>
-<p>$$R[h] = \int_{X \times {  - 1,1} } {{1 \over 2}|h(x) - y|dp(x,y)} $$</p>
+<p>$$R[h] = \int_{X \times {  - 1,1} } { \frac{1}{2}|h(x) - y|dp(x,y)} $$</p>
 <p>但是这种往往是不现实的，因为在现实处理的数据我们是不知道它背后的具体分布的.</p>
 <h2>4. 最小实验误差（ERM - Empirical Risk Minimization）</h2>
 <p>那么做统计的人就提出了一种在未知${{\cal D}},p(x,y)$的情况下，如何计算误分类的误差。</p>

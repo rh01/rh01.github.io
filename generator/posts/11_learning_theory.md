@@ -24,7 +24,7 @@ http://olrs8j04a.bkt.clouddn.com/17-11-28/61138696.jpg
 ## 2. 概率近似算法 – PAC Model
 
 一般情况下，我们可以假设我们的训练数据和测试数据都是独立同分布（iid）来源于一个不知道（unknown）的分布 ${{\cal D}}$.
- 
+
 
 在这里我们将我们的分类算法形成的解空间称为假设空间${{h \in H}}$ （hypothesis space）,那么我们现在要在假设空间内对我们的算法进行评估（evaluate），采用的评估指标为均值误差（average error）或者期望误差（expect error）.
 
@@ -86,7 +86,8 @@ $$R[h] \le {R_{emp}}[h] + \sqrt {{{v(\log ({{2l} \over v}) + 1) - \log ({\delta 
 1. 其中$v$表示了对假说空间$H$的度量；
 2. $l \to \infty ,R[h] \to {R_{emp}}[h]$；
 3. 假说空间越大，Hypothesis dimension就越高，$v \to \infty $，那么bound越大，说明overfitting的几率就越大.
-4. 结构风险（SRM）最小
+
+## 6. 结构风险（SRM）最小
 
 上面的式子可以看作 期望误差$ \le $实验误差（training error->bias）+VC（error->variance）        
 <div align="center">
@@ -101,7 +102,7 @@ Model的variance可以这样理解：100个人算平均身高和1000个人算平
 
 ## 7. 假说空间的大小:VC-dimension 
 
-     
+
 <div align="center">
 <img src="http://www.shenhengheng.xyz/img/posts/11/clip_image065.jpg" >
 <img src="http://www.shenhengheng.xyz/img/posts/11/clip_image067.jpg" >

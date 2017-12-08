@@ -2,10 +2,8 @@ Headless Configuration of HypriotOS
 2017-12-08
 
 本部分是headless HypriotOS 配置的介绍，如有纰漏，请与作者联系.
-http://olrs8j04a.bkt.clouddn.com/17-11-28/61138696.jpg
+http://www.shenhengheng.xyz/img/thumbs/pi.png
 ===
-
-本部分是headless HypriotOS 配置的介绍，如有纰漏，请与作者联系.
 
 # 如何初始化HypriotOS
 
@@ -13,12 +11,10 @@ http://olrs8j04a.bkt.clouddn.com/17-11-28/61138696.jpg
 
 这个就不用再说了，非常简单的，可以参考我的之前文章，但是最近我在部落格里面发现，安装方法比较多，我在这里抛砖引玉，有以下安装方法:
 
-- Windows下安装方法（目前就发现一种方法和一个小工具）
-  -  Win32磁盘映像工具: <https://sourceforge.net/projects/win32diskimager>
-  - 工具： https://www.raspberrypi.org/forums/viewtopic.php?t=195939
-- Linux下的安装方法
-  - flash tools http://www.jianshu.com/p/3e2a901e66b7
-  - space.sh 看起来很牛x <https://rpi.sh/post/setup/>
+- (win)Win32磁盘映像工具: <https://sourceforge.net/projects/win32diskimager>
+- (win)工具： https://www.raspberrypi.org/forums/viewtopic.php?t=195939
+- (linux)flash tools http://www.jianshu.com/p/3e2a901e66b7
+- (linux)space.sh 看起来很牛x <https://rpi.sh/post/setup/>
 
 ## 重要：如何进行headless配置
 
@@ -43,7 +39,9 @@ http://olrs8j04a.bkt.clouddn.com/17-11-28/61138696.jpg
 
 因此，我们需要在开机之前，把所有的事全部搞定（启动ssh服务，启用网卡，连上无线），因此关于HypriotOS的headless配置这篇文章来说，我们在这里以它为例（特殊）！不同于官方镜像，他的headless配置相比较简单些.
 
-![](http://shenhengheng.xyz/img/posts/12/release.png)
+<div align="center">
+<img src="http://www.shenhengheng.xyz/img/posts/12/release.png" >
+</div>
 
 上图说的是，他们已经大大的简化了初始配置步骤，一个user-data文件就可以搞定！但是注意，你的镜像版本是否为HypriotOS v1.7.1
 
@@ -193,10 +191,22 @@ runcmd:
 - 'ifup wlan0'
 ```
 
-## 3. 接下来
+## 接下来
 
 接下来就等待连接你的Hotpot，连接成功后，打开你的shell，连接即可：
 
 - hostname: black-pearl
 - username: pirate
 - password: hypriot
+
+
+
+##  参考
+
+[1] https://raspberrypi.stackexchange.com/questions/10251/prepare-sd-card-for-wifi-on-headless-pi
+
+[2] https://github.com/hypriot/blog/issues/60
+
+[3] https://github.com/hypriot/image-builder-rpi/releases
+
+<https://raspberrypi.stackexchange.com/questions/10251/prepare-sd-card-for-wifi-on-headless-pi>

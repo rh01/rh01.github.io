@@ -51,5 +51,18 @@
 		<picture>ml.png</picture>
 	</project>
 
+	<project>
+		<title>Respberry-Pi3 Document</title>
+		<description>Author: 申恒恒</description>
+		<type>在校期间整理</type>
+		<date>Dec 2017</date>
+		<notes><![CDATA[
+			<span class="label label-default">Reaspberry-Pi-3 Document</span>
+			<span class="label label-warning">Notes</span>	
+			<a href="http://www.shenhengheng.xyz/files/respberry_doc.pdf" class="btn btn-default btn-xs" target="_blank">Details</a>				
+		]]></notes>
+		<picture>raspberry-pi.png</picture>
+	</project>
+
 	
 </projects>

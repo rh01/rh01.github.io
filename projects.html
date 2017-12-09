@@ -13,7 +13,15 @@
 	<link href="css/isikdogan.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<!-- add Math Support -->
-	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+	<!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> -->
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+MathJax.Hub.Config({      
+config: ["MMLorHTML.js"],      
+extensions: ["tex2jax.js"],      
+jax: ["input/TeX"],      
+tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}    
+});  
+</script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -117,6 +125,26 @@
 			<a href="http://www.shenhengheng.xyz/files/ml/ml_overfitting.pdf" class="btn btn-default btn-xs" target="_blank">Overfitting</a>
 			<a href="http://www.shenhengheng.xyz/files/ml/ml_bayes.pdf" class="btn btn-default btn-xs" target="_blank">Naive Bayes Algorithm</a>			
 			
+		</p>
+		<div style="clear:both"></div>
+	</div>
+	
+	
+	
+	<div class="itembox">
+		
+		<img src="img/thumbs/raspberry-pi.png" class="project-thumb"/>
+		<h3>Respberry-Pi3 Document</h3>
+		<p>
+		Dec 2017<br/>
+		
+			Author: 申恒恒<br/>
+		
+		在校期间整理<br/>
+		
+			<span class="label label-default">Reaspberry-Pi-3 Document</span>
+			<span class="label label-warning">Notes</span>	
+			<a href="http://www.shenhengheng.xyz/files/respberry_doc.pdf" class="btn btn-default btn-xs" target="_blank">Details</a>				
 		</p>
 		<div style="clear:both"></div>
 	</div>

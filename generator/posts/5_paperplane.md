@@ -1,6 +1,6 @@
 PaperPlane: a simple static blog generator
 2015-2-23
-
+静态博客生成器
 You like this website? You can easily create your own using PaperPlane, which is a very simple, flat-file, static blog generator.
 http://www.isikdogan.com/img/blog/paperplane-code.png
 ---

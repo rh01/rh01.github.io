@@ -1,6 +1,6 @@
 Headless Configuration of HypriotOS
 2017-12-08
-
+树莓派教程
 本部分是headless HypriotOS 配置的介绍，如有纰漏，请与作者联系.
 http://www.shenhengheng.xyz/img/thumbs/pi.png
 ===

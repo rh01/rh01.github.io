@@ -1,6 +1,6 @@
 Connect Internet Without No Traffic In School
 2017-09-05
-
+ipv6免流
 上一篇文章介绍了如何对电脑进行ipv6免流量配置，接下来就对如何对局域网内的手机如何顺利的联网进行论述，主要介绍局部代理，不同于上篇文章介绍到的对桌面版QQ和微信进行应用代理，这次测试的手机不能进行对QQ 和微信进行使用，好像屏蔽掉了，但能正常在浏览器进行上网和看youtube，Gmail等等
 http://olrs8j04a.bkt.clouddn.com/17-9-5/76082342.jpg
 ---

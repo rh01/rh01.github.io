@@ -1,6 +1,6 @@
 How To Apply Coursera Financial Aid 
 2016-04-03
-
+Coursera
 对于没有钱的学生党来说，Coursera的课程太贵，没有办法，只能通过申请助学金来实现正规的学习，过去Coursera还支持旁听，现在没有了，无奈的我们只能通过Apply Finitial Aid来学习了，想想都痛苦.
 http://olrs8j04a.bkt.clouddn.com/17-9-6/25360972.jpg
 ---

@@ -12,6 +12,11 @@
 	<form>
 		<input type="text" class="form-control" id="search" placeholder="Search...">
 	</form>
+	<hr class="short"/>
+	<span class="label label-default"><i class="fa fa-tags fa-fw"></i> Hot Tags:</span>
+	<a role="button" class="tag label label-warning">树莓派</a>
+	<a role="button" class="tag label label-warning">coursera</a>
+	<a role="button" class="tag label label-warning">ipv6免流</a>
 
 	<div id="search-results-text" style="display:none">
 	<hr/>
@@ -33,6 +38,8 @@
 			
 			<img class="pull-right blog-index-thumbnail" src="{{ post["thumbnail"] }}" alt="thumbnail"/>
 			<p>{{ post["summary"] }} ...</p>
+
+			<p><small><i class="fa fa-tags fa-fw"></i> {{ post["tags"] }}</small></p>
 			
 			<div class="vspace"></div>
 			

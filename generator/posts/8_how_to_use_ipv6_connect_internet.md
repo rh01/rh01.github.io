@@ -11,7 +11,7 @@ http://olrs8j04a.bkt.clouddn.com/17-9-4/34115661.jpg
 
 因此特别地在这里，制作出一个省钱的教程，摆脱你的无VPN和无流量的困境。
 
-###准备材料
+### 准备材料
 
 <br>需要以下材料：
 
@@ -21,7 +21,7 @@ http://olrs8j04a.bkt.clouddn.com/17-9-4/34115661.jpg
 - 需要有线的以太网接口，一般情况下学校都会有网线插口
 - 需要一根网线
 
-###购买VPS
+### 购买VPS
 
 <br>废话少说，上教程和配图。
 
@@ -50,7 +50,7 @@ http://olrs8j04a.bkt.clouddn.com/17-9-4/34115661.jpg
     <center class="cap"><caption>图4 选择使用支付宝支付，Paypal太贵！</caption></center>
 </div>
 
-###配置SS服务
+### 配置SS服务
 
 <br>支付完成后，会向你发送一封邮件，这封邮件包含你的ip地址和SSH的端口号（这个是你需要客户端登录要填写的端口号）。默认情况下，分配的是CentOS系统的。
 
@@ -124,7 +124,7 @@ $ vi /etc/shadowsocks.json
   ![](http://olrs8j04a.bkt.clouddn.com/17-9-4/38703883.jpg)<center class="cap"><caption>图8 查看IP</caption></center>
 </div>
 
-###开始IPV6无流量模式
+### 开始IPV6无流量模式
 
 <br>打开 **控制面板\网络和 Internet\网络连接**,设置本地网卡属性。在IPV6中设置首选DNS服务器为你的VPS主机IPV6地址。（切记：一定要确定你的校园网注销登录了，负责走得还是你的IPV4，即你的校园网。）
 
@@ -143,7 +143,7 @@ $ vi /etc/shadowsocks.json
 </div>
 
 
-###注意
+### 注意
 
 <br>必须关闭IPv4和IPv6的防火墙，它俩的防火墙是独立的所以都要关闭，否则客户端连接不上的.
 
@@ -185,8 +185,8 @@ d. 开启ss服务：`ssserver -c /etc/shadowsocks.json -d start`
 
 OK！你可以快快乐乐的玩耍了！下一篇文章将介绍如何对苹果手机进行局域网连接。
 
-###参考文章
-<br>[1] https://blog.whsir.com/post-1456.html
+### 参考文章
+<br>[1] <https://blog.whsir.com/post-1456.html>
 
 
 

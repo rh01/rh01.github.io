@@ -5,18 +5,17 @@ Headless Configuration of HypriotOS
 http://www.shenhengheng.xyz/img/thumbs/pi.png
 ===
 
-# 如何初始化HypriotOS
 
-## 安装HypriotOS
+# 安装HypriotOS
 
 这个就不用再说了，非常简单的，可以参考我的之前文章，但是最近我在部落格里面发现，安装方法比较多，我在这里抛砖引玉，有以下安装方法:
 
 - (win)Win32磁盘映像工具: <https://sourceforge.net/projects/win32diskimager>
-- (win)工具： https://www.raspberrypi.org/forums/viewtopic.php?t=195939
-- (linux)flash tools http://www.jianshu.com/p/3e2a901e66b7
+- (win)工具： <https://www.raspberrypi.org/forums/viewtopic.php?t=195939>
+- (linux)flash tools <http://www.jianshu.com/p/3e2a901e66b7>
 - (linux)space.sh 看起来很牛x <https://rpi.sh/post/setup/>
 
-## 重要：如何进行headless配置
+# 重要：如何进行headless配置
 
 先放出一堆参考链接：
 
@@ -191,7 +190,7 @@ runcmd:
 - 'ifup wlan0'
 ```
 
-## 接下来
+# 接下来
 
 接下来就等待连接你的Hotpot，连接成功后，打开你的shell，连接即可：
 
@@ -201,12 +200,10 @@ runcmd:
 
 
 
-##  参考
+# 参考
 
-[1] https://raspberrypi.stackexchange.com/questions/10251/prepare-sd-card-for-wifi-on-headless-pi
+[1] <https://raspberrypi.stackexchange.com/questions/10251/prepare-sd-card-for-wifi-on-headless-pi>
 
-[2] https://github.com/hypriot/blog/issues/60
+[2] <https://github.com/hypriot/blog/issues/60>
 
-[3] https://github.com/hypriot/image-builder-rpi/releases
-
-<https://raspberrypi.stackexchange.com/questions/10251/prepare-sd-card-for-wifi-on-headless-pi>
+[3] <https://github.com/hypriot/image-builder-rpi/releases>

@@ -36,7 +36,7 @@
 	<project>
 		<title>Machine Learning Notes</title>
 		<description>Author: 申恒恒</description>
-		<type>中国科学院大学研一整理</type>
+		<type>UCAS, Beijing</type>
 		<date>Sep 2017</date>
 		<notes><![CDATA[
 			<span class="label label-default">Machine Learning And Deep Learning Note</span>
@@ -57,7 +57,7 @@
 	<project>
 		<title>Respberry-Pi3 Tools</title>
 		<description>Author: 申恒恒</description>
-		<type>在校期间整理</type>
+		<type>UCAS, Beijing</type>
 		<date>Dec 2017</date>
 		<notes><![CDATA[
 			<span class="label label-default">Reaspberry-Pi-3 Document</span>
@@ -70,7 +70,7 @@
 	<project>
 		<title>Docker Tutorials</title>
 		<description>Author: 申恒恒</description>
-		<type>中国科学院大学研一整理</type>
+		<type>UCAS, Beijing</type>
 		<date>Dec 2017</date>
 		<notes><![CDATA[
 			<span class="label label-default">Docker</span>

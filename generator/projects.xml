@@ -3,7 +3,7 @@
 
 	<project>
 		<title>Self Driving RC Car Based Neural Networks</title>
-		<description>Partner: 李中泽</description>
+		<description>Author: 申恒恒 and 李中泽</description>
 		<type>Anyang Institute of Technology, Anyang, China</type>
 		<date>May 2017</date>
 		<notes><![CDATA[
@@ -30,6 +30,9 @@
 		]]></notes>
 		<picture>Git-Logo.png</picture>
 	</project>
+
+	
+
 	<project>
 		<title>Machine Learning Notes</title>
 		<description>Author: 申恒恒</description>
@@ -52,7 +55,7 @@
 	</project>
 
 	<project>
-		<title>Respberry-Pi3 Document</title>
+		<title>Respberry-Pi3 Tools</title>
 		<description>Author: 申恒恒</description>
 		<type>在校期间整理</type>
 		<date>Dec 2017</date>
@@ -62,6 +65,19 @@
 			<a href="http://www.shenhengheng.xyz/files/respberry_doc.pdf" class="btn btn-default btn-xs" target="_blank">Details</a>				
 		]]></notes>
 		<picture>raspberry-pi.png</picture>
+	</project>
+
+	<project>
+		<title>Docker Tutorials</title>
+		<description>Author: 申恒恒</description>
+		<type>中国科学院大学研一整理</type>
+		<date>Dec 2017</date>
+		<notes><![CDATA[
+			<span class="label label-default">Docker</span>
+			<span class="label label-danger">Tools</span>
+			<a href="https://github.com/rh01/docker-tutorials" class="btn btn-default btn-xs" target="_blank">GitHub Repository</a>
+		]]></notes>
+		<picture>docker.png</picture>
 	</project>
 
 	

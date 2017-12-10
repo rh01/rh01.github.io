@@ -39,8 +39,16 @@ hr.short{
 }
 
 .navbar-inverse{
+    z-index: 998;
+	position: relative;
+    height: 100%;
 	background-color: #206080;
-	border-color: #206080;
+	/*border-color: #206080;*/
+}
+
+.navbar-inverse .navbar-nav>li {
+	float: left;
+    padding: 0;
 }
 .navbar-inverse .navbar-nav>li>a {
 	color: #ffffff;
@@ -60,6 +68,9 @@ hr.short{
 .business-card img{
 	box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
 	border: 3px solid rgba(255, 255, 255, 0.15);
+}
+ul {
+    list-style-type: none;
 }
 
 .footer{

@@ -49,7 +49,7 @@
 			<a href="http://www.shenhengheng.xyz/files/ml/ml_logistic_regression.pdf" class="btn btn-default btn-xs" target="_blank">Logistic Regression</a>
 			<a href="http://www.shenhengheng.xyz/files/ml/ml_overfitting.pdf" class="btn btn-default btn-xs" target="_blank">Overfitting</a>
 			<a href="http://www.shenhengheng.xyz/files/ml/ml_bayes.pdf" class="btn btn-default btn-xs" target="_blank">Naive Bayes Algorithm</a>			
-			
+			<a href="http://www.shenhengheng.xyz/files/ml/ml_hmm.pdf" class="btn btn-default btn-xs" target="_blank">HMM Algorithm</a>			
 		]]></notes>
 		<picture>ml.png</picture>
 	</project>

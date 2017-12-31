@@ -31,14 +31,15 @@ Anyang Institute of Technology, Anyang, China
 
 
 #### Related Courses
-Deep Learning and Neural Network, Machine Learning, Image And Video Processing, Big Data Introduction, Network Programming.
+Deep Learning and Neural Network, Machine Learning, Image And Video Processing, Big Data Introduction, Network Programming.Multi-Variable Statistic Analysis, Data Science, Deep Learning, Statistic Learning
 
 ---
 
-## Publications
-- [ML NOTES PROJECT](http://www.shenhengheng.xyz/projects.html)
-- [NMF Notes](http://www.shenhengheng.xyz/files/ml/ml_nmf.pdf)
-- [Docker Tutorial](http://github.com/rh01/docker-me.git)
+## Presentation
+- [NMF Slides](http://www.shenhengheng.xyz/files/ml/ml_nmf.pdf)
+- [Docker Slides](http://github.com/rh01/docker-me.git)
+- [Internet Of Things Slide](http://www.shenhengheng.xyz/files/benke/iot_ppt.pdf)
+- [Crypto Slide](http://www.shenhengheng.xyz/files/benke/crypto_ppt.pdf)
 
 ---
 
@@ -49,7 +50,6 @@ Deep Learning and Neural Network, Machine Learning, Image And Video Processing, 
 
 ---
 
-## Honors
 
 
 

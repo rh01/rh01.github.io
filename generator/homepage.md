@@ -7,6 +7,7 @@
 - [Machine Learning And Deep Learning Notes Plans](http://www.shenhengheng.xyz/files/ml/ml_plan.pdf). Sep 16, 2017
 - Deep Learning Notes is comming..., Nov 3, 2017
 - tourGuide forwardend development, please visit in mobile: http://www.shenhengheng.xyz/tourGuide/, Nov 10, 2017
+- Welcome to [ReadAILib](http://www.readailib.com), Dec 20, 2017
 
 ---
 

@@ -4,9 +4,9 @@
 - [Joined China Undergraduate Mathematical Contest in Modeling](http://slxy.ayit.edu.cn/info/1961/1781.htm), July 10, 2015
 - joined the national mechanical creative design contest-Luoyang , Mar 1, 2016
 - [Deep Learning Course Repo](https://github.com/rh01/coursera_dl), Aug 13, 2017
-- [Machine Learning And Deep Learning Notes Plans](http://www.shenhengheng.xyz/files/ml/ml_plan.pdf). Sep 16, 2017
+- [Machine Learning And Deep Learning Notes Plans](http://www.shenheng.xyz/files/ml/ml_plan.pdf). Sep 16, 2017
 - Deep Learning Notes is comming..., Nov 3, 2017
-- tourGuide forwardend development, please [visit in mobile](http://www.shenhengheng.xyz/tourGuide/), Nov 10, 2017
+- tourGuide forwardend development, please [visit in mobile](http://www.shenheng.xyz/tourGuide/), Nov 10, 2017
 - Welcome to [ReadAILib](http://www.readailib.com), Dec 20, 2017
 
 ---
@@ -37,10 +37,10 @@ Deep Learning and Neural Network, Machine Learning, Image And Video Processing, 
 ---
 
 ## Presentation
-- [NMF Slides](http://www.shenhengheng.xyz/files/ml/ml_nmf.pdf)
+- [NMF Slides](http://www.shenheng.xyz/files/ml/ml_nmf.pdf)
 - [Docker Slides](http://github.com/rh01/docker-me.git)
-- [Internet Of Things Slide](http://www.shenhengheng.xyz/files/benke/iot_ppt.pdf)
-- [Crypto Slide](http://www.shenhengheng.xyz/files/benke/crypto_ppt.pdf)
+- [Internet Of Things Slide](http://www.shenheng.xyz/files/benke/iot_ppt.pdf)
+- [Crypto Slide](http://www.shenheng.xyz/files/benke/crypto_ppt.pdf)
 
 ---
 

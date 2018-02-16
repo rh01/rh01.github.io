@@ -2,7 +2,7 @@ Raspberry Self Driving Car Configuration First
 2017-05-04
 raspberry, self driving car
 这篇教程整合了我的[rasp-driving-car]()上面Wiki的全部内容，这个是我本科毕业设计时做的毕业设计智能车的一个前期准备，包括树莓派上面得配置和PC上面得主要配置.
-http://www.shenhengheng.xyz/img/blog/car.png
+http://www.shenheng.xyz/img/blog/car.png
 ---
 
 这篇教程整合了我的[rasp-driving-car]()上面Wiki的全部内容，这个是我本科毕业设计时做的毕业设计智能车的一个前期准备，包括树莓派上面得配置和PC上面得主要配置.

@@ -80,5 +80,18 @@
 		<picture>docker.png</picture>
 	</project>
 
+	<project>
+		<title>大数据平台集群部署方案</title>
+		<description>Author: 申恒恒</description>
+		<type>UCAS, Beijing</type>
+		<date>Mar 2018</date>
+		<notes><![CDATA[
+			<span class="label label-default">BigData</span>
+			<span class="label label-danger">Tools</span>
+			<a href="https://github.com/rh01/docker-tutorials" class="btn btn-default btn-xs" target="_blank">Details</a>
+		]]></notes>
+		<picture>bigdata.png</picture>
+	</project>
+
 	
 </projects>

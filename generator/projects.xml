@@ -88,7 +88,7 @@
 		<notes><![CDATA[
 			<span class="label label-default">BigData</span>
 			<span class="label label-danger">Tools</span>
-			<a href="https://github.com/rh01/docker-tutorials" class="btn btn-default btn-xs" target="_blank">Details</a>
+			<a href="http://www.shenheng.xyz/files/bd/hadoop-spark-ha.pdf" class="btn btn-default btn-xs" target="_blank">Details</a>
 		]]></notes>
 		<picture>bigdata.png</picture>
 	</project>

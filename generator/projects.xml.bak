@@ -90,7 +90,7 @@
 			<span class="label label-danger">Tools</span>
 			<a href="https://github.com/rh01/docker-tutorials" class="btn btn-default btn-xs" target="_blank">Details</a>
 		]]></notes>
-		<picture>docker.png</picture>
+		<picture>bigdata.png</picture>
 	</project>
 
 	

@@ -55,6 +55,22 @@
 	</project>
 
 	<project>
+		<title>BDMS Notes</title>
+		<description>Author: 申恒恒</description>
+		<type>UCAS, Beijing</type>
+		<date>Sep 2017</date>
+		<notes><![CDATA[
+			<span class="label label-default">Big Data</span>
+			<span class="label label-warning">Notes</span>	
+			<a href="https://www.shenhengheng.xyz/files/bdms/bdms_database.pdf" class="btn btn-default btn-xs" target="_blank">DataBase Concepts</a>		
+			<a href="https://www.shenhengheng.xyz/files/bdms/bdms_storage.pdf" class="btn btn-default btn-xs" target="_blank">Big Data Storage Concepts</a>
+			<a href="https://www.shenhengheng.xyz/files/bdms/bdms_computation.pdf" class="btn btn-default btn-xs" target="_blank">Big Data Computation Concepts</a>
+		]]></notes>
+		<picture>bigdata.png</picture>
+	</project>
+
+
+	<project>
 		<title>Respberry-Pi3 Tools</title>
 		<description>Author: 申恒恒</description>
 		<type>UCAS, Beijing</type>

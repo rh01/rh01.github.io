@@ -2,7 +2,7 @@ Headless Configuration of HypriotOS
 2017-12-08
 树莓派教程
 本部分是headless HypriotOS 配置的介绍，如有纰漏，请与作者联系.
-http://www.shenheng.xyz/img/thumbs/pi.png
+https://www.shenhengheng.xyz/img/thumbs/pi.png
 ===
 
 
@@ -39,7 +39,7 @@ http://www.shenheng.xyz/img/thumbs/pi.png
 因此，我们需要在开机之前，把所有的事全部搞定（启动ssh服务，启用网卡，连上无线），因此关于HypriotOS的headless配置这篇文章来说，我们在这里以它为例（特殊）！不同于官方镜像，他的headless配置相比较简单些.
 
 <div align="center">
-<img src="http://www.shenheng.xyz/img/posts/12/release.png" >
+<img src="https://www.shenhengheng.xyz/img/posts/12/release.png" >
 </div>
 
 上图说的是，他们已经大大的简化了初始配置步骤，一个user-data文件就可以搞定！但是注意，你的镜像版本是否为HypriotOS v1.7.1

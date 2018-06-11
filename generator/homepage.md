@@ -48,7 +48,7 @@ Deep Learning and Neural Network, Machine Learning, Image And Video Processing, 
 - Primary: Python, Go, Java, Docker, K8s. Scala
 - Prior Experience: R, Matlab, C, C++, C#, , SQL, HTML/CSS
 - Tools/Libraries/Environments: SpringMVC, SpringBoot, Django, Flask,Beego, Docker, OpenCV, TensorFlow, PyTorch
-- BigData Tools: Zookeeper, MarkLogic, Hadoop, Spark, Storm, Kafka, Activamq, MongoDB, ES, MySQL, Redis, Flume, Kubernetes...
+- BigData Tools: Zookeeper, MarkLogic, Hadoop, Spark, Storm, Kafka, Activamq,RabbitMQ, MongoDB, ES, MySQL, Redis, Flume, Kubernetes...
 ---
 
 

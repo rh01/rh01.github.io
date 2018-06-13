@@ -65,6 +65,7 @@
 			<a href="https://www.shenhengheng.xyz/files/bdms/bdms_database.pdf" class="btn btn-default btn-xs" target="_blank">DataBase Concepts</a>		
 			<a href="https://www.shenhengheng.xyz/files/bdms/bdms_storage.pdf" class="btn btn-default btn-xs" target="_blank">Big Data Storage Concepts</a>
 			<a href="https://www.shenhengheng.xyz/files/bdms/bdms_computation.pdf" class="btn btn-default btn-xs" target="_blank">Big Data Computation Concepts</a>
+			<a href="https://www.shenhengheng.xyz/files/bdms/bdms_analysis.pdf" class="btn btn-default btn-xs" target="_blank">Big Data Analysis Concepts</a>
 		]]></notes>
 		<picture>bigdata.png</picture>
 	</project>

@@ -121,7 +121,7 @@
             <a href="https://www.shenhengheng.xyz/files/report/marklogic_report.pdf" class="btn btn-default btn-xs" target="_blank">report</a>  
             <a href="https://github.com/rh01/ml-benchmark-test" class="btn btn-default btn-xs" target="_blank">benchmark code</a>        
         ]]></notes>
-        <picture>marklogic.png</picture>
+        <picture>marklogic.jpg</picture>
     </project>
     <project>
         <title>Distributed Systems And Parallel Computing Notes</title>

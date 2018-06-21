@@ -111,6 +111,19 @@
         <picture>bigdata.png</picture>
     </project>
     <project>
+        <title>Multi-Model Database MarkLogic</title>
+        <description>Author: 申恒恒</description>
+        <type>UCAS, Beijing</type>
+        <date>June 2018</date>
+        <notes><![CDATA[
+            <span class="label label-default">NoSQL</span>
+            <span class="label label-warning">report</span>  
+            <a href="https://www.shenhengheng.xyz/files/report/marklogic_report.pdf" class="btn btn-default btn-xs" target="_blank">report</a>  
+            <a href="https://github.com/rh01/ml-benchmark-test" class="btn btn-default btn-xs" target="_blank">benchmark code</a>        
+        ]]></notes>
+        <picture>marklogic.png</picture>
+    </project>
+    <project>
         <title>Distributed Systems And Parallel Computing Notes</title>
         <description>Author: 申恒恒</description>
         <type>UCAS, Beijing</type>

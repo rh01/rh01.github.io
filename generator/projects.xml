@@ -138,10 +138,21 @@
             <a href="https://www.shenhengheng.xyz/files/dspc/DataProcessingConcepts2.pdf" class="btn btn-default btn-xs" target="_blank">Data Processing Concepts 2</a>  
             <a href="https://www.shenhengheng.xyz/files/dspc/CoordinationandAgreementConcepts.pdf" class="btn btn-default btn-xs" target="_blank">Coordinationand Agreement Concepts</a>   
             <a href="https://www.shenhengheng.xyz/files/dspc/TransactionsandConcurrencyControlConcepts.pdf" class="btn btn-default btn-xs" target="_blank">Transactions and Concurrency Control Concepts.pdf</a>   
-
-
         ]]></notes>
         <picture>bigdata.png</picture>
+    </project>
+	<project>
+        <title>Recurrent Neural Networks Notes</title>
+        <description>Author: 申恒恒</description>
+        <type>Note, ShangRao</type>
+        <date>July 2018</date>
+        <notes><![CDATA[
+            <span class="label label-default">RNNs & NLP</span>
+            <span class="label label-warning">Notes</span>  
+            <a href="https://www.shenhengheng.xyz/files/rnns/RNNs.pdf" class="btn btn-default btn-xs" target="_blank">RNNs Model and Basis</a>     
+            <a href="https://www.shenhengheng.xyz/files/rnns/NLP.pdf" class="btn btn-default btn-xs" target="_blank">Natural Language Processing Tech</a>
+        ]]></notes>
+        <picture>nlp.png</picture>
     </project>
 	
 </projects>

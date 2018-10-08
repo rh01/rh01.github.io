@@ -179,7 +179,7 @@
             <span class="label label-warning">Notes</span>  
             <a href="https://www.shenhengheng.xyz/files/k8s/kubernetes.pdf" class="btn btn-default btn-xs" target="_blank">Kubernets.</a>     
         ]]></notes>
-        <picture>spark.png</picture>
+        <picture>k8s.png</picture>
     </project>
 	<project>
         <title>Service Mesh</title>
@@ -192,7 +192,7 @@
             <span class="label label-warning">Notes</span>  
             <a href="https://www.shenhengheng.xyz/files/service-mesh/service_mesh.pdf" class="btn btn-default btn-xs" target="_blank">Service Mesh.</a>     
         ]]></notes>
-        <picture>spark.png</picture>
+        <picture>istio.png</picture>
     </project>
 	<project>
         <title>中间件技术</title>

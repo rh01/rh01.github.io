@@ -179,6 +179,7 @@
             <span class="label label-warning">Notes</span>  
             <a href="https://www.shenhengheng.xyz/files/k8s/kubernetes.pdf" class="btn btn-default btn-xs" target="_blank">Kubernets.</a>     
             <a href="https://www.shenhengheng.xyz/files/k8s/k8s部署.pdf" class="btn btn-default btn-xs" target="_blank">Kubernets安装配置手册(All).</a>     
+            <a href="https://rh01.gitbooks.io/learning-k8s/content/" class="btn btn-default btn-xs" target="_blank">learning-k8s.</a>     
         ]]></notes>
         <picture>k8s.png</picture>
     </project>

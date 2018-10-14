@@ -7,7 +7,8 @@
 - [Machine Learning And Deep Learning Notes Plans](https://www.shenhengheng.xyz/files/ml/ml_plan.pdf). Sep 16, 2017
 - Deep Learning Notes is comming..., Nov 3, 2017
 - tourGuide forwardend development, please [visit in mobile](https://www.shenhengheng.xyz/tourGuide/), Nov 10, 2017
-- Welcome to [ReadAILib](http://www.readailib.com), Dec 20, 2017
+- Welcome to [ReadAILib](https://www.readailib.com), Dec 20, 2017
+- Welcome to My File Storage [dir](https://dir.readailib.com), Dec 13, 2018
 
 ---
 
@@ -48,7 +49,8 @@ Deep Learning and Neural Network, Machine Learning, Image And Video Processing, 
 - Primary: Python, Go, Java, Docker, K8s. Scala
 - Prior Experience: R, Matlab, C, C++, C#, , SQL, HTML/CSS
 - Tools/Libraries/Environments: SpringMVC, SpringBoot, Django, Flask,Beego, Docker, OpenCV, TensorFlow, PyTorch
-- BigData Tools: Zookeeper, MarkLogic, Hadoop, Spark, Storm, Kafka, Activamq,RabbitMQ, MongoDB, ES, MySQL, Redis, Flume, Kubernetes...
+- MicroController: Esp8266, Raspberry Pi, Arduino,...
+- BigData Tools: Zookeeper, MarkLogic, Hadoop, Spark, Storm, Kafka, Activamq,RabbitMQ, MongoDB, ES, MySQL, Redis, Flume, Kubernetes, Service Mesh, Blockchain...
 
 ---
 

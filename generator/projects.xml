@@ -142,7 +142,7 @@
         <picture>bigdata.png</picture>
     </project>
 	<project>
-        <title>Recurrent Neural Networks Notes</title>
+        <title>Deep Learning Notes</title>
         <description>Author: 申恒恒</description>
         <type>Note, ShangRao</type>
         <date>July 2018</date>
@@ -152,6 +152,7 @@
             <a href="https://www.shenhengheng.xyz/files/rnns/RNNs.pdf" class="btn btn-default btn-xs" target="_blank">RNNs</a>     
             <a href="https://www.shenhengheng.xyz/files/rnns/NLP.pdf" class="btn btn-default btn-xs" target="_blank">NLP</a>
             <a href="https://www.shenhengheng.xyz/files/rnns/seq2seq.pdf" class="btn btn-default btn-xs" target="_blank">seq2seq</a>
+            <a href="https://www.shenhengheng.xyz/files/cnns/objectdetection.pdf" class="btn btn-default btn-xs" target="_blank">Object Detection Algorithms</a>
         ]]></notes>
         <picture>nlp.png</picture>
     </project>

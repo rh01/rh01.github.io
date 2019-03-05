@@ -2,7 +2,7 @@ Deploy a very small microservice on Raspberrypi kubernetes
 2019-03-01
 kubernetes,microservice,raspberrypi,k8s,gRPC
 最近一直在如何将微服务部署在我的边缘机器上（树莓派），通过kubernetes管理。然后就开始了今天的项目成果，为此特别对此总结。
-https://www.shenhengheng.xyz/img/thumbs/k8s+pis.png
+https://www.shenhengheng.xyz/img/thumbs/k8s+pis.jpg
 ===
 ## 0x00 动机 
 

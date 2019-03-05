@@ -1,5 +1,6 @@
 ---
 ## News
+- New Blog: https://www.41sh.cn, Feb 28, 2019
 - Joined [shiyanlou](www.shiyanlou.com){: target="_blank"}, Sep 19, 2014
 - [Joined China Undergraduate Mathematical Contest in Modeling](http://slxy.ayit.edu.cn/info/1961/1781.htm), July 10, 2015
 - joined the national mechanical creative design contest-Luoyang , Mar 1, 2016

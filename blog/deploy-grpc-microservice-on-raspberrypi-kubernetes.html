@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9076793735164845",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <title>Deploy gRPC microservice on Raspberrypi kubernetes
+</title>
+	
+	
+<meta name="description" content="今天带着大家如何在树莓派kubernetes集群中部署微服务,这次文章和上次文章的区别就是这个涉及两个微服务,如何使两个微服务在kubernetes中实现服务之间的调用可能是与上次的不同之处,这次也使用Google的开源框架gRPC框架来加快微服务的开发.
+" />
+
+	
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/isikdogan.css" rel="stylesheet">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+	<!-- add Math Support -->
+	<!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> -->
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+MathJax.Hub.Config({      
+config: ["MMLorHTML.js"],      
+extensions: ["tex2jax.js"],      
+jax: ["input/TeX"],      
+tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}    
+});  
+</script>
+<!-- <script type="text/javascript">$('.collapse').collapse()</script> -->
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	
+  </head>
+
+  <body>
+  
+  <div class="navbar navbar-inverse navbar-static-top navbar-fixed"">
+  <nav>
+  <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="https://www.shenhengheng.xyz"><span class="fa fa-home fa-fw"></span> About Me</a></li>
+          <li><a href="https://www.shenhengheng.xyz/projects.html"><span class="fa fa-cubes fa-fw"></span> Projects</a></li>
+          <li><a href="https://www.shenhengheng.xyz/blog"><span class="fa fa-pencil fa-fw"></span> Blogs</a></li>
+          <li><a href="https://www.shenhengheng.xyz/files/cv/resume.pdf" target="_blank"><span class="fa fa-bars fa-fw"></span> CV</a></li>
+          <li><a href="http://github.com/rh01" target="_blank"><span class="fa fa-github fa-fw"></span> GitHub</a></li>
+          
+          <li><a href="https://www.youtube.com/channel/UCTOuJy4b9E89zCwffX-qC3A" target="_blank"><span class="fa fa-youtube-play fa-fw"></span> YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/heng960509/" target="_blank"><span class="fa fa-linkedin fa-fw"></span> LinkedIn</a></li>
+      </ul>
+  </div>
+  </nav>
+  </div>
+
+  <!-- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://www.shenhengheng.xyz/index.html"></a>
+        </div>
+
+
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="https://www.shenhengheng.xyz/index.html"><span class="fa fa-home fa-fw"></span> About Me</a></li>
+          <li><a href="https://www.shenhengheng.xyz/projects.html"><span class="fa fa-cubes fa-fw"></span> Projects</a></li>
+          <li><a href="https://www.shenhengheng.xyz/blog"><span class="fa fa-pencil fa-fw"></span> Blogs</a></li>
+          <li><a href="http://github.com/rh01" target="_blank"><span class="fa fa-github fa-fw"></span> GitHub</a></li>
+          
+          <li><a href="https://www.youtube.com/channel/UCTOuJy4b9E89zCwffX-qC3A" target="_blank"><span class="fa fa-youtube-play fa-fw"></span> YouTube</a></li>
+          <li><a href="https://www.linkedin.com/in/heng960509/" target="_blank"><span class="fa fa-linkedin fa-fw"></span> LinkedIn</a></li>
+                 <li class="active"><a href=""><span class="glyphicon glyphicon-home"
+                     aria-hidden="true"></span> 首页</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-info-sign"
+                     aria-hidden="true"></span> 关于该课程设计</a></li>
+                <li class="dropdown">
+                    <a href="contactus.html" class="dropdown-toggle" data-toggle="dropdown"
+                     role="button" aria-haspopup="true" aria-expanded="false">
+                     <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                     作业 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/crypt/classic">仿射密码</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">非对称加密</li>
+                        <li><a href="/crypt/des">DES加密</a></li>
+                        <li><a href="/crypt/rsa">RSA加密</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">额外的项目</li>
+                        <li><a href="/crypt/lfsr">序列密码</a></li>
+                        <li><a href="/crypt/dsa">DSA数字签名</a></li>
+                        <li><a href="#">AES加密</a></li>
+
+                    </ul>
+                 </li>
+                <li><a href=""> 
+        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+        联系我
+    </a></li>
+            </ul>
+            
+        </div>
+    </div>
+
+
+</nav> -->
+  
+    <div class="container">
+		<div class="main row">
+			
+			
+	<div class="blog-content">
+
+		<h1>Deploy gRPC microservice on Raspberrypi kubernetes
+</h1>
+		<span class="date">March 5, 2019</span>
+		
+		<hr/>
+
+		<p>今天带着大家如何在树莓派kubernetes集群中部署微服务,这次文章和上次文章的区别就是这个涉及两个微服务,如何使两个微服务在kubernetes中实现服务之间的调用可能是与上次的不同之处,这次也使用Google的开源框架gRPC框架来加快微服务的开发.</p>
+<p>本次教程需要准备:</p>
+<ul>
+<li>一个启动好的树莓派kubernetes集群(参考: <a href="https://41sh.cn/?id=16">边缘智能-在树莓派上部署kubernetes集群</a>)</li>
+<li>protobuf工具(参考 https://github.com/google/protobuf,从release页下载对应的操作系统的版本即可)</li>
+<li>Docker (参考: https://docs.docker.com/engine/installation/)</li>
+<li>kubectl工具 (参考: https://kubernetes.io/docs/tasks/tools/install-kubectl/)</li>
+</ul>
+<p>本次文章主要参考: </p>
+<ul>
+<li><a href="https://outcrawl.com/getting-started-microservices-go-grpc-kubernetes">Getting Started with Microservices using Go, gRPC and Kubernetes</a></li>
+</ul>
+<p>代码:</p>
+<ul>
+<li>https://github.com/rh01/grpc-microservice-k8s</li>
+</ul>
+<h2>0x01 定义我们的protobuf文件</h2>
+<p>protobuf是google的一个序列化结构化数据工具,它可以让人们定义好相关的结构,使用protoc工具自动生成对应的代码.类似的结构化工具还有thrift.</p>
+<blockquote>
+<p>微服务:这里我主要实现一个最大公约数的功能,输入两个数值,返回这两个数的最大公约数.</p>
+</blockquote>
+<p>这里既然使用gRPC来做,那么主要使用rpc来实现服务调用,因为rpc实现的是服务之间的同步调用，即客户端调用服务并等待响应。gRPC是提供RPC功能的框架之一。此时我们需要使用Protocol Buffer的接口定义语言中编写消息类型和服务的代码并进行编译。</p>
+<p>下面就是我们使用protobuf语言定义的消息类型和服务.(具体参考: <a href="https://grpc.io/docs/quickstart/go.html)">https://grpc.io/docs/quickstart/go.html)</a></p>
+<pre><code class="bash">$ mkdir -pv ~/go/src/github.com/rh01/mini-deploy-app/pb
+$ cd ~/go/src/github.com/rh01/mini-deploy-app/pb
+$ vim pb.proto
+</code></pre>
+
+<pre><code class="yaml">syntax = &quot;proto3&quot;; // protobuf 版本
+
+package pb;        // 代码生成的package名字
+
+// 定义的请求消息体
+message GCDRequest {
+    uint64 a = 1;
+    uint64 b = 2;
+}
+
+// 定义的响应消息体
+message GCDResponse {
+    uint64 result = 1;
+}
+
+// 调用的远程服务,这是client请求server端的远程计算服务
+service GCDService {
+    rpc Compute (GCDRequest) returns (GCDResponse) {}
+}
+</code></pre>
+
+<p>接下来我们需要使用 protoc 生成对应的服务代码</p>
+<pre><code>$ protoc -I . --go_out=plugins=grpc:. ./*.proto
+</code></pre>
+
+<blockquote>
+<p>提前须知:</p>
+<ol>
+<li>执行上面的指令需要使用安装 grpc 和 proto-gen-go 工具,使用下面的命令:</li>
+</ol>
+<p><code>bash
+$ go get -u google.golang.org/grpc
+$ go get -u github.com/golang/protobuf/protoc-gen-go</code></p>
+<ol>
+<li>将 $GOPATH/bin 目录添加到PATH环境变量中</li>
+</ol>
+<p><code>bash
+$ export PATH=$PATH:$GOPATH/bin</code></p>
+</blockquote>
+<p>这时应该生成了 gcd.pb.go 程序.</p>
+<h2>0x02 最大公约数服务</h2>
+<h3>定义服务端</h3>
+<p>gcd 服务将会使用上一步生成的代码进行实现gcd计算服务.</p>
+<pre><code class="bash">$ cd ~/go/src/github.com/rh01/mini-deploy-app/
+$ mkdir -p gcd
+$ vim main.go
+</code></pre>
+
+<pre><code class="go">package main
+
+import (
+    &quot;log&quot;
+    &quot;net&quot;
+
+    context &quot;golang.org/x/net/context&quot;
+
+    pb &quot;github.com/rh01/mini-deploy-app/pb&quot;
+    &quot;google.golang.org/grpc&quot;
+    &quot;google.golang.org/grpc/reflection&quot;
+)
+</code></pre>
+
+<p>在main函数中主要定义server结构,并将其注册为server端,用于处理 gcd 计算的请求.然后启动grpc服务.</p>
+<pre><code class="go">type server struct {
+}
+
+func main() {
+    lis, err := net.Listen(&quot;tcp&quot;, &quot;:3000&quot;)
+    if err != nil {
+        log.Fatalf(&quot;Failed to listen: %v&quot;, err)
+    }
+    s := grpc.NewServer()
+
+    pb.RegisterGCDServiceServer(s, &amp;server{})
+    reflection.Register(s)
+    if err := s.Serve(lis); err != nil {
+        log.Fatalf(&quot;Failed to serve: %v&quot;, err)
+    }
+}
+</code></pre>
+
+<p>实现GCDServiceServer接口的 <code>Compute</code> 方法, server 结构对象的指针作为方法接受者.</p>
+<pre><code class="Go">// gcd.pb.go
+// GCDServiceServer is the server API for GCDService service.
+type GCDServiceServer interface {
+    Compute(context.Context, *GCDRequest) (*GCDResponse, error)
+}
+func (s *server) Compute(ctx context.Context, r *pb.GCDRequest) (*pb.GCDResponse, error) {
+    a, b := r.A, r.B
+    for b != 0 {
+        a, b = b, a%b
+    }
+    return &amp;pb.GCDResponse{Result: a}, nil
+}
+</code></pre>
+
+<h2>0x03 定义RESTFul客户端</h2>
+<p>前端使用 <a href="https://github.com/gin-gonic/gin">gin</a> 框架,主要是提供一个REST风格的访问方式和调用我们定义的gcd服务端执行实际的计算任务.</p>
+<pre><code class="go">$ cd ~/go/src/github.com/rh01/mini-deploy-app/
+$ mkdir -p api
+$ vim main.go
+</code></pre>
+
+<pre><code>package main
+
+import (
+    fmt &quot;fmt&quot;
+    &quot;log&quot;
+    &quot;net/http&quot;
+    &quot;strconv&quot;
+
+    &quot;github.com/gin-gonic/gin&quot;
+    pb &quot;github.com/rh01/mini-deploy-app/pb&quot;
+    &quot;google.golang.org/grpc&quot;
+)
+
+func main() {
+    conn, err := grpc.Dial(&quot;gcd-service:3000&quot;, grpc.WithInsecure())
+    if err != nil {
+        log.Fatalf(&quot;Dial failed: %v&quot;, err)
+    }
+    gcdClient := pb.NewGCDServiceClient(conn)
+}
+</code></pre>
+
+<p>上面的代码主要使用rpc的方式访问我们定义的服务端,此时的 gcd-service:3000 就是我们gcd服务端的 endpoint,这个就是服务地址,需要在kubernetes中定义.</p>
+<pre><code class="go">    r := gin.Default()
+    r.GET(&quot;/gcd/:a/:b&quot;, func(c *gin.Context) {
+        // Parse parameters
+        a, err := strconv.ParseUint(c.Param(&quot;a&quot;), 10, 64)
+        if err != nil {
+            c.JSON(http.StatusBadRequest, gin.H{&quot;error&quot;: &quot;Invalid parameter A&quot;})
+            return
+        }
+        b, err := strconv.ParseUint(c.Param(&quot;b&quot;), 10, 64)
+        if err != nil {
+            c.JSON(http.StatusBadRequest, gin.H{&quot;error&quot;: &quot;Invalid parameter B&quot;})
+            return
+        }
+        // Call GCD service
+        req := &amp;pb.GCDRequest{A: a, B: b}
+        if res, err := gcdClient.Compute(c, req); err == nil {
+            c.JSON(http.StatusOK, gin.H{
+                &quot;result&quot;: fmt.Sprint(res.Result),
+            })
+        } else {
+            c.JSON(http.StatusInternalServerError, gin.H{&quot;error&quot;: err.Error()})
+        }
+    })
+</code></pre>
+
+<p>接下来处理 /gcd/:a/:b 请求,读取参数 A 和 B,然后调用GCD服务.</p>
+<p>最后运行我们的REST API端.启动一个API server.</p>
+<pre><code class="go">    // Run HTTP server
+    if err := r.Run(&quot;:3000&quot;); err != nil {
+        log.Fatalf(&quot;Failed to run server: %v&quot;, err)
+    }
+</code></pre>
+
+<h2>0x04 构建Docker镜像</h2>
+<p>下面是我定义的Dockerfile文件,因为有两个服务,所以这里分成两个Docker镜像,一个是gcd服务,另外一个是提供RESTAPI访问的客户端api.</p>
+<blockquote>
+<p>有关Docker的多阶段构建参考: [<a href="https://www.41sh.cn/?id=61">实战] 将golang编写的微服务部署在树莓派搭建的kubernetes集群</a></p>
+</blockquote>
+<pre><code class="dockerfile"># Dockerfile.gcd
+FROM golang AS build-env
+
+WORKDIR /go/src/github.com/rh01/mini-deploy-app/gcd
+COPY gcd .
+COPY pb ../pb
+COPY vendor ../vendor
+
+
+
+ENV http_proxy http://192.168.1.9:12333
+ENV https_proxy http://192.168.1.9:12333
+
+RUN go get -u -v github.com/kardianos/govendor
+RUN govendor sync
+RUN GOOS=linux GOARCH=arm GOARM=7 go build -v -o /go/src/github.com/rh01/mini-deploy-app/gcd-server
+
+
+FROM armhf/alpine:latest
+COPY --from=build-env /go/src/github.com/rh01/mini-deploy-app/gcd-server /usr/local/bin/gcd
+EXPOSE 3000
+CMD [ &quot;gcd&quot; ]
+</code></pre>
+
+<pre><code class="dockerfile"># Dockerfile.api
+FROM golang AS build-env
+
+WORKDIR /go/src/github.com/rh01/mini-deploy-app/api
+COPY api .
+COPY pb ../pb
+COPY vendor ../vendor
+
+
+
+ENV http_proxy http://192.168.1.9:12333
+ENV https_proxy http://192.168.1.9:12333
+
+RUN go get -u -v github.com/kardianos/govendor
+RUN govendor sync
+RUN GOOS=linux GOARCH=arm GOARM=7 go build -v -o /go/src/github.com/rh01/mini-deploy-app/api-server
+
+
+FROM armhf/alpine:latest
+COPY --from=build-env /go/src/github.com/rh01/mini-deploy-app/api-server /usr/local/bin/api
+EXPOSE 3000
+CMD [ &quot;api&quot; ]
+</code></pre>
+
+<p>然后构建</p>
+<pre><code class="bash">$ docker build -t rh02/apiserver:v1.0.0 -f Dockerfile.api . 
+$ docker build -t rh02/gcdserver:v1.0.0 -f Dockerfile.gcd .
+</code></pre>
+
+<h2>0x05 部署到kubernetes</h2>
+<p>定义两个Deployment和对应的两个Service,并且将gcd服务的名字写成我们api服务调用的名字:gcd-service.</p>
+<p>下面是gcd的deployment和service的定义: gcd.yaml</p>
+<pre><code class="yaml">apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: gcd-deployment
+  labels:
+    app: gcd
+spec:
+  selector:
+    matchLabels:
+      app: gcd
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: gcd
+    spec:
+      containers:
+      - name: gcd
+        image: rh02/gcdserver:v1.0.0
+        imagePullPolicy: Always
+      ports:
+      - name: gcd-service
+        containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gcd-service
+spec:
+  selector:
+    app: gcd
+  ports:
+  - port: 3000
+    targetPort: gcd-service
+</code></pre>
+
+<p>创建api.yaml, service类型设置为NodePort,从而可以在集群外部也可以访问,对于GCD服务,类型设置为ClusterIP即可,只需要在集群内部访问就可以.</p>
+<pre><code class="yaml">apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: api-deployment
+  labels:
+    app: api
+spec:
+  selector:
+    matchLabels:
+      app: api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api
+        image: rh02/apiserver:v1.0.0
+        imagePullPolicy: Always
+      ports:
+      - name: api-service
+        containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-service
+spec:
+  type: NodePort
+  selector:
+    app: api
+  ports:
+  - port: 3000
+    targetPort: api-service
+</code></pre>
+
+<p>使用kubectl创建两个资源:</p>
+<pre><code class="bash">$ kubectl create -f api.yaml
+$ kubectl create -f gcd.yaml
+</code></pre>
+
+<p>检查所有的Pod是否正在运行, 可以指定 <code>-w</code> 标记,查看启动的过程.</p>
+<pre><code class="bash">$ kubectl get pods -w
+NAME                             READY     STATUS    RESTARTS   AGE
+api-deployment-778049682-3vd0z   1/1       Running   0          3s
+gcd-deployment-544390878-0zgc8   1/1       Running   0          2s
+gcd-deployment-544390878-p78g0   1/1       Running   0          2s
+gcd-deployment-544390878-r26nx   1/1       Running   0          2s
+</code></pre>
+
+<h2>0x06 尾声</h2>
+<p><img alt="截图_2019-03-05_15-42-18.png" src="https://www.41sh.cn/zb_users/upload/2019/03/201903051551771763579640.png" /></p>
+<p><img alt="截图_2019-03-05_15-43-02.png" src="https://www.41sh.cn/zb_users/upload/2019/03/201903051551771802295607.png" /></p>
+		
+		
+		  <hr/>
+		  kubernetes,microservice,raspberrypi,k8s,gRPC
+		
+		<hr/>
+			<!-- 来必力City版安装代码 -->
+		<!-- <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDczMC83Mjgz">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div> -->
+		<div id="disqus_thread"></div>
+			<script>
+
+			/**
+			*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+			/*
+			var disqus_config = function () {
+			this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+			this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+			};
+					*/
+			(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = 'https://shenhengheng.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		
+	</div>
+
+	<div class="footer">
+			<hr/>	
+				<small>© Copyright 2016 - shenhengheng.xyz</small>
+				<small class="pull-right">Powered by <a href="https://www.shenhengheng.xyz/blog/paperplane-a-simple-static-blog-generator.html" target="_blank">PaperPlane</a></small>
+			</div>
+	
+
+
+
+		</div>
+	
+    </div><!-- /.container -->
+	
+	<link rel="icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+	<!-- google analytics -->
+	
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-80563036-1']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+	
+  </body>
+</html>

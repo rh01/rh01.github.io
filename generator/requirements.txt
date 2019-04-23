@@ -1,0 +1,5 @@
+Jinja2==2.10
+Markdown==2.5
+MarkupSafe==1.1.0
+python-dateutil==2.7.5
+six==1.11.0

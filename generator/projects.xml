@@ -54,6 +54,7 @@
 			<a href="https://www.shenhengheng.xyz/files/ml/ml_hmm.pdf" class="btn btn-default btn-xs" target="_blank">HMM Algorithm</a>			
 			<a href="https://www.shenhengheng.xyz/files/ml/perceptron.pdf" class="btn btn-default btn-xs" target="_blank">Perceptron Algorithm</a>			
 			<a href="https://www.shenhengheng.xyz/files/ml/ml_mcmc.pdf" class="btn btn-default btn-xs" target="_blank">Markov chain Monte Carlo methods</a>			
+			<a href="https://www.shenhengheng.xyz/files/ml/ml_nn.pdf" class="btn btn-default btn-xs" target="_blank">Neural Networks</a>			
 		]]></notes>
 		<picture>ml.png</picture>
 	</project>

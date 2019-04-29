@@ -21,7 +21,7 @@
 	<link href="css/isikdogan.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-  <script type="text/javascript" src="js/custom.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 	<!-- add Math Support -->
 	<!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script> -->
@@ -48,11 +48,69 @@ tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
   <body>
 
       
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/"></a>
+          </div>
   
-  <div class="navbar navbar-inverse navbar-static-top navbar-fixed"">
+  
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav">
+
+            <li><a href="https://www.shenhengheng.xyz"><span class="fa fa-home fa-fw"></span> About Me</a></li>
+            <li><a href="projects.html"><span class="fa fa-cubes fa-fw"></span> Projects</a></li>
+            <li><a href="blog"><span class="fa fa-pencil fa-fw"></span> Blogs</a></li>
+              <li><a href="files/cv/resume.pdf" target="_blank"><span class="fa fa-bars fa-fw"></span> CV</a></li>
+              <li><a href="http://github.com/rh01" target="_blank"><span class="fa fa-github fa-fw"></span> GitHub</a></li>
+              
+              <li><a href="https://www.youtube.com/channel/UCTOuJy4b9E89zCwffX-qC3A" target="_blank"><span class="fa fa-youtube-play fa-fw"></span> YouTube</a></li>
+              <li><a href="https://www.linkedin.com/in/heng960509/" target="_blank"><span class="fa fa-linkedin fa-fw"></span> LinkedIn</a></li>
+     
+                
+  
+  
+  
+  
+      
+  
+              
+                  
+           
+              
+  
+            </ul>
+       
+          </div>
+          
+      </div>
+  
+  
+  </nav>   
+  
+  <!-- <div class="navbar navbar-inverse navbar-static-top navbar-fixed"">
   <nav>
   <div class="container">
-      <ul class="nav navbar-nav">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar">
+               
+              </span>
+
+
+          </button>
+          <a class="navbar-brand" href="https://www.shenhengheng.xyz/index.html"></a>
+      </div>
+      <ul class="nav navbar-nav navbar-collapse collapse">
         <li><a href=""><span class="fa fa-home fa-fw"></span> About Me</a></li>
           <li><a href="projects.html"><span class="fa fa-cubes fa-fw"></span> Projects</a></li>
           <li><a href="blog"><span class="fa fa-pencil fa-fw"></span> Blogs</a></li>
@@ -64,64 +122,9 @@ tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
       </ul>
   </div>
   </nav>
-  </div>
+  </div> -->
 
-  <!-- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="https://www.shenhengheng.xyz/index.html"></a>
-        </div>
-
-
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><a href="https://www.shenhengheng.xyz/index.html"><span class="fa fa-home fa-fw"></span> About Me</a></li>
-          <li><a href="https://www.shenhengheng.xyz/projects.html"><span class="fa fa-cubes fa-fw"></span> Projects</a></li>
-          <li><a href="https://www.shenhengheng.xyz/blog"><span class="fa fa-pencil fa-fw"></span> Blogs</a></li>
-          <li><a href="http://github.com/rh01" target="_blank"><span class="fa fa-github fa-fw"></span> GitHub</a></li>
-          
-          <li><a href="https://www.youtube.com/channel/UCTOuJy4b9E89zCwffX-qC3A" target="_blank"><span class="fa fa-youtube-play fa-fw"></span> YouTube</a></li>
-          <li><a href="https://www.linkedin.com/in/heng960509/" target="_blank"><span class="fa fa-linkedin fa-fw"></span> LinkedIn</a></li>
-                 <li class="active"><a href=""><span class="glyphicon glyphicon-home"
-                     aria-hidden="true"></span> 首页</a></li>
-                <li><a href=""><span class="glyphicon glyphicon-info-sign"
-                     aria-hidden="true"></span> 关于该课程设计</a></li>
-                <li class="dropdown">
-                    <a href="contactus.html" class="dropdown-toggle" data-toggle="dropdown"
-                     role="button" aria-haspopup="true" aria-expanded="false">
-                     <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                     作业 <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/crypt/classic">仿射密码</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">非对称加密</li>
-                        <li><a href="/crypt/des">DES加密</a></li>
-                        <li><a href="/crypt/rsa">RSA加密</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">额外的项目</li>
-                        <li><a href="/crypt/lfsr">序列密码</a></li>
-                        <li><a href="/crypt/dsa">DSA数字签名</a></li>
-                        <li><a href="#">AES加密</a></li>
-
-                    </ul>
-                 </li>
-                <li><a href=""> 
-        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-        联系我
-    </a></li>
-            </ul>
-            
-        </div>
-    </div>
-
-
-</nav> -->
+ 
 <div class="content">
     <div class="container">
 		<div class="main row">

@@ -218,37 +218,37 @@
     </project>
 
     <project>
-        <title>软路由技术</title>
+        <title>软路由技术笔记</title>
         <description>Author: 申恒恒</description>
         <type>Note, ShangRao</type>
         <date>July 2019</date>
         <notes><![CDATA[
         ]]></notes>
-        <picture>spark.png</picture>
+        <picture>ros-hardware.png</picture>
     </project>
 
     <project>
-        <title>NAS 与 黑裙辉</title>
+        <title>NAS 与 黑裙辉笔记</title>
         <description>Author: 申恒恒</description>
         <type>Note, ShangRao</type>
         <date>July 2019</date>
         <notes><![CDATA[
         ]]></notes>
-        <picture>spark.png</picture>
+        <picture>ros-hardware.png</picture>
     </project>
 
     <project>
-        <title>NBIoT技术</title>
+        <title>NBIoT技术笔记</title>
         <description>Author: 申恒恒</description>
         <type>Note, ShangRao</type>
         <date>July 2019</date>
         <notes><![CDATA[
         ]]></notes>
-        <picture>spark.png</picture>
+        <picture>nbiot.png</picture>
     </project>
 
     <project>
-        <title>ROS/LEDE/Openwrt技术</title>
+        <title>ROS/LEDE/Openwrt技术笔记</title>
         <description>Author: 申恒恒</description>
         <type>Note, ShangRao</type>
         <date>July 2019</date>
@@ -264,16 +264,16 @@
         <date>July 2019</date>
         <notes><![CDATA[
         ]]></notes>
-        <picture>spark.png</picture>
+        <picture>ros-hardware.png</picture>
     </project>
 	
     <project>
-        <title>KubeEdge部署与应用</title>
+        <title>KubeEdge部署与应用笔记</title>
         <description>Author: 申恒恒</description>
         <type>Note, ShangRao</type>
         <date>July 2019</date>
         <notes><![CDATA[
         ]]></notes>
-        <picture>spark.png</picture>
+        <picture>kubeedge.png</picture>
     </project>
 </projects>

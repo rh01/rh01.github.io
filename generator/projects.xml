@@ -158,7 +158,7 @@
             <a href="https://www.shenhengheng.xyz/files/rnns/RNNs.pdf" class="btn btn-default btn-xs" target="_blank">RNNs</a>     
             <a href="https://www.shenhengheng.xyz/files/rnns/NLP.pdf" class="btn btn-default btn-xs" target="_blank">NLP</a>
             <a href="https://www.shenhengheng.xyz/files/rnns/seq2seq.pdf" class="btn btn-default btn-xs" target="_blank">seq2seq</a>
-            <a href="https://www.shenhengheng.xyz/files/rnns/AttentionModel.pdf" class="btn btn-default btn-xs" target="_blank">seq2seq</a>
+            <a href="https://www.shenhengheng.xyz/files/rnns/AttentionModel.pdf" class="btn btn-default btn-xs" target="_blank">AttentionModel</a>
             <a href="https://www.shenhengheng.xyz/files/cnns/objectdetection.pdf" class="btn btn-default btn-xs" target="_blank">Object Detection Algorithms</a>
         ]]></notes>
         <picture>nlp.png</picture>

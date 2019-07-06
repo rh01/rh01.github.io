@@ -216,5 +216,64 @@
         ]]></notes>
         <picture>spark.png</picture>
     </project>
+
+    <project>
+        <title>软路由技术</title>
+        <description>Author: 申恒恒</description>
+        <type>Note, ShangRao</type>
+        <date>July 2019</date>
+        <notes><![CDATA[
+        ]]></notes>
+        <picture>spark.png</picture>
+    </project>
+
+    <project>
+        <title>NAS 与 黑裙辉</title>
+        <description>Author: 申恒恒</description>
+        <type>Note, ShangRao</type>
+        <date>July 2019</date>
+        <notes><![CDATA[
+        ]]></notes>
+        <picture>spark.png</picture>
+    </project>
+
+    <project>
+        <title>NBIoT技术</title>
+        <description>Author: 申恒恒</description>
+        <type>Note, ShangRao</type>
+        <date>July 2019</date>
+        <notes><![CDATA[
+        ]]></notes>
+        <picture>spark.png</picture>
+    </project>
+
+    <project>
+        <title>ROS/LEDE/Openwrt技术</title>
+        <description>Author: 申恒恒</description>
+        <type>Note, ShangRao</type>
+        <date>July 2019</date>
+        <notes><![CDATA[
+        ]]></notes>
+        <picture>spark.png</picture>
+    </project>
+
+    <project>
+        <title>GPIO/NBIoT/GSM/ModBus/串口等数据采集笔记</title>
+        <description>Author: 申恒恒</description>
+        <type>Note, ShangRao</type>
+        <date>July 2019</date>
+        <notes><![CDATA[
+        ]]></notes>
+        <picture>spark.png</picture>
+    </project>
 	
+    <project>
+        <title>KubeEdge部署与应用</title>
+        <description>Author: 申恒恒</description>
+        <type>Note, ShangRao</type>
+        <date>July 2019</date>
+        <notes><![CDATA[
+        ]]></notes>
+        <picture>spark.png</picture>
+    </project>
 </projects>

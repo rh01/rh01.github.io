@@ -259,6 +259,13 @@ p code {
 	font-weight: 200;
 }
 
+code a{
+	font-family: Menlo,Monaco,Consolas,monospace;
+	font-weight: 200;
+	cursor:pointer;
+    pointer-events: none;
+}
+
 .btn-primary{
 	background-color: #206080;
 	border-color: #206080

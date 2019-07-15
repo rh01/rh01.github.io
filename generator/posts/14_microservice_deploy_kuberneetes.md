@@ -68,13 +68,13 @@ EOF
 
 在 **github.com/rh01/goappk8s** 目录下面执行下面的操作：
 
-> **如何安装 govendor：**
->
-> 在Mac中可以使用brew工具或者使用下面的命令
->
->   ```
->   $ go get -u github.com/kardianos/govendor
->   ```
+**如何安装 govendor：**
+
+在Mac中可以使用brew工具或者使用下面的命令
+
+```
+$ go get -u github.com/kardianos/govendor
+```
 
 下面我们使用govendor来将依赖包缓存到本地项目中，方便移植和项目管理。
 
@@ -85,12 +85,11 @@ $ govendor init
 $ govendor fetch github.com/gin-gonic/gin
 ```
 
-> 上面 fetch 需要设置代理才能通过，还是老办法：
->
-> ```
-> $ export http_proxy="http://127.0.0.1:12333"
-> $ export https_proxy="http://127.0.0.1:12333"
-> ```
+上面 fetch 需要设置代理才能通过，还是老办法：
+```
+$ export http_proxy="http://127.0.0.1:12333"
+$ export https_proxy="http://127.0.0.1:12333"
+```
 
 这样一个非常小的微服务应用就做完了，这时需要测试一下，看看是否正常运行。这时切换到 **GOPARH** 文件夹。执行下面的语句
 
@@ -147,34 +146,36 @@ EXPOSE 8080
 CMD [ "app-server" ]
 ```
 
-> 这里也参考了知乎的这片文章：<https://zhuanlan.zhihu.com/p/33813413>
->
-> 主要修改如下：
->
-> 1.  增加了
->
-> ```dockerfile
-> ENV http_proxy http://192.168.1.9:12333
-> ENV https_proxy http://192.168.1.9:12333
-> ```
->
-> 这是因为国内的网络环境，我们需要添加代理，才能拉取相关的依赖包
->
-> 2.  修改了
->
-> ```
-> RUN GOOS=linux GOARCH=arm GOARM=7 go build -v -o /go/src/app/app-server
-> ```
->
-> 这是因为我们需要在树莓派 arm架构下去编译和运行golang程序，因此需要交叉编译。
->
-> 3. 修改了
->
-> ```
-> FROM armhf/alpine:latest
-> ```
->
-> 这个也是因为硬件架构的不同进行相应的修改
+这里也参考了知乎的这片文章：<https://zhuanlan.zhihu.com/p/33813413>
+
+主要修改如下：
+
+1 增加了
+
+```dockerfile
+ENV http_proxy http://192.168.1.9:12333
+ENV https_proxy http://192.168.1.9:12333
+```
+
+这是因为国内的网络环境，我们需要添加代理，才能拉取相关的依赖包
+
+2  修改了
+
+```
+RUN GOOS=linux GOARCH=arm GOARM=7 go build -v -o /go/src/app/app-server
+```
+
+这是因为我们需要在树莓派 arm架构下去编译和运行golang程序，因此需要交叉编译。
+
+3 修改了
+
+```
+FROM armhf/alpine:latest
+```
+
+这个也是因为硬件架构的不同进行相应的修改
+
+
 
 然后构建`Docker`镜像：
 

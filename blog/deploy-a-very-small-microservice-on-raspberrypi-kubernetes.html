@@ -211,11 +211,11 @@ EOF
 </blockquote>
 <p>可以看到上面的代码中，我们导入了第三方包 github.com/gin-gonic/gin，这时可以手动将该依赖包下载下来放置到<strong>GOPATH</strong>下面，这里使用了 <strong>govendor</strong> 来进行管理，当然你可以使用其他的包管理工具，比如：dep、glid或者利用go mod 等等。</p>
 <p>在 <strong>github.com/rh01/goappk8s</strong> 目录下面执行下面的操作：</p>
-<blockquote>
 <p><strong>如何安装 govendor：</strong></p>
 <p>在Mac中可以使用brew工具或者使用下面的命令</p>
-<p><code>$ go get -u github.com/kardianos/govendor</code></p>
-</blockquote>
+<pre><code>$ go get -u github.com/kardianos/govendor
+</code></pre>
+
 <p>下面我们使用govendor来将依赖包缓存到本地项目中，方便移植和项目管理。</p>
 <pre><code class="bash"># 初始化本地项目文件夹为使用vendor管理包
 $ govendor init
@@ -223,11 +223,11 @@ $ govendor init
 $ govendor fetch github.com/gin-gonic/gin
 </code></pre>
 
-<blockquote>
 <p>上面 fetch 需要设置代理才能通过，还是老办法：</p>
-<p><code>$ export http_proxy="http://127.0.0.1:12333"
-$ export https_proxy="http://127.0.0.1:12333"</code></p>
-</blockquote>
+<pre><code>$ export http_proxy=&quot;http://127.0.0.1:12333&quot;
+$ export https_proxy=&quot;http://127.0.0.1:12333&quot;
+</code></pre>
+
 <p>这样一个非常小的微服务应用就做完了，这时需要测试一下，看看是否正常运行。这时切换到 <strong>GOPARH</strong> 文件夹。执行下面的语句</p>
 <pre><code class="bash">$ go install github.com/rh01/goappk8s &amp;&amp; ./bin/goappk8s
 [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
@@ -274,27 +274,24 @@ EXPOSE 8080
 CMD [ &quot;app-server&quot; ]
 </code></pre>
 
-<blockquote>
 <p>这里也参考了知乎的这片文章：<a href="https://zhuanlan.zhihu.com/p/33813413">https://zhuanlan.zhihu.com/p/33813413</a></p>
 <p>主要修改如下：</p>
-<ol>
-<li>增加了</li>
-</ol>
-<p><code>dockerfile
-ENV http_proxy http://192.168.1.9:12333
-ENV https_proxy http://192.168.1.9:12333</code></p>
+<p>1 增加了</p>
+<pre><code class="dockerfile">ENV http_proxy http://192.168.1.9:12333
+ENV https_proxy http://192.168.1.9:12333
+</code></pre>
+
 <p>这是因为国内的网络环境，我们需要添加代理，才能拉取相关的依赖包</p>
-<ol>
-<li>修改了</li>
-</ol>
-<p><code>RUN GOOS=linux GOARCH=arm GOARM=7 go build -v -o /go/src/app/app-server</code></p>
+<p>2  修改了</p>
+<pre><code>RUN GOOS=linux GOARCH=arm GOARM=7 go build -v -o /go/src/app/app-server
+</code></pre>
+
 <p>这是因为我们需要在树莓派 arm架构下去编译和运行golang程序，因此需要交叉编译。</p>
-<ol>
-<li>修改了</li>
-</ol>
-<p><code>FROM armhf/alpine:latest</code></p>
+<p>3 修改了</p>
+<pre><code>FROM armhf/alpine:latest
+</code></pre>
+
 <p>这个也是因为硬件架构的不同进行相应的修改</p>
-</blockquote>
 <p>然后构建<code>Docker</code>镜像：</p>
 <pre><code class="bash">$ docker build -t rh02/goappk8s:v1.0.0 .
 .......(省略了)

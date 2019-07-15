@@ -66,20 +66,24 @@ service GCDService {
 $ protoc -I . --go_out=plugins=grpc:. ./*.proto
 ```
 
-> 提前须知:
->
-> 1. 执行上面的指令需要使用安装 grpc 和 proto-gen-go 工具,使用下面的命令:
->
-> ```bash
-> $ go get -u google.golang.org/grpc
-> $ go get -u github.com/golang/protobuf/protoc-gen-go
-> ```
->
-> 2. 将 $GOPATH/bin 目录添加到PATH环境变量中
->
-> ```bash
-> $ export PATH=$PATH:$GOPATH/bin
-> ```
+提前须知:
+
+执行上面的指令需要使用安装 grpc 和 proto-gen-go 工具,使用下面的命令:
+
+```
+$ go get -u google.golang.org/grpc
+```
+```
+$ go get -u github.com/golang/protobuf/protoc-gen-go
+```
+
+将 $GOPATH/bin 目录添加到PATH环境变量中
+
+```
+$ export PATH=$PATH:$GOPATH/bin
+```
+
+
 
 这时应该生成了 gcd.pb.go 程序.
 

@@ -212,20 +212,18 @@ service GCDService {
 <pre><code>$ protoc -I . --go_out=plugins=grpc:. ./*.proto
 </code></pre>
 
-<blockquote>
 <p>提前须知:</p>
-<ol>
-<li>执行上面的指令需要使用安装 grpc 和 proto-gen-go 工具,使用下面的命令:</li>
-</ol>
-<p><code>bash
-$ go get -u google.golang.org/grpc
-$ go get -u github.com/golang/protobuf/protoc-gen-go</code></p>
-<ol>
-<li>将 $GOPATH/bin 目录添加到PATH环境变量中</li>
-</ol>
-<p><code>bash
-$ export PATH=$PATH:$GOPATH/bin</code></p>
-</blockquote>
+<p>执行上面的指令需要使用安装 grpc 和 proto-gen-go 工具,使用下面的命令:</p>
+<pre><code>$ go get -u google.golang.org/grpc
+</code></pre>
+
+<pre><code>$ go get -u github.com/golang/protobuf/protoc-gen-go
+</code></pre>
+
+<p>将 $GOPATH/bin 目录添加到PATH环境变量中</p>
+<pre><code>$ export PATH=$PATH:$GOPATH/bin
+</code></pre>
+
 <p>这时应该生成了 gcd.pb.go 程序.</p>
 <h2>0x02 最大公约数服务</h2>
 <h3>定义服务端</h3>

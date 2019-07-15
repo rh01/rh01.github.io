@@ -9,7 +9,7 @@ http://olrs8j04a.bkt.clouddn.com/17-9-6/25360972.jpg
 
 ###申请助学金在哪申请？？
 	
-<br>恐怕很多童鞋们都找不到如何申请助学金的链接，不过没关系，哥哥告诉你，哈哈，:)
+恐怕很多童鞋们都找不到如何申请助学金的链接，不过没关系，哥哥告诉你，哈哈，:)
 
 1. 打开你想申请的课程网站
 	比如，莱斯大学著名的IIPP课程（已完成），课程网站为[An Introduction to Interactive Programming in Python(Part 1)](https://www.coursera.org/learn/interactive-python-1)

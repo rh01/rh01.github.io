@@ -13,7 +13,7 @@ http://olrs8j04a.bkt.clouddn.com/17-9-4/34115661.jpg
 
 ### 准备材料
 
-<br>需要以下材料：
+需要以下材料：
 
 - [Bandwagonhost](https://bandwagonhost.com) 账号,有时也被称作搬瓦工
 - 支付宝账户（需要支付你的VPS）
@@ -23,7 +23,7 @@ http://olrs8j04a.bkt.clouddn.com/17-9-4/34115661.jpg
 
 ### 购买VPS
 
-<br>废话少说，上教程和配图。
+废话少说，上教程和配图。
 
 
 在网上搜索了很长时间，搬瓦工是一个便宜稳定并且支持支付宝支付的一家VPS（虚拟主机，往往人们在上面配置服务器或者部署网站，FQ等等，在这里我使用它做VPN服务来FQ。）
@@ -52,7 +52,7 @@ http://olrs8j04a.bkt.clouddn.com/17-9-4/34115661.jpg
 
 ### 配置SS服务
 
-<br>支付完成后，会向你发送一封邮件，这封邮件包含你的ip地址和SSH的端口号（这个是你需要客户端登录要填写的端口号）。默认情况下，分配的是CentOS系统的。
+支付完成后，会向你发送一封邮件，这封邮件包含你的ip地址和SSH的端口号（这个是你需要客户端登录要填写的端口号）。默认情况下，分配的是CentOS系统的。
 
 在主页点击 Services->My Services，即<div align="center">
     ![](http://olrs8j04a.bkt.clouddn.com/17-9-4/74582836.jpg)
@@ -126,7 +126,7 @@ $ vi /etc/shadowsocks.json
 
 ### 开始IPV6无流量模式
 
-<br>打开 **控制面板\网络和 Internet\网络连接**,设置本地网卡属性。在IPV6中设置首选DNS服务器为你的VPS主机IPV6地址。（切记：一定要确定你的校园网注销登录了，负责走得还是你的IPV4，即你的校园网。）
+打开 **控制面板\网络和 Internet\网络连接**,设置本地网卡属性。在IPV6中设置首选DNS服务器为你的VPS主机IPV6地址。（切记：一定要确定你的校园网注销登录了，负责走得还是你的IPV4，即你的校园网。）
 
 <div class="alert alert-warning" role="alert">
   如何确定走的是你的IPV6？<br>
@@ -145,7 +145,7 @@ $ vi /etc/shadowsocks.json
 
 ### 注意
 
-<br>必须关闭IPv4和IPv6的防火墙，它俩的防火墙是独立的所以都要关闭，否则客户端连接不上的.
+必须关闭IPv4和IPv6的防火墙，它俩的防火墙是独立的所以都要关闭，否则客户端连接不上的.
 
 1. 永久有效 -> 修改 `/etc/selinux/config` 文件中的 `SELINUX=""` 为 `disabled`，然后重启。
 
@@ -186,7 +186,7 @@ d. 开启ss服务：`ssserver -c /etc/shadowsocks.json -d start`
 OK！你可以快快乐乐的玩耍了！下一篇文章将介绍如何对苹果手机进行局域网连接。
 
 ### 参考文章
-<br>[1] <https://blog.whsir.com/post-1456.html>
+[1] <https://blog.whsir.com/post-1456.html>
 
 
 

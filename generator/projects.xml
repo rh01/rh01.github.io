@@ -224,6 +224,8 @@
         <type>Note, ShangRao</type>
         <date>July 2019</date>
         <notes><![CDATA[
+            <span class="label label-default">ROS</span>
+            <span class="label label-warning">Notes</span>  
         ]]></notes>
         <picture>ros-hardware.png</picture>
     </project>
@@ -234,6 +236,8 @@
         <type>Note, ShangRao</type>
         <date>July 2019</date>
         <notes><![CDATA[
+            <span class="label label-default">NAS</span>
+            <span class="label label-warning">Notes</span>  
         ]]></notes>
         <picture>ros-hardware.png</picture>
     </project>
@@ -244,6 +248,8 @@
         <type>Note, ShangRao</type>
         <date>July 2019</date>
         <notes><![CDATA[
+            <span class="label label-default">NBIoT</span>
+            <span class="label label-warning">Notes</span>  
         ]]></notes>
         <picture>nbiot.png</picture>
     </project>
@@ -254,6 +260,8 @@
         <type>Note, ShangRao</type>
         <date>July 2019</date>
         <notes><![CDATA[
+            <span class="label label-default">软路由</span>
+            <span class="label label-warning">Notes</span>  
         ]]></notes>
         <picture>ros-hardware.png</picture>
     </project>
@@ -264,6 +272,8 @@
         <type>Note, ShangRao</type>
         <date>July 2019</date>
         <notes><![CDATA[
+            <span class="label label-default">数据采集</span>
+            <span class="label label-warning">Notes</span>  
         ]]></notes>
         <picture>nbiot.png</picture>
     </project>
@@ -274,6 +284,8 @@
         <type>Note, ShangRao</type>
         <date>July 2019</date>
         <notes><![CDATA[
+            <span class="label label-default">KubeEdge</span>
+            <span class="label label-warning">Notes</span>  
         ]]></notes>
         <picture>kubeedge.png</picture>
     </project>

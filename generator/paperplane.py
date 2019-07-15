@@ -45,7 +45,7 @@ def createBlog(text_dir, blog_dir, blog_template, createIndexPage = False, index
         f = codecs.open(file, "r", "utf-8")
         title = f.readline()
         date = f.readline()
-        tags = f.readline().rstrip(os.linesep)
+        tags = list(f.readline().rstrip(os.linesep).split(","))
         description = f.readline()
         #print(description)
         thumbnail = f.readline()

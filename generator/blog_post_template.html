@@ -9,17 +9,23 @@
 			
 	<div class="blog-content">
 
-		<h1>{{ post["title"] }}</h1>
+		<h1 class="post-title">{{ post["title"] }}</h1>
 		<span class="date">{{ post["formatted_date"] }}</span>
+		<span>
+			{% if post["tags"] != [] %}
+			{% for post in post["tags"] %}
+				<a class="post-tag" ><nobr>{{ post }}</nobr>&nbsp;</a>
+			{% endfor %}
+			
+			{% endif %}
+		</span>
+
 		
 		<hr/>
 
 		{{ post["content"] }}
 		
-		{% if post["tags"] != "" %}
-		  <hr/>
-		  {{ post["tags"] }}
-		{% endif %}
+		
 		<hr/>
 			<!-- 来必力City版安装代码 -->
 		<!-- <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDczMC83Mjgz">

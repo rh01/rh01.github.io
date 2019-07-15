@@ -72,9 +72,9 @@ EOF
 >
 > 在Mac中可以使用brew工具或者使用下面的命令
 >
-> ```bash
-> $ go get -u github.com/kardianos/govendor
-> ```
+>   ```
+>   $ go get -u github.com/kardianos/govendor
+>   ```
 
 下面我们使用govendor来将依赖包缓存到本地项目中，方便移植和项目管理。
 
@@ -87,7 +87,7 @@ $ govendor fetch github.com/gin-gonic/gin
 
 > 上面 fetch 需要设置代理才能通过，还是老办法：
 >
-> ```bash
+> ```
 > $ export http_proxy="http://127.0.0.1:12333"
 > $ export https_proxy="http://127.0.0.1:12333"
 > ```
@@ -121,7 +121,7 @@ PONG
 
 > 有关 Docker镜像的多阶段构建以及Docker镜像优化问题，请详见我之前的一篇文章：
 >
-> - https://www.41sh.cn/?id=25
+> https://www.41sh.cn/?id=25
 
 下面我们看一下Dockerfile文件吧。
 
@@ -151,7 +151,7 @@ CMD [ "app-server" ]
 >
 > 主要修改如下：
 >
-> \1.  增加了
+> 1.  增加了
 >
 > ```dockerfile
 > ENV http_proxy http://192.168.1.9:12333
@@ -160,17 +160,17 @@ CMD [ "app-server" ]
 >
 > 这是因为国内的网络环境，我们需要添加代理，才能拉取相关的依赖包
 >
-> \2.  修改了
+> 2.  修改了
 >
-> ```dockerfile
+> ```
 > RUN GOOS=linux GOARCH=arm GOARM=7 go build -v -o /go/src/app/app-server
 > ```
 >
 > 这是因为我们需要在树莓派 arm架构下去编译和运行golang程序，因此需要交叉编译。
 >
-> \3. 修改了
+> 3. 修改了
 >
-> ```dockerfile
+> ```
 > FROM armhf/alpine:latest
 > ```
 >

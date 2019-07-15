@@ -47,7 +47,11 @@
 			<img class="pull-right blog-index-thumbnail" src="{{ post["thumbnail"] }}" alt="thumbnail"/>
 			<p>{{ post["summary"] }} ...</p>
 
-			<p><small><i class="fa fa-tags fa-fw"></i> {{ post["tags"] }}</small></p>
+			<p>
+				{% for post in post["tags"] %}
+				<small><i class="fa fa-tags fa-fw"></i> {{ post }}&nbsp;</small>
+				{% endfor %}
+			</p>
 			
 			<div class="vspace"></div>
 			

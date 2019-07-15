@@ -259,9 +259,7 @@ p code {
 	font-weight: 200;
 }
 
-code a{
-	font-family: Menlo,Monaco,Consolas,monospace;
-	font-weight: 200;
+a .vglnk{
 	cursor:pointer;
     pointer-events: none;
 }
